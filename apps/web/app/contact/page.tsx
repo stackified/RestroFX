@@ -41,7 +41,7 @@ export default function ContactPage() {
                 Contact Us
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Get in touch with our team. We're here to help you with any
+                Get in touch with our team. We&apos;re here to help you with any
                 questions or concerns.
               </p>
             </div>
