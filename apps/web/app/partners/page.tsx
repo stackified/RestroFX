@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@crimsonfx/ui";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
-import { Users, Building2, TrendingUp, Handshake } from "lucide-react";
+import { Users, Building2, TrendingUp, HelpingHand } from "lucide-react";
 
 const partnerPrograms = [
   {
@@ -67,7 +67,7 @@ export default function PartnersPage() {
             <Card className="bg-muted/30">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <Handshake className="h-8 w-8 text-primary" />
+                  <HelpingHand className="h-8 w-8 text-primary" />
                   <CardTitle className="text-2xl">Become a Partner</CardTitle>
                 </div>
               </CardHeader>

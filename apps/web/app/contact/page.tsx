@@ -201,14 +201,14 @@ export default function ContactPage() {
                       CrimsonFX is regulated and operates in accordance with
                       applicable financial regulations. We maintain strict
                       compliance with regulatory requirements to ensure the
-                      security and protection of our clients' funds.
+                      security and protection of our clients&apos; funds.
                     </p>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">Compliance</h3>
                     <p className="text-muted-foreground text-sm">
                       All trading activities are subject to our Terms &
-                      Conditions and Risk Disclosure. Please ensure you
+                      Let&apos;s Start a Conversations and Risk Disclosure. Please ensure you
                       understand the risks involved before trading.
                     </p>
                   </div>
