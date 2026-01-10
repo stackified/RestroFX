@@ -1,0 +1,40 @@
+{
+  "extends": "@crimsonfx/config/tsconfig.json",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@/components/*": [
+        "./components/*"
+      ],
+      "@/lib/*": [
+        "./lib/*"
+      ],
+      "@crimsonfx/ui": [
+        "../../packages/ui"
+      ],
+      "@crimsonfx/utils": [
+        "../../packages/utils"
+      ],
+      "@crimsonfx/types": [
+        "../../packages/types"
+      ]
+    },
+    "allowJs": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
