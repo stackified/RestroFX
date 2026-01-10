@@ -21,7 +21,6 @@ import {
 	Layers,
 	UserPlus,
 	Users,
-	Star,
 	FileText,
 	Shield,
 	RotateCcw,
