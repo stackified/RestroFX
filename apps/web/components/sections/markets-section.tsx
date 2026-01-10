@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { TrendingUp, BarChart3, Droplets, Bitcoin, Globe, PieChart } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { cn } from "@/lib/utils";
+
 import { motion } from "framer-motion";
 
 const markets = [
