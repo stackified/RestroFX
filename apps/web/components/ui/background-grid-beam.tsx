@@ -36,7 +36,7 @@ export const GridBeam: React.FC<{ children: React.ReactNode; className?: string 
     const gridY = Math.floor(Math.random() * maxGridY)
     
     // Decide direction (horizontal or vertical)
-    const direction = Math.random() > 0.5 ? 'horizontal' : 'vertical'
+    const direction: 'horizontal' | 'vertical' = Math.random() > 0.5 ? 'horizontal' : 'vertical'
     
     const beamId = ++beamIdCounter.current
     const newBeam = {
@@ -150,7 +150,7 @@ export const GridBeam: React.FC<{ children: React.ReactNode; className?: string 
               const maxGridY = Math.floor(viewportHeight / 40)
               const gridX = Math.floor(Math.random() * maxGridX)
               const gridY = Math.floor(Math.random() * maxGridY)
-              const direction = Math.random() > 0.5 ? 'horizontal' : 'vertical'
+              const direction: 'horizontal' | 'vertical' = Math.random() > 0.5 ? 'horizontal' : 'vertical'
               const beamId = ++beamIdCounter.current
               
               const newBeam = {
