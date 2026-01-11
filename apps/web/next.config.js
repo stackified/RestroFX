@@ -2,8 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  // basePath will be auto-injected by GitHub Actions configure-pages action
-  // Don't set it here to allow the action to inject it correctly
+  // Set basePath and assetPrefix for GitHub Pages deployment
+  // This is needed for assets to load correctly when deployed to a subdirectory
+  basePath: process.env.NODE_ENV === 'production' ? '/crimsonfx' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/crimsonfx' : '',
   trailingSlash: true,
   transpilePackages: ["@crimsonfx/ui", "@crimsonfx/utils", "@crimsonfx/types"],
   images: {
