@@ -130,7 +130,6 @@ export const CircularShowcase = ({
     function getImageStyle(index: number): React.CSSProperties {
         const gap = calculateGap(containerWidth);
         const maxStickUp = gap * 0.8;
-        const offset = (index - activeIndex + itemsLength) % itemsLength;
         const isActive = index === activeIndex;
         const isLeft = (activeIndex - 1 + itemsLength) % itemsLength === index;
         const isRight = (activeIndex + 1) % itemsLength === index;
