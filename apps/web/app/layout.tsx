@@ -26,6 +26,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://stackified.github.io'),
   title: "Restro FX",
   description: "Restro FX is committed to redefining your trading experience by merging deep market expertise with advanced trading platforms and tools.",
   icons: {
