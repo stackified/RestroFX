@@ -4,17 +4,14 @@ import { BackgroundScroll } from "@/components/ui/background-scroll";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
 import {
-    Users,
     DollarSign,
     TrendingUp,
-    Award,
     Zap,
     Shield,
     Globe,
     BarChart3,
     ArrowRight,
     Check,
-    Star,
     Briefcase,
     Target
 } from "lucide-react";
@@ -164,7 +161,7 @@ export default function IBProgramPage() {
                                 </h2>
                                 <p className="text-lg text-muted-foreground mb-8">
                                     Our IB program is designed to give you everything you need to succeed.
-                                    From advanced tools to dedicated support, we're committed to your growth.
+                                    From advanced tools to dedicated support, we&apos;re committed to your growth.
                                 </p>
                                 <div className="space-y-4">
                                     {features.map((feature, index) => (

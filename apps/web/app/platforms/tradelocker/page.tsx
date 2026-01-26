@@ -124,7 +124,7 @@ export default function TradeLockerPage() {
             content: (
                 <div>
                     <p className="text-neutral-600 text-sm md:text-base mb-8 leading-relaxed">
-                        Create your account and complete quick verification in minutes. We've streamlined the process to get you trading faster with minimal friction.
+                        Create your account and complete quick verification in minutes. We&apos;ve streamlined the process to get you trading faster with minimal friction.
                     </p>
                     <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl border border-neutral-200 bg-neutral-900 group">
                         <Image

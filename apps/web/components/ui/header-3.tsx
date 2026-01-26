@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
@@ -129,7 +130,7 @@ export function Header() {
 						)}
 					>
 						<div className="relative overflow-hidden group">
-							<img src="/logo.png" alt="Restro FX" className="h-8 w-auto object-contain relative z-10" />
+							<Image src="/logo.png" alt="Restro FX" className="h-8 w-auto object-contain relative z-10" width={120} height={32} />
 							{/* Mirror Glow Effect */}
 							<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer z-20 pointer-events-none" />
 						</div>

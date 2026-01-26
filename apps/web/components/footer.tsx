@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Youtube, Twitter, Facebook } from "lucide-react";
 
 export function Footer() {
@@ -9,7 +10,7 @@ export function Footer() {
         {/* Top Header Section: Logo + Socials */}
         <div className="flex flex-col md:flex-row justify-between items-center border-b border-foreground/10 pb-8 mb-12">
           <div className="flex items-center gap-3 mb-6 md:mb-0">
-            <img src="/logo.png" alt="Restro FX" className="h-10 w-auto" />
+            <Image src="/logo.png" alt="Restro FX" className="h-10 w-auto" width={150} height={40} />
             <span className="text-2xl font-bold tracking-tight text-foreground font-heading">Restro FX</span>
           </div>
 
@@ -40,7 +41,7 @@ export function Footer() {
             <div className="max-w-md space-y-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Restro FX is an international broker regulated by the International Financial Centre,
-                ensuring transparency and compliance with international standards of the company's services.
+                ensuring transparency and compliance with international standards of the company&apos;s services.
               </p>
               <div className="text-[10px] text-muted-foreground/60 leading-tight space-y-1">
                 <p>Registration number: 2024-00388</p>
@@ -101,10 +102,10 @@ export function Footer() {
         {/* Detailed Disclaimers */}
         <div className="space-y-6 text-[10px] text-muted-foreground opacity-60 leading-relaxed mb-12">
           <p>
-            Restro FX LTD is an Authorized Financial Services Provider ("FSP") licensed and regulated by the Financial Sector Conduct Authority ("FSCA") (FSP No. 48827).
+            Restro FX LTD is an Authorized Financial Services Provider (&quot;FSP&quot;) licensed and regulated by the Financial Sector Conduct Authority (&quot;FSCA&quot;) (FSP No. 48827).
           </p>
           <p>
-            Restro FX LTD is an International Broker regulated by the International Financial Centre of St. Lucia, ensuring transparency and compliance with international standards of the company's services and provides access to trading services in accordance with applicable laws and regulations.
+            Restro FX LTD is an International Broker regulated by the International Financial Centre of St. Lucia, ensuring transparency and compliance with international standards of the company&apos;s services and provides access to trading services in accordance with applicable laws and regulations.
           </p>
           <p>
             Client accounts are onboarded through Restro FX LTD, a company incorporated in saint lucia (Reg. No. 2024-00388). By opening an account with Restro FX LTD, you confirm that you are at least eighteen (18) years of age (or the legal age in your jurisdiction), that you are acting of your own free will without solicitation from Restro FX, and that you will ensure compliance with all applicable local laws and regulations.
@@ -121,7 +122,7 @@ export function Footer() {
           </div>
           <p className="pl-8 text-[10px] text-muted-foreground leading-relaxed">
             <strong className="text-foreground text-xs block mb-1">Restricted Countries:</strong>
-            Restro FX LTD does not provide services for residents of certain countries, including Israel, New Zealand, Iran, and North Korea (Democratic People's Republic of Korea), or any country where such distribution or use would be contrary to local law or regulation. Furthermore, Restro FX LTD does not solicit citizens of the United States of America. Please check with your local jurisdiction to determine if you are permitted to open an account with Restro FX LTD.
+            Restro FX LTD does not provide services for residents of certain countries, including Israel, New Zealand, Iran, and North Korea (Democratic People&apos;s Republic of Korea), or any country where such distribution or use would be contrary to local law or regulation. Furthermore, Restro FX LTD does not solicit citizens of the United States of America. Please check with your local jurisdiction to determine if you are permitted to open an account with Restro FX LTD.
           </p>
           <p className="pl-8 text-[10px] text-muted-foreground leading-relaxed italic">
             It is your responsibility to determine whether you are permitted to open an account with Restro FX LTD.

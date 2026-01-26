@@ -4,10 +4,8 @@ import { BackgroundScroll } from "@/components/ui/background-scroll";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
 import {
-    Users,
     DollarSign,
     TrendingUp,
-    Award,
     Zap,
     Shield,
     Globe,
@@ -16,10 +14,8 @@ import {
     Check,
     Star,
     Megaphone,
-    Target,
     Percent,
     Wallet,
-    Link2,
     Mail,
     Image as ImageIcon,
     Code
@@ -199,7 +195,7 @@ export default function AffiliateProgramPage() {
                             </h1>
 
                             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                                Join Restro FX's affiliate program and earn generous commissions by promoting our premium trading platforms.
+                                Join Restro FX&apos;s affiliate program and earn generous commissions by promoting our premium trading platforms.
                                 Choose your commission model and start earning today.
                             </p>
 

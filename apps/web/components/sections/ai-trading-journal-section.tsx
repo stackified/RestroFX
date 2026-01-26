@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
-import { Sparkles, ArrowRight, Bot, BarChart2, TrendingUp, ChevronLeft } from "lucide-react";
+import { Sparkles, ArrowRight, Bot, BarChart2, TrendingUp } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function AiTradingJournalSection() {
@@ -60,7 +60,7 @@ export function AiTradingJournalSection() {
                                         </div>
                                         <div className="space-y-2">
                                             <div className="p-4 rounded-2xl rounded-tl-none bg-muted/50 border border-primary/5 text-sm leading-relaxed text-foreground shadow-sm">
-                                                I've analyzed your last 50 trades on EUR/USD. You have a <span className="text-primary font-bold">78% win rate</span> during the London session, but your stop-losses are too tight during high volatility.
+                                                I&apos;ve analyzed your last 50 trades on EUR/USD. You have a <span className="text-primary font-bold">78% win rate</span> during the London session, but your stop-losses are too tight during high volatility.
                                             </div>
                                         </div>
                                     </motion.div>
