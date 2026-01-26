@@ -182,7 +182,6 @@ export const CircularShowcase = ({
                 {/* Images */}
                 <div className="relative w-full h-96 perspective-1000" ref={imageContainerRef}>
                     {items.map((item, index) => {
-                        const isActive = index === activeIndex;
                         const isLeft = (activeIndex - 1 + itemsLength) % itemsLength === index;
                         const isRight = (activeIndex + 1) % itemsLength === index;
                         const isSide = isLeft || isRight;
