@@ -78,6 +78,7 @@ jobs:
         working-directory: ./apps/web
         env:
           NODE_ENV: production
+          BASE_PATH: /RestroFX
           ASSET_PREFIX: /RestroFX/
 
       - name: Upload artifact
