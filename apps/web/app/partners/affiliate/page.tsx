@@ -4,8 +4,10 @@ import { BackgroundScroll } from "@/components/ui/background-scroll";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
 import {
+    Users,
     DollarSign,
     TrendingUp,
+    Award,
     Zap,
     Shield,
     Globe,
@@ -14,8 +16,10 @@ import {
     Check,
     Star,
     Megaphone,
+    Target,
     Percent,
     Wallet,
+    Link2,
     Mail,
     Image as ImageIcon,
     Code

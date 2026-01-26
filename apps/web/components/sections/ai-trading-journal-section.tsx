@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
-import { Sparkles, ArrowRight, Bot, BarChart2, TrendingUp } from "lucide-react";
+import { Sparkles, ArrowRight, Bot, BarChart2, TrendingUp, ChevronLeft } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function AiTradingJournalSection() {
