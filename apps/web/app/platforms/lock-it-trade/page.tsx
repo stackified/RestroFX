@@ -13,8 +13,7 @@ import {
     Globe,
     Smartphone,
     ArrowRight,
-    Layers,
-    Activity
+    Layers
 } from "lucide-react";
 
 export default function LockItTradePage() {
