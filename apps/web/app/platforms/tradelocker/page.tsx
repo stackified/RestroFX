@@ -15,7 +15,6 @@ import {
     Globe,
     Smartphone,
     Download,
-    CheckCircle2,
     Sparkles,
     Rocket,
     Target,
