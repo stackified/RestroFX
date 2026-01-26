@@ -4,17 +4,14 @@ import { BackgroundScroll } from "@/components/ui/background-scroll";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
 import {
-    Users,
     DollarSign,
     TrendingUp,
-    Award,
     Zap,
     Shield,
     Globe,
     BarChart3,
     ArrowRight,
     Check,
-    Star,
     Briefcase,
     Target
 } from "lucide-react";
