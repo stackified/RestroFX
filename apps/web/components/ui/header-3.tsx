@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
 import { createPortal } from 'react-dom';
+import { withBasePath } from '@/lib/base-path';
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -128,11 +129,11 @@ export function Header() {
 							scrolled ? "mr-8" : "mr-14"
 						)}
 					>
-						<div className="relative overflow-hidden group">
-							<img src="/logo.png" alt="Restro FX" className="h-8 w-auto object-contain relative z-10" />
-							{/* Mirror Glow Effect */}
-							<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer z-20 pointer-events-none" />
-						</div>
+					<div className="relative overflow-hidden group">
+						<img src={withBasePath("/logo.png")} alt="Restro FX" className="h-8 w-auto object-contain relative z-10" />
+						{/* Mirror Glow Effect */}
+						<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer z-20 pointer-events-none" />
+					</div>
 						<span className="text-xl font-bold tracking-tight text-foreground font-heading whitespace-nowrap">Restro FX</span>
 					</Link>
 					<NavigationMenu className="hidden lg:flex min-w-0 flex-1 pl-4">

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import { withBasePath } from "@/lib/base-path"
 
 interface Feature {
   step: string
@@ -134,7 +135,7 @@ export function FeatureSteps({
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                     >
                       <Image
-                        src={feature.image}
+                        src={withBasePath(feature.image)}
                         alt={feature.step}
                         className="w-full h-full object-contain p-4 bg-white/5"
                         width={1000}

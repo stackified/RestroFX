@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
 import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 import {
     Zap,
     TrendingUp,
@@ -123,7 +124,7 @@ export default function TradeLockerPage() {
                     </p>
                     <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl border border-neutral-200 bg-neutral-900 group">
                         <Image
-                            src="/images/Registration.png"
+                            src={withBasePath("/images/Registration.png")}
                             alt="Registration"
                             width={500}
                             height={300}
@@ -143,7 +144,7 @@ export default function TradeLockerPage() {
                     </p>
                     <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl border border-neutral-200 bg-neutral-900 group">
                         <Image
-                            src="/images/Fund Account.png"
+                            src={withBasePath("/images/Fund Account.png")}
                             alt="Funding"
                             width={500}
                             height={300}
@@ -163,7 +164,7 @@ export default function TradeLockerPage() {
                     </p>
                     <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl border border-neutral-200 bg-neutral-900 group">
                         <Image
-                            src="/images/Start Trading.png"
+                            src={withBasePath("/images/Start Trading.png")}
                             alt="Trading"
                             width={500}
                             height={300}
@@ -330,7 +331,7 @@ export default function TradeLockerPage() {
                                             {/* Background Image */}
                                             <div className="absolute inset-0">
                                                 <Image
-                                                    src="/images/Trade Locker Swapped Colors.png"
+                                                    src={withBasePath("/images/Trade Locker Swapped Colors.png")}
                                                     alt={feature.title}
                                                     fill
                                                     className="object-cover opacity-30 group-hover:opacity-35 transition-opacity duration-500"
