@@ -92,25 +92,25 @@ export default function TradeLockerPage() {
             quote: "Full-featured trading directly in your browser with no installation required. Access your account from any device instantly.",
             name: "Web Platform",
             designation: "Browser Based",
-            src: "/images/Web Platform.png"
+            src: withBasePath("/images/Web Platform.png")
         },
         {
             quote: "Trade on the go with our powerful iOS application optimized for iPhone and iPad. Never miss a market opportunity.",
             name: "iOS App",
             designation: "Mobile & Tablet",
-            src: "/images/iOS App.png"
+            src: withBasePath("/images/iOS App.png")
         },
         {
             quote: "Manage your positions anywhere with our feature-rich Android application. Full trading capabilities in your pocket.",
             name: "Android App",
             designation: "Mobile & Tablet",
-            src: "/images/Android App.png"
+            src: withBasePath("/images/Android App.png")
         },
         {
             quote: "Maximum performance and multi-screen support for professional traders. Desktop-class power for serious trading.",
             name: "Desktop App",
             designation: "Windows & macOS",
-            src: "/images/Desktop App.png"
+            src: withBasePath("/images/Desktop App.png")
         }
     ], []);
 
@@ -271,7 +271,7 @@ export default function TradeLockerPage() {
                         }
                     >
                         <Image
-                            src="/TL.avif"
+                            src={withBasePath("/TL.avif")}
                             alt="hero"
                             height={720}
                             width={1400}
