@@ -457,19 +457,21 @@ export default function TradeLockerPage() {
                                         <p className="text-2xl text-white/90 font-light max-w-lg leading-relaxed">
                                             Get a $100,000 demo account and experience the TradeLocker advantage today. No credit card required.
                                         </p>
-                                        <Button
-                                            size="lg"
-                                            variant="secondary"
-                                            className="rounded-full px-12 h-20 text-xl font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
-                                            asChild
-                                        >
-                                            <Link href="/demo">
-                                                <span className="relative z-10 flex items-center">
-                                                    Start Free Demo <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
-                                                </span>
-                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                                            </Link>
-                                        </Button>
+                                        <div className="pt-4">
+                                            <Button
+                                                size="lg"
+                                                variant="secondary"
+                                                className="rounded-full px-12 h-16 text-lg font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
+                                                asChild
+                                            >
+                                                <Link href="/demo">
+                                                    <span className="relative z-10 flex items-center">
+                                                        Start Free Demo <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+                                                    </span>
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                                                </Link>
+                                            </Button>
+                                        </div>
                                     </motion.div>
 
                                     <motion.div
@@ -493,26 +495,26 @@ export default function TradeLockerPage() {
                                         <motion.div
                                             animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
                                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                            className="absolute top-1/4 -left-16 p-4 bg-white rounded-2xl shadow-2xl z-30"
+                                            className="absolute top-1/4 -left-16 z-30 drop-shadow-2xl filter brightness-110"
                                         >
                                             <Image
                                                 src={withBasePath("/images/Trade Locker.png")}
                                                 alt="TL"
-                                                width={48}
-                                                height={48}
+                                                width={64}
+                                                height={64}
                                                 className="object-contain"
                                             />
                                         </motion.div>
                                         <motion.div
                                             animate={{ y: [0, -20, 0], rotate: [0, -5, 0] }}
                                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                            className="absolute bottom-1/4 -right-12 p-4 bg-white rounded-2xl shadow-2xl z-30"
+                                            className="absolute bottom-1/4 -right-12 z-30 drop-shadow-2xl filter brightness-110"
                                         >
                                             <Image
                                                 src={withBasePath("/images/Trade Locker.png")}
                                                 alt="TL"
-                                                width={48}
-                                                height={48}
+                                                width={64}
+                                                height={64}
                                                 className="object-contain"
                                             />
                                         </motion.div>
