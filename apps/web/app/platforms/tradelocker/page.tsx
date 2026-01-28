@@ -495,7 +495,7 @@ export default function TradeLockerPage() {
                                         <motion.div
                                             animate={{ y: [0, -15, 0], x: [0, 8, 0], rotate: [0, 8, 0] }}
                                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                                            className="absolute top-12 -left-24 z-30 drop-shadow-2xl filter brightness-110"
+                                            className="absolute top-20 -left-16 z-30 drop-shadow-2xl filter brightness-110"
                                         >
                                             <Image
                                                 src={withBasePath("/images/Trade Locker.png")}
