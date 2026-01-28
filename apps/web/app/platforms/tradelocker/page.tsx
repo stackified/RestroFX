@@ -460,11 +460,14 @@ export default function TradeLockerPage() {
                                         <Button
                                             size="lg"
                                             variant="secondary"
-                                            className="rounded-full px-12 h-18 text-xl font-bold bg-white text-primary hover:bg-neutral-100 shadow-2xl hover:-translate-y-1 transition-all duration-300 group"
+                                            className="rounded-full px-12 h-20 text-xl font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
                                             asChild
                                         >
                                             <Link href="/demo">
-                                                Start Free Demo <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                                                <span className="relative z-10 flex items-center">
+                                                    Start Free Demo <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
+                                                </span>
+                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                                             </Link>
                                         </Button>
                                     </motion.div>
@@ -476,25 +479,42 @@ export default function TradeLockerPage() {
                                         transition={{ duration: 0.8, delay: 0.2 }}
                                         className="relative flex justify-center lg:justify-end"
                                     >
-                                        <div className="relative w-80 h-[640px] bg-neutral-900/10 rounded-[4rem] border-8 border-white/20 shadow-2xl backdrop-blur-xl flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                                            <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"></div>
-                                            <TrendingUp className="h-28 w-28 text-white opacity-80 group-hover:opacity-100 transition-opacity" />
-                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-black/20 rounded-b-3xl"></div>
+                                        <div className="relative w-80 h-[640px] bg-neutral-900/10 rounded-[4rem] border-8 border-white/20 shadow-2xl backdrop-blur-xl flex items-center justify-center overflow-hidden group-hover:scale-[1.02] transition-transform duration-700">
+                                            <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent z-20"></div>
+                                            <Image
+                                                src={withBasePath("/TradeLockerSS.webp")}
+                                                alt="TradeLocker Platform"
+                                                fill
+                                                className="object-cover"
+                                            />
+                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-black/40 rounded-b-3xl z-30"></div>
                                         </div>
 
                                         <motion.div
-                                            animate={{ y: [0, -10, 0] }}
-                                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                                            className="absolute top-1/4 -left-12 p-5 bg-white rounded-2xl shadow-2xl"
+                                            animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+                                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                            className="absolute top-1/4 -left-16 p-4 bg-white rounded-2xl shadow-2xl z-30"
                                         >
-                                            <Activity className="h-10 w-10 text-primary" />
+                                            <Image
+                                                src={withBasePath("/images/Trade Locker.png")}
+                                                alt="TL"
+                                                width={48}
+                                                height={48}
+                                                className="object-contain"
+                                            />
                                         </motion.div>
                                         <motion.div
-                                            animate={{ y: [0, -10, 0] }}
-                                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                                            className="absolute bottom-1/4 -right-8 p-5 bg-white rounded-2xl shadow-2xl"
+                                            animate={{ y: [0, -20, 0], rotate: [0, -5, 0] }}
+                                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                                            className="absolute bottom-1/4 -right-12 p-4 bg-white rounded-2xl shadow-2xl z-30"
                                         >
-                                            <Zap className="h-10 w-10 text-yellow-500" />
+                                            <Image
+                                                src={withBasePath("/images/Trade Locker.png")}
+                                                alt="TL"
+                                                width={48}
+                                                height={48}
+                                                className="object-contain"
+                                            />
                                         </motion.div>
                                     </motion.div>
                                 </div>
