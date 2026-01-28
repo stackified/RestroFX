@@ -493,9 +493,9 @@ export default function TradeLockerPage() {
                                         </div>
 
                                         <motion.div
-                                            animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+                                            animate={{ y: [0, -10, 0], x: [0, 5, 0], rotate: [0, 5, 0] }}
                                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                            className="absolute top-1/4 -left-16 z-30 drop-shadow-2xl filter brightness-110"
+                                            className="absolute -top-8 -right-12 z-30 drop-shadow-2xl filter brightness-110"
                                         >
                                             <Image
                                                 src={withBasePath("/images/Trade Locker.png")}
@@ -506,9 +506,9 @@ export default function TradeLockerPage() {
                                             />
                                         </motion.div>
                                         <motion.div
-                                            animate={{ y: [0, -20, 0], rotate: [0, -5, 0] }}
+                                            animate={{ y: [0, -15, 0], x: [0, -5, 0], rotate: [0, -5, 0] }}
                                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                            className="absolute bottom-1/4 -right-12 z-30 drop-shadow-2xl filter brightness-110"
+                                            className="absolute -bottom-10 -left-16 z-30 drop-shadow-2xl filter brightness-110"
                                         >
                                             <Image
                                                 src={withBasePath("/images/Trade Locker.png")}
