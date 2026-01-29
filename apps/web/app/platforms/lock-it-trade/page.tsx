@@ -225,7 +225,7 @@ export default function LockItTradePage() {
                                         <span className="text-white/80 italic font-light">Funded?</span>
                                     </h2>
                                     <p className="text-lg sm:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
-                                        Join thousands of traders who have replaced spreadsheets with Lock It Trade's institutional-grade journaling.
+                                        Join thousands of traders who have replaced spreadsheets with Lock It Trade&apos;s institutional-grade journaling.
                                     </p>
                                     <div className="pt-4">
                                         <Button
