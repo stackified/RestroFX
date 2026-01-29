@@ -71,6 +71,11 @@ export const CircularShowcase = ({
     const [hoverPrev, setHoverPrev] = useState(false);
     const [hoverNext, setHoverNext] = useState(false);
     const [containerWidth, setContainerWidth] = useState(1200);
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+    // Minimum swipe distance (in px)
+    const minSwipeDistance = 50;
 
     const imageContainerRef = useRef<HTMLDivElement>(null);
     const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -126,6 +131,28 @@ export const CircularShowcase = ({
         if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
     }, [itemsLength]);
 
+    const onTouchStart = (e: React.TouchEvent) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e: React.TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+        if (isLeftSwipe) {
+            handleNext();
+        }
+        if (isRightSwipe) {
+            handlePrev();
+        }
+    };
+
     // Compute transforms for each image (always show 3: left, center, right)
     function getImageStyle(index: number): React.CSSProperties {
         const gap = calculateGap(containerWidth);
@@ -177,7 +204,12 @@ export const CircularShowcase = ({
     };
 
     return (
-        <div className="w-full max-w-6xl mx-auto p-4 md:p-8">
+        <div
+            className="w-full max-w-6xl mx-auto p-4 md:p-8"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+        >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                 {/* Images */}
                 <div className="relative w-full h-96 perspective-1000" ref={imageContainerRef}>

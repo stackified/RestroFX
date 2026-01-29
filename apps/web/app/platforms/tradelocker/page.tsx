@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 // import { Boxes } from "@/components/ui/background-boxes";
 import { AnimatedCard } from "@/components/ui/animated-card";
+import { Counter } from "@/components/ui/counter";
 import { BackgroundScroll } from "@/components/ui/background-scroll";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { cn } from "@/lib/utils";
@@ -178,10 +179,10 @@ export default function TradeLockerPage() {
     ], []);
 
     const stats = useMemo(() => [
-        { label: "Active Traders", value: "500K+", icon: TrendingUp },
-        { label: "Countries", value: "150+", icon: Globe },
-        { label: "Assets", value: "1000+", icon: BarChart3 },
-        { label: "Uptime", value: "99.9%", icon: Activity }
+        { label: "Active Traders", value: 500, suffix: "K+", icon: TrendingUp },
+        { label: "Countries", value: 150, suffix: "+", icon: Globe },
+        { label: "Assets", value: 1000, suffix: "+", icon: BarChart3 },
+        { label: "Uptime", value: 99.9, suffix: "%", decimals: 1, icon: Activity }
     ], []);
 
     return (
@@ -192,7 +193,7 @@ export default function TradeLockerPage() {
 
                 {/* Redesigned Hero Section with Container Scroll */}
                 {/* Redesigned Hero Section with Container Scroll */}
-                <section className="relative w-full z-20">
+                <section className="relative w-full z-20 pt-32 md:pt-20">
                     <ContainerScroll
                         titleComponent={
                             <>
@@ -292,7 +293,9 @@ export default function TradeLockerPage() {
                                         <div className="inline-flex p-3 rounded-xl bg-primary/5 text-primary mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                                             <stat.icon className="h-6 w-6 group-hover:text-white transition-colors" />
                                         </div>
-                                        <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2 font-heading">{stat.value}</div>
+                                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 mb-2 font-heading">
+                                            <Counter value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
+                                        </div>
                                         <div className="text-sm md:text-base text-neutral-600 font-medium">{stat.label}</div>
                                     </div>
                                 </AnimatedCard>
@@ -434,7 +437,7 @@ export default function TradeLockerPage() {
                     <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
                         <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
                         <div className="container mx-auto max-w-7xl relative z-10">
-                            <div className="relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-primary via-red-600 to-red-700 p-12 lg:p-24 shadow-2xl group">
+                            <div className="relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden bg-gradient-to-br from-primary via-red-600 to-red-700 p-6 sm:p-12 lg:p-24 shadow-2xl group">
                                 {/* Animated Background Pattern */}
                                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30 group-hover:opacity-40 transition-opacity duration-500"></div>
 
@@ -461,11 +464,11 @@ export default function TradeLockerPage() {
                                             <Button
                                                 size="lg"
                                                 variant="secondary"
-                                                className="rounded-full px-8 sm:px-12 h-14 sm:h-16 text-base sm:text-lg font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
+                                                className="w-full sm:w-auto rounded-full px-8 sm:px-12 h-14 sm:h-16 text-base sm:text-lg font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
                                                 asChild
                                             >
                                                 <Link href="/demo">
-                                                    <span className="relative z-10 flex items-center">
+                                                    <span className="relative z-10 flex items-center justify-center">
                                                         Start Free Demo <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
                                                     </span>
                                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
