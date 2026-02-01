@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { Button, buttonVariants } from '@/components/ui/button';
@@ -129,11 +130,11 @@ export function Header() {
 							scrolled ? "mr-8" : "mr-14"
 						)}
 					>
-					<div className="relative overflow-hidden group">
-						<img src={withBasePath("/logo.png")} alt="Restro FX" className="h-8 w-auto object-contain relative z-10" />
-						{/* Mirror Glow Effect */}
-						<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer z-20 pointer-events-none" />
-					</div>
+						<div className="relative overflow-hidden group">
+							<Image src={withBasePath("/logo.png")} alt="Restro FX" width={32} height={32} className="h-8 w-auto object-contain relative z-10" />
+							{/* Mirror Glow Effect */}
+							<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer z-20 pointer-events-none" />
+						</div>
 						<span className="text-xl font-bold tracking-tight text-foreground font-heading whitespace-nowrap">Restro FX</span>
 					</Link>
 					<NavigationMenu className="hidden lg:flex min-w-0 flex-1 pl-4">

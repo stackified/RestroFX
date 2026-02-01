@@ -12,7 +12,6 @@ import {
   Shield,
   ArrowRight,
   ArrowLeft,
-  Monitor,
   Laptop,
   Brain
 } from "lucide-react";

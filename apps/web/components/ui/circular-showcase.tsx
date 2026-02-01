@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, {
     useEffect,
     useRef,
@@ -226,10 +227,11 @@ export const CircularShowcase = ({
                                 style={getImageStyle(index)}
                             >
                                 {/* Full-size image covering the entire card */}
-                                <img
+                                <Image
                                     src={item.src}
                                     alt={item.name}
-                                    className={`w-full h-full object-cover object-center ${isSide ? 'opacity-40 blur-sm' : ''}`}
+                                    fill
+                                    className={`object-cover object-center ${isSide ? 'opacity-40 blur-sm' : ''}`}
                                 />
                                 {/* Glassmorphic overlay for side images */}
                                 {isSide && (
