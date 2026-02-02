@@ -3,7 +3,7 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BackgroundScroll } from "@/components/ui/background-scroll";
-import { Card, CardContent, CardHeader, CardTitle } from "@crimsonfx/ui";
+
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, Clock, MapPin, Send, ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -89,7 +89,7 @@ export default function ContactPage() {
               </h1>
 
               <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Have questions? We're here to help. Reach out to our team and we'll get back to you as soon as possible.
+                Have questions? We&apos;re here to help. Reach out to our team and we&apos;ll get back to you as soon as possible.
               </p>
             </motion.div>
 
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 className="p-8 rounded-2xl bg-white border border-border shadow-lg"
               >
                 <h2 className="text-2xl font-bold font-heading mb-2">Send Us a Message</h2>
-                <p className="text-muted-foreground mb-6">Fill out the form below and we'll get back to you shortly.</p>
+                <p className="text-muted-foreground mb-6">Fill out the form below and we&apos;ll get back to you shortly.</p>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
@@ -264,7 +264,7 @@ export default function ContactPage() {
                   <div className="mb-8">
                     <h3 className="font-semibold text-lg mb-3">Regulation</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      RestroFX is regulated and operates in accordance with applicable financial regulations. We maintain strict compliance with regulatory requirements to ensure the security and protection of our clients' funds.
+                      RestroFX is regulated and operates in accordance with applicable financial regulations. We maintain strict compliance with regulatory requirements to ensure the security and protection of our clients&apos; funds.
                     </p>
                   </div>
 

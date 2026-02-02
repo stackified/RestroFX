@@ -19,7 +19,7 @@ const HelixRings: React.FC<HelixRingsProps> = ({
     stepY = 0.85,
     rotationStep = Math.PI / 16,
 }) => {
-    const groupRef = useRef<THREE.Group>(new THREE.Group());
+    const groupRef = useRef<THREE.Group>(null);
 
     useFrame(() => {
         if (groupRef.current) {
@@ -61,14 +61,14 @@ const HelixRings: React.FC<HelixRingsProps> = ({
         <group
             scale={1}
             position={[5, 0, 0]}
-            ref={groupRef}
+            ref={groupRef as any}
             rotation={[0, 0, 0]}
 
         >
             {elements.map((el) => (
                 <mesh
                     key={el.id}
-                    geometry={ringGeometry}
+                    geometry={ringGeometry as any}
                     position={[0, el.y, 0]}
                     rotation={[0, Math.PI / 2 + el.rotation, 0]}
                     castShadow

@@ -2,7 +2,7 @@
 import { TimelineContent } from "@/components/ui/timeline-animation";
 import { ArrowRight, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { useRef } from "react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function AboutSection3() {

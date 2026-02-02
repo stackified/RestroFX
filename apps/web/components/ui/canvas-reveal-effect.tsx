@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, { useMemo, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { cn } from "@/lib/utils";
@@ -213,11 +213,9 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
 const ShaderMaterial = ({
     source,
     uniforms,
-    maxFps = 60,
 }: {
     source: string;
     hovered?: boolean;
-    maxFps?: number;
     uniforms: Uniforms;
 }) => {
     const { size } = useThree();
@@ -309,10 +307,10 @@ const ShaderMaterial = ({
     );
 };
 
-const Shader: React.FC<ShaderProps> = ({ source, uniforms, maxFps = 60 }) => {
+const Shader: React.FC<ShaderProps> = ({ source, uniforms }) => {
     return (
         <Canvas className="absolute inset-0 h-full w-full">
-            <ShaderMaterial source={source} uniforms={uniforms} maxFps={maxFps} />
+            <ShaderMaterial source={source} uniforms={uniforms} />
         </Canvas>
     );
 };
