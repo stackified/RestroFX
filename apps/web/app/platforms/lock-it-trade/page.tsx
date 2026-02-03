@@ -187,7 +187,7 @@ export default function LockItTradePage() {
                                                     alt={feature.title}
                                                     width={700}
                                                     height={700}
-                                                    className="object-contain opacity-60 group-hover:opacity-80 transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                                                    className="object-contain opacity-50 group-hover:opacity-70 transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110"
                                                 />
                                             </div>
 

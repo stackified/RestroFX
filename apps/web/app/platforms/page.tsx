@@ -1,140 +1,17 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BackgroundScroll } from "@/components/ui/background-scroll";
-import { Card, CardContent, CardHeader, CardTitle } from "@crimsonfx/ui";
-import { Button } from "@crimsonfx/ui";
-import Link from "next/link";
-import { Check, Download, Smartphone, Globe, Brain } from "lucide-react";
-
-const platforms = [
-  {
-    id: "lock-it-trade",
-    name: "Lock It Trade",
-    description:
-      "A sophisticated AI-powered trading journal designed for serious traders to structure their success. Lock It Trade replaces legacy spreadsheets with data-driven insights and automated analytics.",
-    features: [
-      "87% AI Readiness Score",
-      "72% Average Win Rate Tracking",
-      "Violations Summary (Max Loss, Lot Size)",
-      "Risk/Reward Breakdown",
-      "85%+ Strategy Compliance Analysis",
-      "Institutional-grade Dashboard",
-      "Automated Trading Analytics",
-      "Prop Firm Challenge Optimization",
-    ],
-    downloads: [
-      { name: "Web App", icon: Globe },
-      { name: "Mobile", icon: Smartphone },
-    ],
-  },
-  {
-    id: "tradelocker",
-    name: "TradeLocker",
-    description:
-      "A modern, intuitive platform designed for today's traders. TradeLocker combines powerful features with a user-friendly interface for a seamless trading experience.",
-    features: [
-      "User-friendly interface",
-      "Advanced order management",
-      "Real-time market data",
-      "Cloud-based access from anywhere",
-      "Customizable workspace",
-      "Integrated risk management tools",
-      "Mobile trading apps",
-      "Professional charting tools",
-    ],
-    downloads: [
-      { name: "Windows", icon: Download },
-      { name: "Mac", icon: Download },
-      { name: "Web", icon: Globe },
-      { name: "Mobile", icon: Smartphone },
-    ],
-  },
-];
+import { PlatformsHero } from "@/components/sections/platforms/platforms-hero";
+import { PlatformsList } from "@/components/sections/platforms/platforms-list";
 
 export default function PlatformsPage() {
   return (
     <>
       <BackgroundScroll />
       <Navbar />
-      <main>
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-background">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl sm:text-5xl font-semibold font-heading text-foreground mb-6">
-                Trading Platforms
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Choose from industry-leading trading platforms designed for
-                professional traders.
-              </p>
-            </div>
-
-            <div className="space-y-16">
-              {platforms.map((platform) => (
-                <div key={platform.id}>
-                  <Card>
-                    <CardHeader>
-                      <div className="flex items-center gap-3">
-                        {platform.id === "lock-it-trade" ? (
-                          <Brain className="h-8 w-8 text-primary" />
-                        ) : (
-                          <Smartphone className="h-8 w-8 text-primary" />
-                        )}
-                        <CardTitle className="text-3xl">{platform.name}</CardTitle>
-                      </div>
-                      <p className="text-muted-foreground mt-4 text-lg">
-                        {platform.description}
-                      </p>
-                    </CardHeader>
-                    <CardContent className="space-y-8">
-                      <div>
-                        <h3 className="font-semibold mb-4 text-lg">
-                          Key Features
-                        </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {platform.features.map((feature, index) => (
-                            <div key={index} className="flex items-start gap-2">
-                              <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                              <span className="text-sm">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h3 className="font-semibold mb-4 text-lg">
-                          Available On
-                        </h3>
-                        <div className="flex flex-wrap gap-4">
-                          {platform.downloads.map((download, index) => (
-                            <div
-                              key={index}
-                              className="flex items-center gap-2 px-4 py-2 bg-muted rounded-md"
-                            >
-                              <download.icon className="h-4 w-4" />
-                              <span className="text-sm font-medium">
-                                {download.name}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex gap-4">
-                        <Button size="lg" asChild>
-                          <Link href="/register">Start Trading</Link>
-                        </Button>
-                        <Button size="lg" variant="outline" asChild>
-                          <Link href="/demo">Try Demo</Link>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <main className="min-h-screen bg-background">
+        <PlatformsHero />
+        <PlatformsList />
       </main>
       <Footer />
     </>
