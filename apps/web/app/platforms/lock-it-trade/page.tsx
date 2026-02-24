@@ -531,7 +531,7 @@ export default function LockItTradePage() {
                                         <div className="relative w-72 h-[560px] sm:w-80 sm:h-[640px] bg-neutral-900/10 rounded-[3rem] sm:rounded-[4rem] border-8 border-white/20 shadow-2xl backdrop-blur-xl flex items-center justify-center overflow-hidden group-hover:scale-[1.02] transition-transform duration-700">
                                             <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent z-20"></div>
                                             <Image
-                                                src={withBasePath("/images/LockITTrade.png")}
+                                                src={withBasePath("/LockItTradeSS.png")}
                                                 alt="Lock It Trade Platform"
                                                 fill
                                                 className="object-cover"
@@ -545,11 +545,11 @@ export default function LockItTradePage() {
                                             className="absolute top-28 -left-4 sm:top-20 sm:-left-16 z-30 drop-shadow-2xl filter brightness-110"
                                         >
                                             <Image
-                                                src={withBasePath("/images/LockITTradeLogo.png")}
+                                                src={withBasePath("/images/LockITTradeLogoNoBg.png")}
                                                 alt="Logo"
-                                                width={48}
-                                                height={48}
-                                                className="object-contain rounded-[1rem] sm:w-[56px] sm:h-[56px]"
+                                                width={64}
+                                                height={64}
+                                                className="object-contain rounded-[1rem] sm:w-[80px] sm:h-[80px]"
                                             />
                                         </motion.div>
                                         <motion.div
@@ -558,11 +558,11 @@ export default function LockItTradePage() {
                                             className="absolute bottom-12 -right-2 sm:-right-4 z-30 drop-shadow-2xl filter brightness-110"
                                         >
                                             <Image
-                                                src={withBasePath("/images/LockITTradeLogo.png")}
+                                                src={withBasePath("/images/LockITTradeLogoNoBg.png")}
                                                 alt="Logo"
-                                                width={40}
-                                                height={40}
-                                                className="object-contain rounded-[0.75rem] sm:w-[48px] sm:h-[48px]"
+                                                width={56}
+                                                height={56}
+                                                className="object-contain rounded-[0.75rem] sm:w-[72px] sm:h-[72px]"
                                             />
                                         </motion.div>
                                     </motion.div>

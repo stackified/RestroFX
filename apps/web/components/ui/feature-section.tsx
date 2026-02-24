@@ -118,7 +118,7 @@ export function FeatureSteps({
 
           <div
             className={cn(
-              "order-1 md:order-2 relative h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden rounded-lg shadow-lg",
+              "order-1 md:order-2 relative h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden rounded-2xl shadow-lg",
               imageHeight
             )}
           >
@@ -128,7 +128,7 @@ export function FeatureSteps({
                   index === currentFeature && (
                     <motion.div
                       key={index}
-                      className="absolute inset-0 rounded-lg overflow-hidden"
+                      className="absolute inset-0 rounded-2xl overflow-hidden"
                       initial={{ y: 50, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       exit={{ y: -50, opacity: 0 }}
@@ -137,7 +137,7 @@ export function FeatureSteps({
                       <Image
                         src={withBasePath(feature.image)}
                         alt={feature.step}
-                        className="w-full h-full object-contain p-4 bg-white/5"
+                        className="w-full h-full object-contain p-4 bg-white/5 rounded-2xl"
                         width={1000}
                         height={500}
                         priority={index === 0}
