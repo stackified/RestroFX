@@ -89,7 +89,7 @@ export function AccountTypesFAQ() {
                             <div className="mt-12 flex flex-col sm:flex-row gap-4">
                                 <div className="p-6 rounded-2xl bg-gradient-to-br from-card to-muted border border-border/50 shadow-xl shadow-black/5">
                                     <h4 className="font-bold mb-2">Still need help?</h4>
-                                    <p className="text-sm text-muted-foreground mb-4">Can't find the answer you're looking for? Contact our 24/7 support team.</p>
+                                    <p className="text-sm text-muted-foreground mb-4">Can&apos;t find the answer you&apos;re looking for? Contact our 24/7 support team.</p>
                                     <Button variant="outline" className="w-full rounded-xl border-red-600/20 hover:border-red-600 transition-colors" asChild>
                                         <Link href="/contact" className="flex items-center justify-center gap-2">
                                             Contact Support <ArrowRight className="h-4 w-4" />

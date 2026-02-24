@@ -228,7 +228,8 @@ const ShaderMaterial = ({
         material.uniforms.u_time.value = timestamp;
     });
 
-    const getUniforms = () => {
+
+    const material = useMemo(() => {
         const preparedUniforms: any = {};
         for (const uniformName in uniforms) {
             const uniform: any = uniforms[uniformName];
@@ -271,10 +272,7 @@ const ShaderMaterial = ({
         preparedUniforms["u_resolution"] = {
             value: new THREE.Vector2(size.width * 2, size.height * 2),
         };
-        return preparedUniforms;
-    };
 
-    const material = useMemo(() => {
         const materialObject = new THREE.ShaderMaterial({
             vertexShader: `
       precision mediump float;
@@ -290,14 +288,14 @@ const ShaderMaterial = ({
       }
       `,
             fragmentShader: source,
-            uniforms: getUniforms(),
+            uniforms: preparedUniforms,
             glslVersion: THREE.GLSL3,
             blending: THREE.CustomBlending,
             blendSrc: THREE.SrcAlphaFactor,
             blendDst: THREE.OneFactor,
         });
         return materialObject;
-    }, [size.width, size.height, source]);
+    }, [size.width, size.height, source, uniforms]);
 
     return (
         <mesh ref={ref as any}>

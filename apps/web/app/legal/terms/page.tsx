@@ -54,7 +54,7 @@ export default function TermsPage() {
                   1. Introduction
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  These Terms & Conditions ("Terms") govern your access to and use of the RestroFX website, trading platform, and services. By opening an account or using our services, you agree to be legally bound by these Terms.
+                  These Terms & Conditions (&quot;Terms&quot;) govern your access to and use of the RestroFX website, trading platform, and services. By opening an account or using our services, you agree to be legally bound by these Terms.
                 </p>
               </div>
 
