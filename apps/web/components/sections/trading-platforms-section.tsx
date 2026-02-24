@@ -54,7 +54,7 @@ export function TradingPlatformsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold font-heading text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-4 tracking-tight">
             Trade on <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Powerful Platforms</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -111,16 +111,10 @@ export function TradingPlatformsSection() {
                     </div>
                   </div>
 
-                  <Button variant="outline" className="w-full rounded-xl h-11 border-2 border-primary/20 hover:border-primary/40 group/btn transition-all duration-300" asChild>
+                  <Button variant="outline" className="w-full rounded-full h-11 border-2 border-primary/20 text-red-600 hover:border-red-600 hover:bg-red-600 hover:text-white group/btn transition-all duration-300 font-semibold" asChild>
                     <Link href={`/platforms/${platform.id}`} className="flex items-center justify-center gap-2">
                       Learn More
-                      <motion.span
-                        className="inline-block"
-                        whileHover={{ x: 4 }}
-                        transition={{ type: "spring", stiffness: 400 }}
-                      >
-                        <ArrowRight className="h-4 w-4" />
-                      </motion.span>
+                      <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
                 </CardContent>
@@ -136,9 +130,11 @@ export function TradingPlatformsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-8 md:mt-12"
         >
-          <Button size="lg" className="rounded-xl px-10 h-14 text-lg font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform w-[90%] sm:w-auto mx-auto" asChild>
+          <Button size="lg" className="rounded-full px-12 h-16 text-lg font-bold bg-primary text-white shadow-[0_20px_50px_rgba(220,38,38,0.3)] hover:bg-red-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,38,38,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95 w-[90%] sm:w-auto mx-auto border-none" asChild>
             <Link href="/register">
-              Start Trading <ArrowRight className="ml-2 h-5 w-5" />
+              <span className="relative z-10 flex items-center justify-center">
+                Start Trading <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </span>
             </Link>
           </Button>
         </motion.div>

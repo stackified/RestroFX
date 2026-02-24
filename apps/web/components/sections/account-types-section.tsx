@@ -64,8 +64,8 @@ export function AccountTypesSection() {
           >
             <span>Account Types</span>
           </motion.div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold font-heading text-foreground mb-4">
-            Choose Your Trading Edge
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-4 tracking-tight">
+            Choose Your Trading <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Edge</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
             Select the account type that best fits your trading style and experience level. Each account is designed to optimize your trading performance.
@@ -167,23 +167,19 @@ export function AccountTypesSection() {
 
                     <CardFooter className="relative z-10 pt-2 pb-6 px-4 sm:px-6 flex-shrink-0">
                       <Button
-                        className={`w-full rounded-xl h-12 sm:h-14 text-base sm:text-lg font-bold transition-all duration-300 ${account.popular
-                          ? "bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/30 text-white hover:scale-[1.02]"
-                          : "border-2 border-red-600/30 hover:border-red-600 hover:text-red-600 hover:bg-red-600/5"
-                          } group/btn`}
+                        className={`w-full rounded-full h-12 sm:h-14 text-base sm:text-lg font-bold transition-all duration-500 ${account.popular
+                          ? "bg-primary hover:bg-red-700 shadow-[0_20px_50px_rgba(220,38,38,0.2)] hover:shadow-[0_30px_60px_rgba(220,38,38,0.3)] text-white hover:-translate-y-1"
+                          : "border-2 border-red-600/30 text-red-600 hover:bg-red-600 hover:text-white hover:border-red-600 shadow-sm"
+                          } group/btn active:scale-95`}
                         variant={account.popular ? "default" : "outline"}
                         size="lg"
                         asChild
                       >
                         <Link href={`/register?account=${account.id}`} className="flex items-center justify-center gap-2">
-                          Open Account
-                          <motion.span
-                            className="inline-block"
-                            whileHover={{ x: 4 }}
-                            transition={{ type: "spring", stiffness: 400 }}
-                          >
-                            <ArrowRight className="h-5 w-5" />
-                          </motion.span>
+                          <span className="relative z-10 flex items-center justify-center">
+                            Open Account
+                            <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
+                          </span>
                         </Link>
                       </Button>
                     </CardFooter>

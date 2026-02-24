@@ -4,8 +4,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
-import { Sparkles, ArrowRight, Bot, BarChart2, TrendingUp } from "lucide-react";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { Sparkles, ArrowRight, TrendingUp } from "lucide-react";
+import { PinContainer } from "@/components/ui/3d-pin";
+import { Activity } from "lucide-react";
 
 export function AiTradingJournalSection() {
     const ref = useRef(null);
@@ -17,98 +18,73 @@ export function AiTradingJournalSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                     {/* Visual Side */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                        transition={{ duration: 0.8 }}
-                        className="relative order-2 lg:order-1"
-                    >
-                        {/* Glowing Card Container */}
-                        <div className="relative rounded-[2rem] p-1 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent backdrop-blur-3xl">
-                            <GlowingEffect
-                                spread={60}
-                                glow={true}
-                                disabled={false}
-                                proximity={100}
-                                inactiveZone={0.01}
-                                borderWidth={3}
-                                variant="red"
-                            />
+                    <div className="relative order-2 lg:order-1 flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
+                        <PinContainer title="Unlock AI Insights" href="/register">
+                            <div className="flex flex-col p-6 sm:p-8 tracking-tight w-[20rem] sm:w-[26rem] h-[20rem] sm:h-[26rem] bg-gradient-to-br from-white/90 via-white/80 to-primary/10 backdrop-blur-xl border-2 border-white/40 rounded-3xl shadow-2xl shadow-primary/30 relative overflow-hidden">
+                                {/* Glassmorphic overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 pointer-events-none" />
 
-                            <div className="relative rounded-[1.8rem] bg-background/40 border border-white/5 overflow-hidden shadow-2xl backdrop-blur-xl">
-                                {/* Chat Interface Header */}
-                                <div className="absolute top-0 inset-x-0 h-16 border-b border-primary/10 bg-background/50 backdrop-blur-md flex items-center px-6 justify-between z-20">
-                                    <div className="flex items-center gap-3">
-                                        <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-                                        <span className="font-heading font-semibold text-sm tracking-wide text-foreground/80">RESTRO INTELLIGENCE</span>
+                                {/* Content wrapper */}
+                                <div className="relative z-10">
+                                    {/* Header */}
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="flex items-center gap-2">
+                                            <div className="size-2.5 rounded-full bg-primary animate-pulse shadow-lg shadow-primary/50" />
+                                            <div className="text-xs font-semibold text-primary uppercase tracking-wider">Live AI</div>
+                                        </div>
+                                        <div className="px-3 py-1 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 backdrop-blur-sm">
+                                            <span className="text-xs font-bold text-primary">Pro</span>
+                                        </div>
                                     </div>
-                                    <Sparkles className="h-4 w-4 text-primary" />
-                                </div>
 
-                                {/* Chat Body */}
-                                <div className="pt-24 pb-8 px-6 space-y-6 h-[460px] flex flex-col justify-end">
+                                    {/* Title */}
+                                    <div className="mb-6">
+                                        <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mb-1">
+                                            Smart Trading
+                                        </h3>
+                                        <p className="text-sm text-foreground/70 font-medium">AI-Powered Insights</p>
+                                    </div>
 
-                                    {/* AI Message 1 */}
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                        transition={{ delay: 0.4 }}
-                                        className="flex gap-4 max-w-[90%]"
-                                    >
-                                        <div className="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br from-primary to-red-700 flex items-center justify-center shadow-lg shadow-primary/20">
-                                            <Bot className="h-5 w-5 text-white" />
+                                    {/* Stats Grid */}
+                                    <div className="grid grid-cols-2 gap-4 mb-6">
+                                        <div className="bg-gradient-to-br from-white/60 to-primary/10 rounded-xl p-4 border border-white/50 backdrop-blur-md shadow-lg">
+                                            <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">+127%</div>
+                                            <div className="text-xs text-foreground/60 font-medium">Avg. Profit</div>
                                         </div>
-                                        <div className="space-y-2">
-                                            <div className="p-4 rounded-2xl rounded-tl-none bg-muted/50 border border-primary/5 text-sm leading-relaxed text-foreground shadow-sm">
-                                                I&apos;ve analyzed your last 50 trades on EUR/USD. You have a <span className="text-primary font-bold">78% win rate</span> during the London session, but your stop-losses are too tight during high volatility.
+                                        <div className="bg-gradient-to-br from-white/60 to-primary/10 rounded-xl p-4 border border-white/50 backdrop-blur-md shadow-lg">
+                                            <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">2.4K</div>
+                                            <div className="text-xs text-foreground/60 font-medium">Trades Analyzed</div>
+                                        </div>
+                                    </div>
+
+                                    {/* Progress Bar */}
+                                    <div className="space-y-2">
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs text-foreground/70 font-medium">AI Confidence</span>
+                                            <span className="text-xs text-primary font-bold">98%</span>
+                                        </div>
+                                        <div className="relative h-2 bg-white/50 rounded-full overflow-hidden backdrop-blur-sm border border-white/30">
+                                            <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary to-primary/80 rounded-full w-[98%] shadow-lg shadow-primary/40">
+                                                <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/50 to-white/30 animate-pulse" />
                                             </div>
                                         </div>
-                                    </motion.div>
+                                    </div>
 
-                                    {/* User Response */}
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                        transition={{ delay: 1 }}
-                                        className="flex gap-4 max-w-[85%] self-end flex-row-reverse"
-                                    >
-                                        <div className="h-10 w-10 shrink-0 rounded-full bg-foreground flex items-center justify-center">
-                                            <span className="text-xs font-bold text-background">ME</span>
+                                    {/* Footer */}
+                                    <div className="mt-auto pt-4 flex justify-between items-center border-t border-primary/20">
+                                        <div className="flex items-center gap-2">
+                                            <Activity className="h-4 w-4 text-primary animate-pulse" />
+                                            <span className="text-xs text-foreground/70 font-medium">Active Now</span>
                                         </div>
-                                        <div className="p-4 rounded-2xl rounded-tr-none bg-primary text-white text-sm leading-relaxed shadow-lg shadow-primary/20">
-                                            Generate an optimized risk management plan for next week.
+                                        <div className="flex items-center gap-1 text-primary text-sm font-bold group-hover:gap-2 transition-all">
+                                            <span>Explore</span>
+                                            <ArrowRight className="h-4 w-4" />
                                         </div>
-                                    </motion.div>
-
-                                    {/* AI Insight Card */}
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.95, y: 10 }}
-                                        animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                                        transition={{ delay: 1.8 }}
-                                        className="bg-background/60 border border-primary/10 rounded-xl p-4 mt-2 backdrop-blur-md shadow-lg"
-                                    >
-                                        <div className="flex items-center gap-2 mb-3">
-                                            <BarChart2 className="h-4 w-4 text-primary" />
-                                            <span className="text-xs font-bold text-foreground">OPTIMIZATION STRATEGY</span>
-                                        </div>
-                                        <div className="grid grid-cols-2 gap-3">
-                                            <div className="bg-primary/5 p-3 rounded-lg border border-primary/5">
-                                                <div className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Recommended SL</div>
-                                                <div className="font-numbers font-bold text-primary">25 Pips</div>
-                                            </div>
-                                            <div className="bg-primary/5 p-3 rounded-lg border border-primary/5">
-                                                <div className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Projected ROI</div>
-                                                <div className="font-numbers font-bold text-green-500">+12.4%</div>
-                                            </div>
-                                        </div>
-                                    </motion.div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Background Decor */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/20 blur-[100px] -z-10 opacity-40 rounded-full mix-blend-screen pointer-events-none" />
-                    </motion.div>
+                        </PinContainer>
+                    </div>
 
                     {/* Text Content */}
                     <motion.div
@@ -122,9 +98,8 @@ export function AiTradingJournalSection() {
                             <span>AI-POWERED ANALYTICS</span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-foreground leading-[1.1]">
-                            Your Personal <br />
-                            <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">AI Trading Mentor</span>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-4 tracking-tight">
+                            Your Personal <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">AI Trading Mentor</span>
                         </h2>
 
                         <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
@@ -147,9 +122,14 @@ export function AiTradingJournalSection() {
                         </ul>
 
                         <div className="pt-4">
-                            <Button size="lg" className="rounded-xl px-10 h-14 bg-white text-primary hover:bg-neutral-100 shadow-xl shadow-black/20" asChild>
+                            <Button
+                                variant="outline"
+                                size="lg"
+                                className="rounded-full h-14 px-10 border-2 border-red-600/20 text-red-600 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-300 font-bold active:scale-95 shadow-md inline-flex items-center gap-2"
+                                asChild
+                            >
                                 <Link href="/platforms/ai-trading-journal">
-                                    Get Started Free <ArrowRight className="ml-2 h-5 w-5" />
+                                    Get Started Free <ArrowRight className="h-4 w-4" />
                                 </Link>
                             </Button>
                         </div>

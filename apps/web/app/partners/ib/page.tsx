@@ -88,7 +88,7 @@ export default function IBProgramPage() {
 
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-foreground leading-tight">
                                 IB Program
-                                <span className="block text-primary mt-2">Partner for Success</span>
+                                <span className="block bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent mt-2">Partner for Success</span>
                             </h1>
 
                             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -126,8 +126,8 @@ export default function IBProgramPage() {
                 <section className="py-20 px-4 sm:px-6 lg:px-8">
                     <div className="container mx-auto max-w-7xl">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">
-                                Why Become an IB?
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4 tracking-tight">
+                                <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Why</span> Become an IB?
                             </h2>
                             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                                 Partner with a trusted broker and unlock unlimited earning potential
@@ -156,8 +156,8 @@ export default function IBProgramPage() {
                     <div className="container mx-auto max-w-7xl">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-6">
-                                    Premium IB Features
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-6 tracking-tight">
+                                    <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Premium</span> IB Features
                                 </h2>
                                 <p className="text-lg text-muted-foreground mb-8">
                                     Our IB program is designed to give you everything you need to succeed.
@@ -191,8 +191,8 @@ export default function IBProgramPage() {
                 <section className="py-20 px-4 sm:px-6 lg:px-8">
                     <div className="container mx-auto max-w-7xl">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">
-                                How It Works
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4 tracking-tight">
+                                <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">How</span> It Works
                             </h2>
                             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                                 Get started in three simple steps
@@ -233,8 +233,8 @@ export default function IBProgramPage() {
                 <section className="py-20 px-4 sm:px-6 lg:px-8">
                     <div className="container mx-auto max-w-4xl">
                         <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-3xl p-12 text-center border-2 border-primary/20">
-                            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-                                Ready to Start Your IB Journey?
+                            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4 tracking-tight">
+                                Ready to <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Start Your IB Journey?</span>
                             </h2>
                             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
                                 Join our IB program today and start building a profitable partnership

@@ -34,7 +34,7 @@ export default function RiskDisclosurePage() {
               </h1>
 
               <p className="text-lg text-muted-foreground">
-                Last updated: February 2, 2026
+                Last updated: February 23, 2026
               </p>
             </motion.div>
 
@@ -44,7 +44,7 @@ export default function RiskDisclosurePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-8"
             >
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-red-50 to-orange-50 border-2 border-primary/20">
+              <div className="p-8 rounded-2xl bg-gradient-to-br from-red-50 to-orange-50 border-2 border-primary/20 shadow-sm">
                 <div className="flex items-start gap-4">
                   <AlertTriangle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
@@ -60,85 +60,60 @@ export default function RiskDisclosurePage() {
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  General Risk Warning
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Trading forex, CFDs, and other leveraged products involves significant risk of loss and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  You could lose some or all of your initial investment. Do not invest money that you cannot afford to lose.
-                </p>
-              </div>
-
-              <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
-                <h2 className="text-2xl font-bold font-heading mb-4">
-                  Leverage Risk
+                  1. General Risk Warning
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Leverage allows you to control a large position with a small amount of capital. While this can magnify profits, it can also magnify losses. A small price movement against your position can result in substantial losses, potentially exceeding your initial investment.
+                  Trading forex and leveraged products involves substantial risk and may not be suitable for all investors.
                 </p>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  Market Volatility
+                  2. Leverage Risk
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Financial markets can be extremely volatile. Prices can move rapidly and unpredictably, especially during major economic announcements or geopolitical events. This volatility can result in significant gains or losses in a short period of time.
+                  Leverage increases both potential profits and losses. You may lose all invested capital.
                 </p>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  Technical Risks
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Trading platforms rely on technology and internet connectivity. Technical issues may include:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Internet connection failures</li>
-                  <li>Platform downtime or technical glitches</li>
-                  <li>Delays in order execution</li>
-                  <li>Data feed interruptions</li>
-                </ul>
-              </div>
-
-              <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
-                <h2 className="text-2xl font-bold font-heading mb-4">
-                  Past Performance
+                  3. Market Volatility
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Past performance is not indicative of future results. Historical returns, expected returns, and probability projections are provided for informational purposes only and should not be construed as investment advice.
+                  Markets can move rapidly due to economic, political, or global events.
                 </p>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  No Guarantee of Profit
+                  4. No Advice
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  RestroFX does not guarantee profits or protection from losses. All trading decisions are made at your own risk. We recommend seeking advice from an independent financial advisor if you have any doubts.
+                  RestroFX does not provide investment, legal, or tax advice.
                 </p>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  Regulatory Information
+                  5. Client Responsibility
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  RestroFX operates in accordance with applicable financial regulations. However, regulatory protection may vary depending on your jurisdiction. Please ensure you understand the regulatory framework that applies to you.
+                  You acknowledge full responsibility for all trading decisions and outcomes.
                 </p>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  Contact Us
+                  Contact Information
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   If you have any questions about these risk disclosures, please contact us at{" "}
-                  <a href="mailto:compliance@restrofx.com" className="text-primary hover:underline">
-                    compliance@restrofx.com
+                  <a href="mailto:support@restrofx.com" className="text-primary hover:underline">
+                    support@restrofx.com
                   </a>
+                  <br />
+                  Website: <a href="https://www.restrofx.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.restrofx.com</a>
                 </p>
               </div>
             </motion.div>

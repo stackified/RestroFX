@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@crimsonfx/ui";
-import { Button } from "@/components/ui/neon-button";
+import { Button } from "@crimsonfx/ui";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Check,
@@ -340,9 +340,9 @@ export function PlatformSelectorSection() {
                           </div>
                         </div>
                         <Button
-                          variant="default"
+                          variant="ghost"
                           size="sm"
-                          className="rounded-xl h-10 px-4 border-red-600/30 hover:border-red-600 flex-shrink-0 transition-all font-semibold"
+                          className="rounded-full h-10 px-6 border border-red-600/20 text-red-600 hover:bg-red-600 hover:text-white flex-shrink-0 transition-all font-bold"
                           onClick={() => {
                             setStep("platform");
                             setSelectedPlatform(null);
@@ -491,9 +491,9 @@ export function PlatformSelectorSection() {
                   </div>
                   <div className="flex gap-3 flex-shrink-0 flex-wrap justify-center">
                     <Button
-                      variant="default"
+                      variant="outline"
                       size="lg"
-                      className="rounded-xl h-14 px-8 border-2 border-red-600/30 hover:border-red-600 hover:bg-red-600/5 transition-all font-bold"
+                      className="rounded-full h-14 px-8 border-2 border-red-600/30 text-red-600 hover:bg-red-600 hover:text-white transition-all duration-300 font-bold active:scale-95"
                       onClick={() => {
                         setSelectedPlatform(null);
                         setSelectedAccount(null);
@@ -517,7 +517,7 @@ export function PlatformSelectorSection() {
                       <Button
                         variant="default"
                         size="lg"
-                        className="rounded-xl h-14 px-10 text-lg font-bold bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/30 text-white hover:scale-105 transition-all inline-flex items-center gap-2"
+                        className="rounded-full h-14 px-10 text-lg font-bold bg-primary hover:bg-red-700 shadow-[0_20px_50px_rgba(220,38,38,0.3)] hover:shadow-[0_30px_60px_rgba(220,38,38,0.4)] text-white hover:-translate-y-1 transition-all duration-500 inline-flex items-center gap-3 active:scale-95"
                       >
                         <span>Open Account</span>
                         <ArrowRight className="h-5 w-5" />
@@ -535,11 +535,11 @@ export function PlatformSelectorSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="mt-8 text-center"
+            className="mt-8 flex justify-center"
           >
             <Button
-              variant="default"
-              className="rounded-xl h-auto min-h-[3.5rem] py-3 px-8 border-red-600/30 hover:border-red-600 transition-all font-semibold max-w-[280px] sm:max-w-none mx-auto flex items-center justify-center leading-tight text-center"
+              variant="outline"
+              className="rounded-full h-14 px-10 border-2 border-red-600/20 text-red-600 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-300 font-bold active:scale-95 shadow-md inline-flex items-center gap-2"
               onClick={() => {
                 setStep("account");
                 setTimeout(() => {
@@ -553,7 +553,7 @@ export function PlatformSelectorSection() {
                 }, 100);
               }}
             >
-              Skip to Account Selection
+              Skip to Account Selection <ArrowRight className="h-4 w-4" />
             </Button>
           </motion.div>
         )}
@@ -563,12 +563,11 @@ export function PlatformSelectorSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-8 text-center"
+            className="mt-8 flex justify-center"
           >
             <Button
-              variant="default"
-              size="sm"
-              className="rounded-xl h-auto min-h-[2.5rem] py-2 px-6 border-red-600/30 hover:border-red-600 inline-flex items-center justify-center gap-2 transition-all font-semibold max-w-[280px] sm:max-w-none mx-auto leading-tight text-center"
+              variant="outline"
+              className="rounded-full h-14 px-10 border-2 border-red-600/20 text-red-600 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-300 font-bold active:scale-95 shadow-md inline-flex items-center gap-2"
               onClick={() => {
                 setStep("platform");
                 setSelectedAccount(null);
@@ -584,7 +583,7 @@ export function PlatformSelectorSection() {
               }}
             >
               <ArrowLeft className="h-4 w-4" />
-              <span>Go Back to Platform Selection</span>
+              Back to Platforms
             </Button>
           </motion.div>
         )}

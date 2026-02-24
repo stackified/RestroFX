@@ -16,7 +16,7 @@ interface Feature {
 interface FeatureStepsProps {
   features: Feature[]
   className?: string
-  title?: string
+  title?: React.ReactNode
   autoPlayInterval?: number
   imageHeight?: string
 }
@@ -54,7 +54,7 @@ export function FeatureSteps({
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-semibold font-heading text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-4 tracking-tight">
             {title}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">

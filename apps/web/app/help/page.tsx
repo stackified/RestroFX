@@ -100,7 +100,7 @@ export default function HelpPage() {
                     <Link href="/contact">Contact Support</Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <a href="mailto:support@crimsonfx.com">Email Us</a>
+                    <a href="mailto:support@restrofx.com">Email Us</a>
                   </Button>
                 </div>
               </CardContent>

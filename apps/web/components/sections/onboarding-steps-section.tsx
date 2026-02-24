@@ -7,19 +7,19 @@ const steps = [
     step: "01",
     title: "Discovery",
     content: "Begin your journey with Restro FX by exploring the world of trading. From understanding forex markets to diving into CFDs, we help you discover new opportunities, equipping you with the knowledge needed to navigate the financial landscape.",
-    image: "/Logo.jpg",
+    image: "/images/Discovery.jpg",
   },
   {
     step: "02",
     title: "Strategy Design",
     content: "From analyzing market trends to customizing trading strategies, we work with precision to tailor an approach that aligns with your goals. Whether you're a novice or an experienced trader, our tools and insights are designed to bring your financial vision to life.",
-    image: "/Logo.jpg",
+    image: "/images/Strategy Design.jpg",
   },
   {
     step: "03",
     title: "Transformation",
     content: "Our team ensures your trading experience is executed with precision and agility. With cutting-edge technology, risk management, and dedicated support, we help you transform your investments into rewarding outcomes.",
-    image: "/Logo.jpg",
+    image: "/images/Transformation.jpg",
   },
 ];
 
@@ -30,7 +30,7 @@ export function OnboardingStepsSection() {
   return (
     <FeatureSteps
       features={steps}
-      title="Our Journey"
+      title={<>Our <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Journey</span></>}
       autoPlayInterval={4000}
       imageHeight="aspect-square h-auto w-full max-w-md mx-auto bg-transparent shadow-none"
     />

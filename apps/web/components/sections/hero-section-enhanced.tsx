@@ -99,14 +99,27 @@ export function HeroSectionEnhanced({
               transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-start"
             >
-              <Button size="lg" className="rounded-xl px-10 h-14 text-lg font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300" asChild>
+              <Button
+                size="lg"
+                className="rounded-full px-12 h-16 text-lg font-bold bg-primary text-white shadow-[0_20px_50px_rgba(220,38,38,0.3)] hover:bg-red-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,38,38,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95 border-none"
+                asChild
+              >
                 <Link href={ctaHref}>
-                  {ctaLabel} <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="relative z-10 flex items-center justify-center">
+                    {ctaLabel} <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+                  </span>
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-xl px-10 h-14 text-lg font-semibold border-2 hover:bg-muted/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-12 h-16 text-lg font-bold border-2 border-white/30 text-white hover:bg-white hover:text-red-700 transition-all duration-500 bg-transparent active:scale-95 shadow-lg backdrop-blur-sm"
+                asChild
+              >
                 <Link href={secondaryCtaHref}>
-                  <Play className="mr-2 h-4 w-4 fill-current" /> {secondaryCtaLabel}
+                  <span className="flex items-center justify-center">
+                    <Play className="mr-3 h-4 w-4 fill-current group-hover:scale-110 transition-transform" /> {secondaryCtaLabel}
+                  </span>
                 </Link>
               </Button>
             </motion.div>

@@ -34,7 +34,7 @@ export default function PrivacyPage() {
               </h1>
 
               <p className="text-lg text-muted-foreground">
-                Last updated: February 2, 2026
+                Last updated: February 23, 2026
               </p>
             </motion.div>
 
@@ -46,89 +46,73 @@ export default function PrivacyPage() {
             >
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  Information We Collect
+                  1. Information We Collect
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  RestroFX collects information that you provide directly to us, including:
-                </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Personal identification information (name, email, phone number)</li>
-                  <li>Financial information for account verification</li>
-                  <li>Trading activity and transaction history</li>
-                  <li>Device and browser information</li>
-                  <li>IP address and location data</li>
+                  <li>Personal information (name, email, phone)</li>
+                  <li>Verification documents</li>
+                  <li>Technical data (IP address, device data)</li>
                 </ul>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  How We Use Your Information
+                  2. Use of Information
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  We use the information we collect to:
+                  We use your information to:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Provide, maintain, and improve our services</li>
-                  <li>Process transactions and send related information</li>
-                  <li>Verify your identity and prevent fraud</li>
-                  <li>Send you technical notices and support messages</li>
-                  <li>Respond to your comments and questions</li>
-                  <li>Comply with legal obligations and regulations</li>
+                  <li>Provide and manage services</li>
+                  <li>Verify identity</li>
+                  <li>Improve platform performance</li>
+                  <li>Comply with legal obligations</li>
                 </ul>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  Information Sharing
+                  3. Data Protection
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  We do not sell, trade, or rent your personal information to third parties. We may share your information with trusted service providers who assist us in operating our platform, conducting our business, or servicing you, as long as those parties agree to keep this information confidential.
+                  RestroFX uses industry-standard security measures to protect client data.
                 </p>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  Data Security
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  We implement industry-standard security measures to protect your personal information, including encryption, secure servers, and regular security audits. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
-                </p>
-              </div>
-
-              <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
-                <h2 className="text-2xl font-bold font-heading mb-4">
-                  Your Rights
+                  4. Data Sharing
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  You have the right to:
+                  We do not sell personal data. Information may be shared with:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Access and receive a copy of your personal data</li>
-                  <li>Correct inaccurate or incomplete information</li>
-                  <li>Request deletion of your personal data</li>
-                  <li>Object to processing of your personal data</li>
-                  <li>Withdraw consent at any time</li>
+                  <li>Payment providers</li>
+                  <li>Compliance partners</li>
+                  <li>Authorities when required by law</li>
                 </ul>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  Cookies and Tracking
+                  5. User Rights
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  We use cookies and similar tracking technologies to track activity on our platform and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
+                  Clients may request access, correction, or deletion of personal data subject to legal requirements.
                 </p>
               </div>
 
               <div className="p-8 rounded-2xl bg-white border border-border shadow-sm">
                 <h2 className="text-2xl font-bold font-heading mb-4">
-                  Contact Us
+                  Contact Information
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   If you have any questions about this Privacy Policy, please contact us at{" "}
-                  <a href="mailto:privacy@restrofx.com" className="text-primary hover:underline">
-                    privacy@restrofx.com
+                  <a href="mailto:support@restrofx.com" className="text-primary hover:underline">
+                    support@restrofx.com
                   </a>
+                  <br />
+                  Website: <a href="https://www.restrofx.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.restrofx.com</a>
                 </p>
               </div>
             </motion.div>

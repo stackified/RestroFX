@@ -109,7 +109,7 @@ export default function AITradingJournalPage() {
 
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-foreground leading-tight">
                                 Your Personal
-                                <span className="block text-primary mt-2">AI Trading Mentor</span>
+                                <span className="block bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent mt-2">AI Trading Mentor</span>
                             </h1>
 
                             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -137,8 +137,8 @@ export default function AITradingJournalPage() {
                 <section className="py-20 px-4 sm:px-6 lg:px-8">
                     <div className="container mx-auto max-w-7xl">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">
-                                Intelligent Features for Smarter Trading
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4 tracking-tight">
+                                <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Intelligent Features</span> for Smarter Trading
                             </h2>
                             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                                 Leverage cutting-edge AI to gain a competitive edge in the markets
@@ -166,8 +166,8 @@ export default function AITradingJournalPage() {
                 <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
                     <div className="container mx-auto max-w-7xl">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">
-                                How It Works
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4 tracking-tight">
+                                <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">How</span> It Works
                             </h2>
                             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                                 Get started in minutes and see results immediately
@@ -193,8 +193,8 @@ export default function AITradingJournalPage() {
                     <div className="container mx-auto max-w-7xl">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-6">
-                                    Unlock Your Trading Potential
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-6 tracking-tight">
+                                    Unlock Your <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Trading Potential</span>
                                 </h2>
                                 <p className="text-lg text-muted-foreground mb-8">
                                     Our AI Trading Journal helps you become a better trader by providing insights

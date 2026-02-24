@@ -46,12 +46,6 @@ const platformLinks: LinkItem[] = [
 		description: 'Modern, intuitive trading platform',
 		icon: Layers,
 	},
-	{
-		title: 'AI Trading Journal',
-		href: '/platforms/ai-trading-journal',
-		description: 'Analyze your performance with AI',
-		icon: BarChart,
-	},
 ];
 
 const tradingLinks: LinkItem[] = [
@@ -207,10 +201,10 @@ export function Header() {
 					"hidden items-center lg:flex shrink-0 transition-all duration-300",
 					scrolled ? "gap-2 pl-12" : "gap-4"
 				)}>
-					<Button variant="outline" className="rounded-xl h-9 px-4" asChild>
+					<Button variant="outline" className="rounded-full h-10 px-6 font-semibold border-border hover:bg-muted/50 transition-all active:scale-95" asChild>
 						<Link href="/login">Sign In</Link>
 					</Button>
-					<Button className="rounded-xl h-9 px-4" asChild>
+					<Button className="rounded-full h-10 px-6 font-bold bg-primary text-white hover:bg-red-700 shadow-md transition-all active:scale-95" asChild>
 						<Link href="/register">Get Started</Link>
 					</Button>
 				</div>
@@ -260,10 +254,10 @@ export function Header() {
 					</Link>
 				</div>
 				<div className="flex flex-col gap-2">
-					<Button variant="outline" className="w-full bg-transparent rounded-xl" asChild>
+					<Button variant="outline" className="w-full bg-transparent rounded-full h-12 font-semibold" asChild>
 						<Link href="/login">Sign In</Link>
 					</Button>
-					<Button className="w-full rounded-xl" asChild>
+					<Button className="w-full rounded-full h-12 font-bold bg-primary text-white" asChild>
 						<Link href="/register">Get Started</Link>
 					</Button>
 				</div>
