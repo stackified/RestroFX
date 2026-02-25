@@ -495,29 +495,29 @@ export default function TradeLockerPage() {
                                         </div>
 
                                         <motion.div
-                                            animate={{ y: [0, -20, 0], x: [0, 10, 0], rotate: [0, 12, 0] }}
+                                            animate={{ y: [0, -15, 0], x: [0, 8, 0], rotate: [0, 8, 0] }}
                                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                                            className="absolute top-12 -left-12 sm:top-8 sm:-left-24 z-30 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] filter brightness-110"
+                                            className="absolute top-28 -left-4 sm:top-20 sm:-left-16 z-30 drop-shadow-2xl filter brightness-110"
                                         >
                                             <Image
                                                 src={withBasePath("/images/Trade Locker.png")}
                                                 alt="TL"
-                                                width={96}
-                                                height={96}
-                                                className="object-contain rounded-[1.5rem] sm:w-[120px] sm:h-[120px]"
+                                                width={48}
+                                                height={48}
+                                                className="object-contain rounded-[1rem] sm:w-[56px] sm:h-[56px]"
                                             />
                                         </motion.div>
                                         <motion.div
-                                            animate={{ y: [0, -15, 0], x: [0, -8, 0], rotate: [0, -12, 0] }}
+                                            animate={{ y: [0, -12, 0], x: [0, -6, 0], rotate: [0, -8, 0] }}
                                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                            className="absolute -bottom-4 -right-8 sm:-bottom-10 sm:-right-24 z-30 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] filter brightness-110"
+                                            className="absolute bottom-12 -right-2 sm:-right-4 z-30 drop-shadow-2xl filter brightness-110"
                                         >
                                             <Image
                                                 src={withBasePath("/images/Trade Locker.png")}
                                                 alt="TL"
-                                                width={80}
-                                                height={80}
-                                                className="object-contain rounded-[1.25rem] sm:w-[100px] sm:h-[100px]"
+                                                width={40}
+                                                height={40}
+                                                className="object-contain rounded-[0.75rem] sm:w-[48px] sm:h-[48px]"
                                             />
                                         </motion.div>
                                     </motion.div>

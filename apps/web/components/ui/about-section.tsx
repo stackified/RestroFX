@@ -4,6 +4,7 @@ import { ArrowRight, Facebook, Instagram, Linkedin, Youtube } from "lucide-react
 import { useRef } from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { withBasePath } from "@/lib/base-path";
 
 export default function AboutSection3() {
     const heroRef = useRef<HTMLDivElement>(null);
@@ -141,7 +142,7 @@ export default function AboutSection3() {
                                 preserveAspectRatio="xMidYMid slice"
                                 width={"100%"}
                                 height={"100%"}
-                                xlinkHref="/images/About1.jpg"
+                                xlinkHref={withBasePath("/images/About1.jpg")}
                             ></image>
                         </svg>
                     </TimelineContent>
