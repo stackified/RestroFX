@@ -123,7 +123,7 @@ export default function LockItTradePage() {
                             width={500}
                             height={300}
                             loading="lazy"
-                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                            className="object-cover w-full h-full rounded-2xl transition-transform duration-500 group-hover:scale-105"
                         />
                     </div>
                 </div>
@@ -143,7 +143,7 @@ export default function LockItTradePage() {
                             width={500}
                             height={300}
                             loading="lazy"
-                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                            className="object-cover w-full h-full rounded-2xl transition-transform duration-500 group-hover:scale-105"
                         />
                     </div>
                 </div>
@@ -163,7 +163,7 @@ export default function LockItTradePage() {
                             width={500}
                             height={300}
                             loading="lazy"
-                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                            className="object-cover w-full h-full rounded-2xl transition-transform duration-500 group-hover:scale-105"
                         />
                     </div>
                 </div>
@@ -293,7 +293,7 @@ export default function LockItTradePage() {
                                                     alt={feature.title}
                                                     width={700}
                                                     height={700}
-                                                    className="object-contain opacity-50 group-hover:opacity-70 transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                                                    className="object-contain opacity-50 group-hover:opacity-70 transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110 rounded-2xl"
                                                 />
                                             </div>
 
@@ -533,35 +533,35 @@ export default function LockItTradePage() {
                                                 src={withBasePath("/LockItTradeSS.png")}
                                                 alt="Lock It Trade Platform"
                                                 fill
-                                                className="object-cover"
+                                                className="object-cover rounded-[2.5rem]"
                                             />
                                             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-6 sm:h-7 bg-black/40 rounded-b-3xl z-30"></div>
                                         </div>
 
                                         <motion.div
-                                            animate={{ y: [0, -15, 0], x: [0, 8, 0], rotate: [0, 8, 0] }}
+                                            animate={{ y: [0, -20, 0], x: [0, 10, 0], rotate: [0, 12, 0] }}
                                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                                            className="absolute top-28 -left-4 sm:top-20 sm:-left-16 z-30 drop-shadow-2xl filter brightness-110"
+                                            className="absolute top-12 -left-12 sm:top-8 sm:-left-24 z-30 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] filter brightness-110"
                                         >
                                             <Image
                                                 src={withBasePath("/images/LockITTradeLogoNoBg.png")}
                                                 alt="Logo"
-                                                width={64}
-                                                height={64}
-                                                className="object-contain rounded-[1rem] sm:w-[80px] sm:h-[80px]"
+                                                width={96}
+                                                height={96}
+                                                className="object-contain rounded-[1.5rem] sm:w-[120px] sm:h-[120px]"
                                             />
                                         </motion.div>
                                         <motion.div
-                                            animate={{ y: [0, -12, 0], x: [0, -6, 0], rotate: [0, -8, 0] }}
+                                            animate={{ y: [0, -15, 0], x: [0, -8, 0], rotate: [0, -12, 0] }}
                                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                            className="absolute bottom-12 -right-2 sm:-right-4 z-30 drop-shadow-2xl filter brightness-110"
+                                            className="absolute -bottom-4 -right-8 sm:-bottom-10 sm:-right-24 z-30 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] filter brightness-110"
                                         >
                                             <Image
                                                 src={withBasePath("/images/LockITTradeLogoNoBg.png")}
                                                 alt="Logo"
-                                                width={56}
-                                                height={56}
-                                                className="object-contain rounded-[0.75rem] sm:w-[72px] sm:h-[72px]"
+                                                width={80}
+                                                height={80}
+                                                className="object-contain rounded-[1.25rem] sm:w-[100px] sm:h-[100px]"
                                             />
                                         </motion.div>
                                     </motion.div>

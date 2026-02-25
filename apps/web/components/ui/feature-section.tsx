@@ -137,7 +137,7 @@ export function FeatureSteps({
                       <Image
                         src={withBasePath(feature.image)}
                         alt={feature.step}
-                        className="w-full h-full object-contain p-4 bg-white/5 rounded-2xl"
+                        className="w-full h-full object-cover rounded-2xl"
                         width={1000}
                         height={500}
                         priority={index === 0}

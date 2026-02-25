@@ -55,7 +55,7 @@ export function AboutSectionEnhanced() {
                 customVariants={revealVariants}
                 className="text-sm font-medium text-muted-foreground uppercase tracking-wide"
               >
-                ABOUT CRIMSONFX
+                ABOUT RESTROFX
               </TimelineContent>
             </div>
           </div>
@@ -73,7 +73,7 @@ export function AboutSectionEnhanced() {
                 src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&auto=format&fit=crop"
                 alt="Trading platform"
                 fill
-                className="object-cover"
+                className="object-cover rounded-2xl"
                 priority
               />
             </div>
@@ -89,13 +89,13 @@ export function AboutSectionEnhanced() {
               className="flex gap-4"
             >
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-primary font-bold font-numbers">500K+</span>
-                <span className="text-muted-foreground">Traders Worldwide</span>
+                <span className="text-primary font-bold font-numbers">50K+</span>
+                <span className="text-muted-foreground">Active Traders</span>
                 <span className="text-border">|</span>
               </div>
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-primary font-bold font-numbers">$2.5B+</span>
-                <span className="text-muted-foreground">Withdrawals Processed</span>
+                <span className="text-primary font-bold font-numbers">$10B+</span>
+                <span className="text-muted-foreground">Volume Traded</span>
               </div>
             </TimelineContent>
             <div className="lg:absolute right-0 bottom-16 flex lg:flex-col flex-row-reverse lg:gap-0 gap-4">
@@ -159,7 +159,7 @@ export function AboutSectionEnhanced() {
                 className="sm:text-base text-sm font-body"
               >
                 <p className="leading-relaxed">
-                  CrimsonFX is a leading online trading platform dedicated to
+                  RestroFX is a leading online trading platform dedicated to
                   providing traders with access to global financial markets. We
                   combine cutting-edge technology with transparent trading
                   conditions to deliver a professional trading experience.
@@ -190,7 +190,7 @@ export function AboutSectionEnhanced() {
                 customVariants={revealVariants}
                 className="text-primary text-2xl font-bold font-heading mb-2"
               >
-                CRIMSONFX
+                RESTROFX
               </TimelineContent>
               <TimelineContent
                 as="div"

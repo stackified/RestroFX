@@ -67,8 +67,6 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link href="/account-types" className="hover:text-primary">Account Types</Link></li>
                 <li><Link href="/markets" className="hover:text-primary">Instruments</Link></li>
-                <li><Link href="/liquidity" className="hover:text-primary">Liquidity</Link></li>
-                <li><Link href="/spreads" className="hover:text-primary">Spreads</Link></li>
               </ul>
             </div>
             <div>
@@ -76,7 +74,6 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link href="/partners/ib" className="hover:text-primary">IB Program</Link></li>
                 <li><Link href="/partners/affiliate" className="hover:text-primary">Affiliates</Link></li>
-                <li><Link href="/partners/white-label" className="hover:text-primary">White Label</Link></li>
               </ul>
             </div>
             <div>

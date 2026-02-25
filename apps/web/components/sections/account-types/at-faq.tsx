@@ -33,7 +33,7 @@ const faqs = [
     },
     {
         question: "Which platforms are available?",
-        answer: "We offer MetaTrader 5 and TradeLocker trading platforms on desktop, web, and mobile devices.",
+        answer: "We offer Lock It Trade and TradeLocker trading platforms on desktop, web, and mobile devices.",
         icon: MonitorSmartphone
     },
     {

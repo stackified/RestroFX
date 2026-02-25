@@ -113,7 +113,7 @@ export function HeroSectionEnhanced({
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full px-12 h-16 text-lg font-bold border-2 border-white/30 text-white hover:bg-white hover:text-red-700 transition-all duration-500 bg-transparent active:scale-95 shadow-lg backdrop-blur-sm"
+                className="rounded-full px-12 h-16 text-lg font-bold border-2 border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-500 bg-transparent active:scale-95 shadow-lg backdrop-blur-sm"
                 asChild
               >
                 <Link href={secondaryCtaHref}>

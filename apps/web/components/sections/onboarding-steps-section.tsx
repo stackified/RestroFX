@@ -32,7 +32,7 @@ export function OnboardingStepsSection() {
       features={steps}
       title={<>Our <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Journey</span></>}
       autoPlayInterval={4000}
-      imageHeight="aspect-square h-auto w-full max-w-md mx-auto bg-transparent shadow-none"
+      imageHeight="aspect-square h-auto w-full max-w-md mx-auto"
     />
   );
 }
