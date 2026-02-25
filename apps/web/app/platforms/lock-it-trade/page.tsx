@@ -31,7 +31,6 @@ import { useMemo, lazy, Suspense } from "react";
 // Lazy load heavy components for better performance
 const Timeline = lazy(() => import("@/components/ui/timeline").then(mod => ({ default: mod.Timeline })));
 const CircularShowcase = lazy(() => import("@/components/ui/circular-showcase").then(mod => ({ default: mod.CircularShowcase })));
-import { Smartphone, Download, Globe } from "lucide-react";
 
 // Loading fallback component
 const ComponentLoader = () => (
