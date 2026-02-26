@@ -58,8 +58,6 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link href="/platforms/lock-it-trade" className="hover:text-primary">Lock It Trade</Link></li>
                 <li><Link href="/platforms/tradelocker" className="hover:text-primary">TradeLocker</Link></li>
-                <li>						<Link href="/platforms/ai-trading-journal" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI Trading Journal</Link>
-                </li>
               </ul>
             </div>
             <div>

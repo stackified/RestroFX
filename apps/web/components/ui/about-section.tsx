@@ -67,10 +67,10 @@ export default function AboutSection3() {
                                 href="#"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-border bg-background rounded-lg flex items-center justify-center cursor-pointer hover:bg-blue-50 hover:border-blue-200 transition-colors group"
+                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-primary/10 bg-primary/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all duration-300 group"
                                 aria-label="Facebook"
                             >
-                                <Facebook className="w-4 h-4 text-muted-foreground group-hover:text-blue-600 transition-colors" />
+                                <Facebook className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
                             </TimelineContent>
                             <TimelineContent
                                 as="a"
@@ -80,10 +80,10 @@ export default function AboutSection3() {
                                 href="#"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-border bg-background rounded-lg flex items-center justify-center cursor-pointer hover:bg-pink-50 hover:border-pink-200 transition-colors group"
+                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-primary/10 bg-primary/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all duration-300 group"
                                 aria-label="Instagram"
                             >
-                                <Instagram className="w-4 h-4 text-muted-foreground group-hover:text-pink-600 transition-colors" />
+                                <Instagram className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
                             </TimelineContent>
                             <TimelineContent
                                 as="a"
@@ -93,10 +93,10 @@ export default function AboutSection3() {
                                 href="#"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-border bg-background rounded-lg flex items-center justify-center cursor-pointer hover:bg-blue-50 hover:border-blue-200 transition-colors group"
+                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-primary/10 bg-primary/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all duration-300 group"
                                 aria-label="LinkedIn"
                             >
-                                <Linkedin className="w-4 h-4 text-muted-foreground group-hover:text-blue-700 transition-colors" />
+                                <Linkedin className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
                             </TimelineContent>
                             <TimelineContent
                                 as="a"
@@ -106,10 +106,10 @@ export default function AboutSection3() {
                                 href="#"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-border bg-background rounded-lg flex items-center justify-center cursor-pointer hover:bg-red-50 hover:border-red-200 transition-colors group"
+                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-primary/10 bg-primary/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all duration-300 group"
                                 aria-label="YouTube"
                             >
-                                <Youtube className="w-4 h-4 text-muted-foreground group-hover:text-red-600 transition-colors" />
+                                <Youtube className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
                             </TimelineContent>
                         </div>
                     </div>
@@ -142,7 +142,7 @@ export default function AboutSection3() {
                                 preserveAspectRatio="xMidYMid slice"
                                 width={"100%"}
                                 height={"100%"}
-                                xlinkHref={withBasePath("/images/About1.jpg")}
+                                xlinkHref={withBasePath("/images/About.webp")}
                             ></image>
                         </svg>
                     </TimelineContent>

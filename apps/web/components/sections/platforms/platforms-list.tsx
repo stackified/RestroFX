@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Button } from "@crimsonfx/ui";
 import Link from "next/link";
 import { Check, Brain, Smartphone, ArrowRight, Laptop, Globe } from "lucide-react";
+import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 
 export function PlatformsList() {
     return (
@@ -11,14 +13,14 @@ export function PlatformsList() {
 
             {/* Platform 1: Lock It Trade */}
             <div className="container mx-auto max-w-7xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="order-2 lg:order-1"
+                        className="order-2 lg:order-1 lg:col-span-5"
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-12 w-12 rounded-xl bg-red-600/10 flex items-center justify-center text-red-600">
@@ -70,19 +72,19 @@ export function PlatformsList() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="order-1 lg:order-2 relative"
+                        className="order-1 lg:order-2 lg:col-span-7 relative"
                     >
                         <div className="absolute inset-0 bg-gradient-to-tr from-red-600/20 to-purple-500/20 rounded-[2rem] blur-3xl opacity-30" />
                         <div className="relative rounded-[2rem] bg-card/50 backdrop-blur-xl border border-white/5 p-2 shadow-2xl overflow-hidden glass">
-                            <div className="rounded-[1.5rem] overflow-hidden bg-black/60 aspect-[4/3] relative grid place-items-center border border-white/5">
-                                {/* Abstract UI representation */}
-                                <div className="text-center">
-                                    <Brain className="w-20 h-20 text-red-600/50 mx-auto mb-4" />
-                                    <div className="text-muted-foreground font-medium">AI Dashboard Interface</div>
-                                </div>
-
+                            <div className="rounded-[1.5rem] overflow-hidden bg-black/60 aspect-video relative border border-white/5">
+                                <Image
+                                    src={withBasePath("/images/Lock It Trade SS.jpeg")}
+                                    alt="Lock It Trade Screenshot"
+                                    fill
+                                    className="object-cover"
+                                />
                                 {/* Floating Badge */}
-                                <div className="absolute bottom-6 right-6 bg-background/80 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 shadow-lg flex items-center gap-3">
+                                <div className="absolute bottom-6 right-6 bg-background/80 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 shadow-lg flex items-center gap-3 z-10">
                                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                                     <span className="text-sm font-bold">Analysis Active</span>
                                 </div>
@@ -95,23 +97,24 @@ export function PlatformsList() {
 
             {/* Platform 2: TradeLocker */}
             <div className="container mx-auto max-w-7xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="relative"
+                        className="relative lg:col-span-7"
                     >
                         <div className="absolute inset-0 bg-gradient-to-bl from-blue-600/20 to-cyan-500/20 rounded-[2rem] blur-3xl opacity-30" />
                         <div className="relative rounded-[2rem] bg-card/50 backdrop-blur-xl border border-white/5 p-2 shadow-2xl overflow-hidden glass">
-                            <div className="rounded-[1.5rem] overflow-hidden bg-black/60 aspect-[4/3] relative grid place-items-center border border-white/5">
-                                {/* Abstract UI representation */}
-                                <div className="text-center">
-                                    <Smartphone className="w-20 h-20 text-blue-500/50 mx-auto mb-4" />
-                                    <div className="text-muted-foreground font-medium">Mobile Trading View</div>
-                                </div>
+                            <div className="rounded-[1.5rem] overflow-hidden bg-black/60 aspect-video relative border border-white/5">
+                                <Image
+                                    src={withBasePath("/images/Trade Locker SS.avif")}
+                                    alt="TradeLocker Screenshot"
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                         </div>
                     </motion.div>
@@ -121,6 +124,7 @@ export function PlatformsList() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
+                        className="lg:col-span-5"
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-12 w-12 rounded-xl bg-blue-600/10 flex items-center justify-center text-blue-600">

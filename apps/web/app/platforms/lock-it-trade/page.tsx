@@ -86,25 +86,25 @@ export default function LockItTradePage() {
             quote: "Access your Lock It Trade journal from any browser with no installation required. Review your performance instantly.",
             name: "Web Platform",
             designation: "Browser Based",
-            src: withBasePath("/images/Web Platform.png")
+            src: withBasePath("/images/Lock It Trade Web.webp")
         },
         {
             quote: "Journal on the go with our optimized mobile experience. Never miss logging a trade or checking your stats.",
             name: "iOS App",
             designation: "Mobile & Tablet",
-            src: withBasePath("/images/iOS App.png")
+            src: withBasePath("/images/Lock It Trade Iphone.webp")
         },
         {
             quote: "Full functionality on Android devices. Manage your trading psychology from anywhere.",
             name: "Android App",
             designation: "Mobile & Tablet",
-            src: withBasePath("/images/Android App.png")
+            src: withBasePath("/images/Lock It Trade Android.webp")
         },
         {
             quote: "Maximum screen real estate for deep dive analysis. The ultimate desktop journaling experience.",
             name: "Desktop App",
             designation: "Windows & macOS",
-            src: withBasePath("/images/Desktop App.png")
+            src: withBasePath("/images/Lock It Trade Desktop.webp")
         }
     ], []);
 
@@ -181,9 +181,8 @@ export default function LockItTradePage() {
     return (
         <>
             <BackgroundScroll />
-            <div className="min-h-screen bg-transparent text-neutral-900 font-sans antialiased overflow-x-hidden relative">
-                <Navbar />
-
+            <Navbar />
+            <main className="min-h-screen bg-transparent text-neutral-900 font-sans antialiased overflow-x-hidden relative">
                 {/* Hero Section */}
                 <section className="relative w-full z-20 pt-8">
                     {/* Hero Glows */}
@@ -263,7 +262,7 @@ export default function LockItTradePage() {
                     </div>
                 </section>
 
-                <main className="relative bg-transparent">
+                <div className="relative bg-transparent">
                     {/* Features Section */}
                     <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
                         <div className="container mx-auto max-w-7xl relative z-10">
@@ -530,7 +529,7 @@ export default function LockItTradePage() {
                                         <div className="relative w-72 h-[560px] sm:w-80 sm:h-[640px] bg-neutral-900/10 rounded-[3rem] sm:rounded-[4rem] border-8 border-white/20 shadow-2xl backdrop-blur-xl flex items-center justify-center overflow-hidden group-hover:scale-[1.02] transition-transform duration-700">
                                             <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent z-20"></div>
                                             <Image
-                                                src={withBasePath("/LockItTradeSS.png")}
+                                                src={withBasePath("/LockItTradeSS.webp")}
                                                 alt="Lock It Trade Platform"
                                                 fill
                                                 className="object-cover rounded-[2.5rem]"
@@ -569,9 +568,9 @@ export default function LockItTradePage() {
                             </div>
                         </div>
                     </section>
-                </main>
-                <Footer />
-            </div>
+                </div>
+            </main>
+            <Footer />
         </>
     );
 }

@@ -93,25 +93,25 @@ export default function TradeLockerPage() {
             quote: "Full-featured trading directly in your browser with no installation required. Access your account from any device instantly.",
             name: "Web Platform",
             designation: "Browser Based",
-            src: withBasePath("/images/Web Platform.png")
+            src: withBasePath("/images/Trade Locker Web.webp")
         },
         {
             quote: "Trade on the go with our powerful iOS application optimized for iPhone and iPad. Never miss a market opportunity.",
             name: "iOS App",
             designation: "Mobile & Tablet",
-            src: withBasePath("/images/iOS App.png")
+            src: withBasePath("/images/Trade Locker Iphone.webp")
         },
         {
             quote: "Manage your positions anywhere with our feature-rich Android application. Full trading capabilities in your pocket.",
             name: "Android App",
             designation: "Mobile & Tablet",
-            src: withBasePath("/images/Android App.png")
+            src: withBasePath("/images/Trade Locker Android.webp")
         },
         {
             quote: "Maximum performance and multi-screen support for professional traders. Desktop-class power for serious trading.",
             name: "Desktop App",
             designation: "Windows & macOS",
-            src: withBasePath("/images/Desktop App.png")
+            src: withBasePath("/images/Trade Locker Desktop.webp")
         }
     ], []);
 
@@ -188,9 +188,8 @@ export default function TradeLockerPage() {
     return (
         <>
             <BackgroundScroll />
-            <div className="min-h-screen bg-transparent text-neutral-900 font-sans antialiased overflow-x-hidden relative">
-                <Navbar />
-
+            <Navbar />
+            <main className="min-h-screen bg-transparent text-neutral-900 font-sans antialiased overflow-x-hidden relative">
                 {/* Redesigned Hero Section with Container Scroll */}
                 <section className="relative w-full z-20 pt-8">
                     {/* Hero Glows */}
@@ -212,7 +211,7 @@ export default function TradeLockerPage() {
                                     </motion.div>
 
                                     {/* Main Heading */}
-                                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-heading text-neutral-900 leading-[1.05] tracking-tight">
+                                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-heading text-neutral-900 leading-[1.05] tracking-tight text-center">
                                         Experience <br />
                                         <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">
                                             Fluid Trading
@@ -220,7 +219,7 @@ export default function TradeLockerPage() {
                                     </h1>
 
                                     {/* Subheading */}
-                                    <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-2xl mx-auto font-light">
+                                    <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-2xl mx-auto font-light text-center">
                                         TradeLocker offers an immersive, intuitive environment designed for modern traders with{" "}
                                         <span className="font-semibold text-primary">zero latency</span> and{" "}
                                         <span className="font-semibold text-primary">maximum precision</span>.
@@ -285,7 +284,6 @@ export default function TradeLockerPage() {
                 </section>
 
                 {/* Stats Section */}
-                {/* Stats Section */}
                 <section className="py-12 px-4 sm:px-6 lg:px-8 relative pt-24 z-10">
                     <div className="container mx-auto max-w-7xl relative z-10">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -306,7 +304,7 @@ export default function TradeLockerPage() {
                     </div>
                 </section>
 
-                <main className="relative bg-transparent">
+                <div className="relative bg-transparent">
                     {/* Enhanced Features Section */}
                     <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
                         <div className="container mx-auto max-w-7xl relative z-10">
@@ -536,10 +534,10 @@ export default function TradeLockerPage() {
                                 transition={{ duration: 0.8 }}
                                 className="text-center mb-16"
                             >
-                                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-heading text-neutral-900 mb-6 tracking-tight">
+                                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-heading text-neutral-900 mb-6 tracking-tight text-center">
                                     Download <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">TradeLocker</span>
                                 </h2>
-                                <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light">
+                                <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light text-center">
                                     Available on all major platforms. Choose your preferred device.
                                 </p>
                             </motion.div>
@@ -563,9 +561,9 @@ export default function TradeLockerPage() {
                             </div>
                         </div>
                     </section>
-                </main>
-                <Footer />
-            </div>
+                </div>
+            </main>
+            <Footer />
         </>
     );
 }
