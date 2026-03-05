@@ -64,18 +64,13 @@ jobs:
         with:
           path: ./apps/web/out
 
-      - name: Deploy to Hostinger
+      - name: Deploy to Hostinger Branch
         if: github.ref == 'refs/heads/main'
-        uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: "-rlgoDzvc -i"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-          SOURCE: "apps/web/out/"
-          TARGET: "public_html/"
-          EXCLUDE: "/dist/, /node_modules/"
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: deploy-prod # The branch Hostinger will pull from
+          folder: apps/web/out # The folder to upload
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   deploy-github-pages:
     if: github.ref == 'refs/heads/dev'
