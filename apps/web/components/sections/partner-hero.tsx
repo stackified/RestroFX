@@ -5,11 +5,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-interface PartnerHeroProps {
-  partnerName: string;
-}
 
-export function PartnerHero({ partnerName }: PartnerHeroProps) {
+
+export function PartnerHero() {
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-12">
       {/* Background Elements */}

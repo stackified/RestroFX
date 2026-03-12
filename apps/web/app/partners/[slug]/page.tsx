@@ -51,7 +51,7 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
       <BackgroundScroll />
       <Navbar />
       <main>
-        <PartnerHero partnerName={partner.name} />
+        <PartnerHero />
 
         <div className="py-4 sm:py-6">
           <ScrollReveal>
