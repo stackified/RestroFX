@@ -47,7 +47,7 @@ export function PartnerBio({ name, bio, imageUrl, quote }: PartnerBioProps) {
             </div>
             {quote && (
                 <div className="mt-8 text-center lg:text-left">
-                    <p className="text-xl italic text-muted-foreground">"{quote}"</p>
+                    <p className="text-xl italic text-muted-foreground">&quot;{quote}&quot;</p>
                     <p className="mt-2 font-bold text-primary">— {name}</p>
                 </div>
             )}
