@@ -45,7 +45,7 @@ export default function AffiliateProgramPage() {
         {
             icon: DollarSign,
             title: "Generous Commissions",
-            description: "Choose from CPA, RevShare, or Hybrid models with industry-leading commission rates."
+            description: "Choose our highly-rewarding Reshare models with industry-leading commission rates."
         },
         {
             icon: Megaphone,
@@ -71,42 +71,42 @@ export default function AffiliateProgramPage() {
 
     const commissionModels = [
         {
-            title: "CPA",
-            subtitle: "Cost Per Acquisition",
-            description: "Earn a one-time payment for every qualified trader you refer",
+            title: "Basic Reshare",
+            subtitle: "Starter Tier",
+            description: "Earn consistent commissions as your referred clients trade",
             features: [
-                "Up to $800 per qualified trader",
-                "Instant commission on first deposit",
-                "No ongoing management needed",
-                "Perfect for high-traffic sources"
+                "Earn $5 per lot",
+                "Lifetime recurring commissions",
+                "Passive income potential",
+                "Real-time tracking Dashboard"
             ],
-            icon: Wallet,
+            icon: Percent,
             popular: false
         },
         {
-            title: "RevShare",
-            subtitle: "Revenue Share",
-            description: "Earn ongoing commissions from your referred clients' trading activity",
+            title: "Pro Reshare",
+            subtitle: "Professional Tier",
+            description: "Increased commission for high-performing affiliates",
             features: [
-                "Up to 50% revenue share",
+                "Earn $10 per lot",
                 "Lifetime recurring commissions",
-                "Passive income potential",
-                "Best for long-term partnerships"
+                "Dedicated account manager",
+                "Best for active partners"
             ],
-            icon: Percent,
+            icon: TrendingUp,
             popular: true
         },
         {
-            title: "Hybrid",
-            subtitle: "Best of Both Worlds",
-            description: "Combine CPA and RevShare for maximum earning potential",
+            title: "Elite Reshare",
+            subtitle: "VIP Tier",
+            description: "Maximum rewards for established partners and influencers",
             features: [
-                "Upfront CPA payment",
-                "Plus ongoing RevShare",
-                "Balanced risk and reward",
-                "Flexible commission structure"
+                "Earn $20+ per lot",
+                "Lifetime recurring commissions",
+                "Custom promotion materials",
+                "Premium VIP support"
             ],
-            icon: TrendingUp,
+            icon: Wallet,
             popular: false
         }
     ];
@@ -135,9 +135,9 @@ export default function AffiliateProgramPage() {
     ];
 
     const stats = [
-        { value: "500+", label: "Active Affiliates" },
-        { value: "$10M+", label: "Commissions Paid" },
-        { value: "25%", label: "Avg Conversion" },
+        { value: "300+", label: "Active Affiliates" },
+        { value: "$20k+", label: "Commissions Paid" },
+        { value: "15%", label: "Avg Conversion" },
         { value: "90 Days", label: "Cookie Duration" }
     ];
 

@@ -167,7 +167,7 @@ export function PlatformSelectorSection() {
             <span className="block text-xl sm:text-3xl md:text-4xl lg:text-5xl mt-2"> & Account Type</span>
           </h2>
           <p className="text-muted-foreground text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
-            Select your preferred trading platform and account type to start your journey with professional-grade trading tools.
+            Select your preferred software and account type to start your journey with professional-grade trading tools.
           </p>
         </motion.div>
 
