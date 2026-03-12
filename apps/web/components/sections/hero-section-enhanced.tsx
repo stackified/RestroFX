@@ -132,17 +132,17 @@ export function HeroSectionEnhanced({
               className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:flex gap-6 md:gap-8 items-center justify-start opacity-70"
             >
               <div className="flex flex-col group cursor-default items-start">
-                <span className="text-xl md:text-2xl font-bold text-white sm:text-foreground group-hover:text-primary transition-colors drop-shadow-md">50k+</span>
+                <span className="text-xl md:text-2xl font-bold text-white sm:text-foreground group-hover:text-primary transition-colors drop-shadow-md">10k+</span>
                 <span className="text-[10px] md:text-xs uppercase tracking-widest font-semibold text-white/80 sm:text-muted-foreground group-hover:text-foreground transition-colors drop-shadow-md">Active Traders</span>
               </div>
               <div className="w-px h-8 bg-border hidden lg:block" />
               <div className="flex flex-col group cursor-default items-start">
-                <span className="text-xl md:text-2xl font-bold text-white sm:text-foreground group-hover:text-primary transition-colors drop-shadow-md">$10B+</span>
+                <span className="text-xl md:text-2xl font-bold text-white sm:text-foreground group-hover:text-primary transition-colors drop-shadow-md">$5B+</span>
                 <span className="text-[10px] md:text-xs uppercase tracking-widest font-semibold text-white/80 sm:text-muted-foreground group-hover:text-foreground transition-colors drop-shadow-md">Volume Traded</span>
               </div>
               <div className="w-px h-8 bg-border hidden lg:block" />
               <div className="flex flex-col group cursor-default items-start">
-                <span className="text-xl md:text-2xl font-bold text-white sm:text-foreground group-hover:text-primary transition-colors drop-shadow-md">4.9/5</span>
+                <span className="text-xl md:text-2xl font-bold text-white sm:text-foreground group-hover:text-primary transition-colors drop-shadow-md">4.5/5</span>
                 <span className="text-[10px] md:text-xs uppercase tracking-widest font-semibold text-white/80 sm:text-muted-foreground group-hover:text-foreground transition-colors drop-shadow-md">User Rating</span>
               </div>
             </motion.div>
