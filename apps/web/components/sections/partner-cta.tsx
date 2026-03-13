@@ -14,49 +14,42 @@ export function PartnerCTA({ partnerName, message }: PartnerCTAProps) {
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background Decorative Elements */}
-      <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]" />
-      </div>
+      <div className="absolute inset-0 bg-transparent z-0" />
 
-      <div className="container px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold font-heading mb-8"
-          >
-            A message from <span className="text-primary">{partnerName.split(' ')[0]}</span>.
-          </motion.h2>
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden bg-gradient-to-br from-primary via-red-600 to-red-700 p-8 sm:p-12 lg:p-24 shadow-2xl group text-center mx-auto max-w-[90%] sm:max-w-full">
+            {/* Animated Background Pattern */}
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30 group-hover:opacity-40 transition-opacity duration-500"></div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mb-12"
-          >
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed italic">
-              {message || `Trade with the broker I trust. Join me at RestroFX and experience trading the way it was meant to be. Raw spreads, lightning-fast execution, and a platform that puts you first.`}
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          >
-            <Button
-              size="lg"
-              className="rounded-full px-12 h-16 text-xl font-bold bg-primary text-white shadow-xl hover:bg-red-700 hover:scale-105 transition-all duration-300 group"
-              asChild
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10 space-y-8"
             >
-              <Link href="/register">
-                JOIN RESTROFX <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </Button>
-          </motion.div>
+              <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold font-heading text-white leading-tight">
+                A message from <br />
+                <span className="text-white/80 italic font-light">{partnerName.split(' ')[0]}.</span>
+              </h2>
+              <p className="text-lg sm:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed italic">
+                &quot;{message}&quot;
+              </p>
+              <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Button
+                      size="lg"
+                      variant="secondary"
+                      className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
+                      asChild
+                  >
+                      <Link href="/register">
+                          <span className="relative z-10 flex items-center justify-center">
+                              JOIN RESTROFX <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+                          </span>
+                      </Link>
+                  </Button>
+              </div>
+            </motion.div>
         </div>
       </div>
     </section>

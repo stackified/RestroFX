@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@crimsonfx/ui";
+
 import { Zap, Percent, Activity } from "lucide-react";
 
 export function PartnerFeatures() {
@@ -52,27 +52,24 @@ export function PartnerFeatures() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              whileHover={{ y: -5 }}
-              className="h-full"
+              className="h-full group p-6 sm:p-8 rounded-[2rem] border-2 border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 bg-background/50 backdrop-blur-md relative overflow-hidden"
             >
-              <Card className={`h-full relative overflow-hidden transition-all duration-300 border-2 ${feature.borderColor} bg-background/50 backdrop-blur-sm group hover:shadow-xl`}>
-                <div
-                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${feature.bgGradient}`}
-                />
-                <CardHeader className="relative z-10 pb-4">
-                  <div className={`p-3 rounded-xl bg-muted/50 border border-border w-fit mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className={`h-6 w-6 ${feature.iconColor}`} />
-                  </div>
-                  <CardTitle className="text-xl font-bold leading-tight">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="relative z-10 text-muted-foreground">
-                  <p className="leading-relaxed text-sm">{feature.description}</p>
-                </CardContent>
-              </Card>
+              <div
+                className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br ${feature.bgGradient} -z-10`}
+              />
+              <div className="flex flex-col h-full z-10 relative">
+                <div className={`p-4 rounded-2xl bg-muted/50 border border-border w-fit mb-6 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 shadow-sm`}>
+                  <Icon className={`h-8 w-8 ${feature.iconColor} group-hover:rotate-6 transition-transform`} />
+                </div>
+                <h3 className="text-2xl font-bold font-heading mb-4 leading-tight group-hover:text-primary transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p className="leading-relaxed text-muted-foreground text-base sm:text-lg flex-grow">
+                  {feature.description}
+                </p>
+              </div>
             </motion.div>
           );
         })}
