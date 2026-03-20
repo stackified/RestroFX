@@ -15,6 +15,7 @@ interface PartnerData {
   imageUrl: string;
   quote?: string;
   ctaMessage?: string;
+  ctaUrl?: string;
 }
 
 const PARTNERS_DATA: Record<string, PartnerData> = {
@@ -23,7 +24,8 @@ const PARTNERS_DATA: Record<string, PartnerData> = {
     bio: "Solo E started trading with $500–$600 paychecks to fund his music dream. No prop firms, no handouts — just self-taught grit. He burned $100K learning the hard way, mastering risk, discipline, and consistency. \n\nThe breakthrough came flipping $600 to $25K (then losing it), but going live on YouTube and turning $4K into $40K put him on the map. Now he refuses to deposit over $10K, proving small accounts can win big. The Solo E brand is about flipping limits, giving underdogs a system, and proving the world wrong one trade at a time.",
     imageUrl: "/images/soloetv.png",
     quote: "Life is short and working for other people sucks",
-    ctaMessage: "Trade with the broker I trust. Join me at RestroFX and experience trading the way it was meant to be. Raw spreads, lightning-fast execution, and a platform that puts you first."
+    ctaMessage: "Trade with the broker I trust. Join me at RestroFX and experience trading the way it was meant to be. Raw spreads, lightning-fast execution, and a platform that puts you first.",
+    ctaUrl: "https://portal.restrofx.com/r/glaPWwHQ"
   },
   "default": {
     name: "Our Global Partner",
@@ -49,9 +51,9 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
   return (
     <>
       <BackgroundScroll />
-      <Navbar />
+      <Navbar ctaUrl={partner.ctaUrl} />
       <main>
-        <PartnerHero />
+        <PartnerHero ctaUrl={partner.ctaUrl} />
 
         <div className="py-4 sm:py-6">
           <ScrollReveal>
@@ -60,6 +62,7 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
               bio={partner.bio}
               imageUrl={partner.imageUrl}
               quote={partner.quote}
+              ctaUrl={partner.ctaUrl}
             />
           </ScrollReveal>
         </div>
@@ -83,7 +86,11 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
 
         <div className="py-4 sm:py-6">
           <ScrollReveal>
-            <PartnerCTA partnerName={partner.name} message={partner.ctaMessage} />
+            <PartnerCTA 
+              partnerName={partner.name} 
+              message={partner.ctaMessage} 
+              ctaUrl={partner.ctaUrl} 
+            />
           </ScrollReveal>
         </div>
 

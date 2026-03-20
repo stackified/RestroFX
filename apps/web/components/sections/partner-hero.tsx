@@ -7,7 +7,11 @@ import { ArrowRight } from "lucide-react";
 
 
 
-export function PartnerHero() {
+interface PartnerHeroProps {
+  ctaUrl?: string;
+}
+
+export function PartnerHero({ ctaUrl }: PartnerHeroProps) {
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-12">
       {/* Background Elements */}
@@ -71,7 +75,11 @@ export function PartnerHero() {
                 className="w-full sm:w-auto rounded-xl px-12 h-16 text-lg font-bold bg-primary text-white shadow-[0_20px_50px_rgba(187,0,0,0.3)] hover:bg-red-700 hover:scale-105 transition-all duration-300 group relative overflow-hidden border-none"
                 asChild
               >
-                <Link href="/register">
+                <Link 
+                  href={ctaUrl || "/register"}
+                  target={ctaUrl ? "_blank" : undefined}
+                  rel={ctaUrl ? "noopener noreferrer" : undefined}
+                >
                   <span className="relative z-10 flex items-center justify-center">
                     Start Trading <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </span>
