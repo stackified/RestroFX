@@ -84,7 +84,7 @@ const companyLinks: LinkItem[] = [
 	},
 ];
 
-export function Header() {
+export function Header({ ctaUrl }: { ctaUrl?: string }) {
 	const [open, setOpen] = React.useState(false);
 	const scrolled = useScroll(10);
 
@@ -144,7 +144,12 @@ export function Header() {
 									<div className="p-2">
 										<p className="text-muted-foreground text-sm">
 											Interested?{' '}
-											<a href="/register" className="text-red-500 font-medium hover:underline">
+											<a 
+												href={ctaUrl || "/register"} 
+												target={ctaUrl ? "_blank" : undefined}
+												rel={ctaUrl ? "noopener noreferrer" : undefined}
+												className="text-red-500 font-medium hover:underline"
+											>
 												Start Trading
 											</a>
 										</p>
@@ -162,7 +167,12 @@ export function Header() {
 									<div className="p-2 border-t mt-1">
 										<p className="text-muted-foreground text-sm">
 											Interested?{' '}
-											<a href="/register" className="text-red-500 font-medium hover:underline">
+											<a 
+												href={ctaUrl || "/register"} 
+												target={ctaUrl ? "_blank" : undefined}
+												rel={ctaUrl ? "noopener noreferrer" : undefined}
+												className="text-red-500 font-medium hover:underline"
+											>
 												Start Trading
 											</a>
 										</p>
@@ -180,7 +190,12 @@ export function Header() {
 									<div className="p-2 border-t mt-1">
 										<p className="text-muted-foreground text-sm">
 											Interested?{' '}
-											<a href="/register" className="text-red-500 font-medium hover:underline">
+											<a 
+												href={ctaUrl || "/register"} 
+												target={ctaUrl ? "_blank" : undefined}
+												rel={ctaUrl ? "noopener noreferrer" : undefined}
+												className="text-red-500 font-medium hover:underline"
+											>
 												Start Trading
 											</a>
 										</p>
@@ -202,10 +217,22 @@ export function Header() {
 					scrolled ? "gap-2 pl-12" : "gap-4"
 				)}>
 					<Button variant="outline" className="rounded-full h-9 px-5 text-sm font-semibold border-border hover:bg-muted/50 transition-all active:scale-95" asChild>
-						<Link href="/login">Sign In</Link>
+						<Link 
+							href={ctaUrl || "/login"}
+							target={ctaUrl ? "_blank" : undefined}
+							rel={ctaUrl ? "noopener noreferrer" : undefined}
+						>
+							Sign In
+						</Link>
 					</Button>
 					<Button className="rounded-full h-9 px-5 text-sm font-bold bg-primary text-white hover:bg-red-700 shadow-md transition-all active:scale-95" asChild>
-						<Link href="/register">Get Started</Link>
+						<Link 
+							href={ctaUrl || "/register"}
+							target={ctaUrl ? "_blank" : undefined}
+							rel={ctaUrl ? "noopener noreferrer" : undefined}
+						>
+							Get Started
+						</Link>
 					</Button>
 				</div>
 				<Button
@@ -255,10 +282,22 @@ export function Header() {
 				</div>
 				<div className="flex flex-col gap-2">
 					<Button variant="outline" className="w-full bg-transparent rounded-full h-10 text-sm font-semibold" asChild>
-						<Link href="/login">Sign In</Link>
+						<Link 
+							href={ctaUrl || "/login"}
+							target={ctaUrl ? "_blank" : undefined}
+							rel={ctaUrl ? "noopener noreferrer" : undefined}
+						>
+							Sign In
+						</Link>
 					</Button>
 					<Button className="w-full rounded-full h-10 text-sm font-bold bg-primary text-white" asChild>
-						<Link href="/register">Get Started</Link>
+						<Link 
+							href={ctaUrl || "/register"}
+							target={ctaUrl ? "_blank" : undefined}
+							rel={ctaUrl ? "noopener noreferrer" : undefined}
+						>
+							Get Started
+						</Link>
 					</Button>
 				</div>
 			</MobileMenu>

@@ -8,9 +8,10 @@ import { ArrowRight } from "lucide-react";
 interface PartnerCTAProps {
   partnerName: string;
   message?: string;
+  ctaUrl?: string;
 }
 
-export function PartnerCTA({ partnerName, message }: PartnerCTAProps) {
+export function PartnerCTA({ partnerName, message, ctaUrl }: PartnerCTAProps) {
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background Decorative Elements */}
@@ -42,7 +43,11 @@ export function PartnerCTA({ partnerName, message }: PartnerCTAProps) {
                       className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
                       asChild
                   >
-                      <Link href="/register">
+                      <Link 
+                        href={ctaUrl || "/register"}
+                        target={ctaUrl ? "_blank" : undefined}
+                        rel={ctaUrl ? "noopener noreferrer" : undefined}
+                      >
                           <span className="relative z-10 flex items-center justify-center">
                               JOIN RESTROFX <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
                           </span>

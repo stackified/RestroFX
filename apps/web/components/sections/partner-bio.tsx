@@ -10,9 +10,10 @@ interface PartnerBioProps {
   bio: string;
   imageUrl: string;
   quote?: string;
+  ctaUrl?: string;
 }
 
-export function PartnerBio({ name, bio, imageUrl, quote }: PartnerBioProps) {
+export function PartnerBio({ name, bio, imageUrl, quote, ctaUrl }: PartnerBioProps) {
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="container px-4 md:px-6">
@@ -110,7 +111,13 @@ export function PartnerBio({ name, bio, imageUrl, quote }: PartnerBioProps) {
                 className="rounded-xl bg-primary hover:bg-primary/90 text-white px-10 h-14 font-bold shadow-lg shadow-primary/20 transition-all hover:-translate-y-1"
                 asChild
               >
-                <Link href="/register">Start Trading Under {name.split(' ')[0]}</Link>
+                <Link 
+                  href={ctaUrl || "/register"}
+                  target={ctaUrl ? "_blank" : undefined}
+                  rel={ctaUrl ? "noopener noreferrer" : undefined}
+                >
+                  Start Trading Under {name.split(' ')[0]}
+                </Link>
               </Button>
             </div>
           </motion.div>

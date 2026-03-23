@@ -17,6 +17,7 @@ interface PartnerData {
   quote?: string;
   ctaMessage?: string;
   youtubeId?: string;
+  ctaUrl?: string;
 }
 
 const PARTNERS_DATA: Record<string, PartnerData> = {
@@ -26,7 +27,8 @@ const PARTNERS_DATA: Record<string, PartnerData> = {
     imageUrl: "/images/soloetv.png",
     quote: "Life is short and working for other people sucks",
     ctaMessage: "Trade with the broker I trust. Join me at RestroFX and experience trading the way it was meant to be. Raw spreads, lightning-fast execution, and a platform that puts you first.",
-    youtubeId: "01loBLlZRHw"
+    youtubeId: "01loBLlZRHw",
+    ctaUrl: "https://portal.restrofx.com/r/glaPWwHQ"
   },
   "default": {
     name: "Our Global Partner",
@@ -52,9 +54,9 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
   return (
     <>
       <BackgroundScroll />
-      <Navbar />
+      <Navbar ctaUrl={partner.ctaUrl} />
       <main>
-        <PartnerHero />
+        <PartnerHero ctaUrl={partner.ctaUrl} />
 
         <div className="py-4 sm:py-6">
           <ScrollReveal>
@@ -63,6 +65,7 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
               bio={partner.bio}
               imageUrl={partner.imageUrl}
               quote={partner.quote}
+              ctaUrl={partner.ctaUrl}
             />
           </ScrollReveal>
         </div>
@@ -92,7 +95,11 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
 
         <div className="py-4 sm:py-6">
           <ScrollReveal>
-            <PartnerCTA partnerName={partner.name} message={partner.ctaMessage} />
+            <PartnerCTA 
+              partnerName={partner.name} 
+              message={partner.ctaMessage} 
+              ctaUrl={partner.ctaUrl} 
+            />
           </ScrollReveal>
         </div>
 
