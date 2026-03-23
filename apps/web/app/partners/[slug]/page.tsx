@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { PartnerHero } from "@/components/sections/partner-hero";
 import { PartnerBio } from "@/components/sections/partner-bio";
+import { PartnerVideo } from "@/components/sections/partner-video";
 import { PartnerCTA } from "@/components/sections/partner-cta";
 import { PartnerFeatures } from "@/components/sections/partner-features";
 import { TrustMetricsSection } from "@/components/sections/trust-metrics-section";
@@ -15,6 +16,7 @@ interface PartnerData {
   imageUrl: string;
   quote?: string;
   ctaMessage?: string;
+  youtubeId?: string;
 }
 
 const PARTNERS_DATA: Record<string, PartnerData> = {
@@ -23,7 +25,8 @@ const PARTNERS_DATA: Record<string, PartnerData> = {
     bio: "Solo E started trading with $500–$600 paychecks to fund his music dream. No prop firms, no handouts — just self-taught grit. He burned $100K learning the hard way, mastering risk, discipline, and consistency. \n\nThe breakthrough came flipping $600 to $25K (then losing it), but going live on YouTube and turning $4K into $40K put him on the map. Now he refuses to deposit over $10K, proving small accounts can win big. The Solo E brand is about flipping limits, giving underdogs a system, and proving the world wrong one trade at a time.",
     imageUrl: "/images/soloetv.png",
     quote: "Life is short and working for other people sucks",
-    ctaMessage: "Trade with the broker I trust. Join me at RestroFX and experience trading the way it was meant to be. Raw spreads, lightning-fast execution, and a platform that puts you first."
+    ctaMessage: "Trade with the broker I trust. Join me at RestroFX and experience trading the way it was meant to be. Raw spreads, lightning-fast execution, and a platform that puts you first.",
+    youtubeId: "01loBLlZRHw"
   },
   "default": {
     name: "Our Global Partner",
@@ -63,6 +66,12 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
             />
           </ScrollReveal>
         </div>
+
+        {partner.youtubeId && (
+          <ScrollReveal>
+            <PartnerVideo youtubeId={partner.youtubeId} />
+          </ScrollReveal>
+        )}
 
         <div className="py-4 sm:py-6">
           <ScrollReveal>
