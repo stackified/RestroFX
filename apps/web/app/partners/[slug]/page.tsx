@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { PartnerHero } from "@/components/sections/partner-hero";
 import { PartnerBio } from "@/components/sections/partner-bio";
 import { PartnerVideo } from "@/components/sections/partner-video";
+import { CurvedCarousel } from "@/components/ui/curved-carousel";
 import { PartnerCTA } from "@/components/sections/partner-cta";
 import { PartnerFeatures } from "@/components/sections/partner-features";
 import { TrustMetricsSection } from "@/components/sections/trust-metrics-section";
@@ -18,6 +19,7 @@ interface PartnerData {
   ctaMessage?: string;
   youtubeId?: string;
   ctaUrl?: string;
+  featuredVideos?: { id: string; videoId: string; title: string }[];
 }
 
 const PARTNERS_DATA: Record<string, PartnerData> = {
@@ -28,7 +30,15 @@ const PARTNERS_DATA: Record<string, PartnerData> = {
     quote: "Life is short and working for other people sucks",
     ctaMessage: "Trade with the broker I trust. Join me at RestroFX and experience trading the way it was meant to be. Raw spreads, lightning-fast execution, and a platform that puts you first.",
     youtubeId: "01loBLlZRHw",
-    ctaUrl: "https://portal.restrofx.com/r/glaPWwHQ"
+    ctaUrl: "https://portal.restrofx.com/r/glaPWwHQ",
+    featuredVideos: [
+      { id: "1", videoId: "R2djd5ACzPM", title: "i'm finally buying my dream car" },
+      { id: "2", videoId: "_QmCh4dNVGE", title: "Don't Trade Every Pair | Here's What Actually Works" },
+      { id: "3", videoId: "DV6cte3H9rc", title: "Pulled $15k profit - here's every single trade" },
+      { id: "4", videoId: "KhLUPlL777U", title: "Why You Should Reconsider Trading This year" },
+      { id: "5", videoId: "SyC37iKc2wE", title: "I Made $20k Trading Silver | Here's My Exact Strategy" },
+      { id: "6", videoId: "rExdi9Vzkxk", title: "Is Trading Really Worth It? My 6 Years of Results" }
+    ]
   },
   "default": {
     name: "Our Global Partner",
@@ -73,6 +83,16 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
         {partner.youtubeId && (
           <ScrollReveal>
             <PartnerVideo youtubeId={partner.youtubeId} />
+          </ScrollReveal>
+        )}
+
+        {partner.featuredVideos && (
+          <ScrollReveal>
+            <CurvedCarousel 
+              items={partner.featuredVideos} 
+              title="Our Latest Insights"
+              subtitle="Watch the journey unfold. From strategy deep dives to lifestyle updates, stay connected with our partner's latest content."
+            />
           </ScrollReveal>
         )}
 
