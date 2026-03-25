@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import { PartnerHero } from "@/components/sections/partner-hero";
 import { PartnerBio } from "@/components/sections/partner-bio";
 import { PartnerVideo } from "@/components/sections/partner-video";
-import { PartnerVideoCarousel } from "@/components/sections/partner-video-carousel";
+import { CurvedCarousel } from "@/components/ui/curved-carousel";
 import { PartnerCTA } from "@/components/sections/partner-cta";
 import { PartnerFeatures } from "@/components/sections/partner-features";
 import { TrustMetricsSection } from "@/components/sections/trust-metrics-section";
@@ -19,7 +19,7 @@ interface PartnerData {
   ctaMessage?: string;
   youtubeId?: string;
   ctaUrl?: string;
-  extraVideos?: { id: string; title: string; thumbnail: string }[];
+  featuredVideos?: { id: string; videoId: string; title: string }[];
 }
 
 const PARTNERS_DATA: Record<string, PartnerData> = {
@@ -29,38 +29,15 @@ const PARTNERS_DATA: Record<string, PartnerData> = {
     imageUrl: "/images/soloetv.png",
     quote: "Life is short and working for other people sucks",
     ctaMessage: "Trade with the broker I trust. Join me at RestroFX and experience trading the way it was meant to be. Raw spreads, lightning-fast execution, and a platform that puts you first.",
+    youtubeId: "01loBLlZRHw",
     ctaUrl: "https://portal.restrofx.com/r/glaPWwHQ",
-    extraVideos: [
-      {
-        id: "R2djd5ACzPM",
-        thumbnail: "https://i.ytimg.com/vi/R2djd5ACzPM/hqdefault.jpg",
-        title: "i'm finally buying my dream car"
-      },
-      {
-        id: "_QmCh4dNVGE",
-        thumbnail: "https://i.ytimg.com/vi/_QmCh4dNVGE/hqdefault.jpg",
-        title: "Don't Trade Every Pair | Here's What Actually Works"
-      },
-      {
-        id: "DV6cte3H9rc",
-        thumbnail: "https://i.ytimg.com/vi/DV6cte3H9rc/hqdefault.jpg",
-        title: "Pulled $15k profit - here's every single trade (GatesFX)"
-      },
-      {
-        id: "KhLUPlL777U",
-        thumbnail: "https://i.ytimg.com/vi/KhLUPlL777U/hqdefault.jpg",
-        title: "Why You Should Reconsider Trading This year"
-      },
-      {
-        id: "SyC37iKc2wE",
-        thumbnail: "https://i.ytimg.com/vi/SyC37iKc2wE/hqdefault.jpg",
-        title: "I Made $20k Trading Silver | Here's My Exact Strategy"
-      },
-      {
-        id: "rExdi9Vzkxk",
-        thumbnail: "https://i.ytimg.com/vi/rExdi9Vzkxk/hqdefault.jpg",
-        title: "Is Trading Really Worth It? My 6 Years of Results"
-      }
+    featuredVideos: [
+      { id: "1", videoId: "R2djd5ACzPM", title: "i'm finally buying my dream car" },
+      { id: "2", videoId: "_QmCh4dNVGE", title: "Don't Trade Every Pair | Here's What Actually Works" },
+      { id: "3", videoId: "DV6cte3H9rc", title: "Pulled $15k profit - here's every single trade" },
+      { id: "4", videoId: "KhLUPlL777U", title: "Why You Should Reconsider Trading This year" },
+      { id: "5", videoId: "SyC37iKc2wE", title: "I Made $20k Trading Silver | Here's My Exact Strategy" },
+      { id: "6", videoId: "rExdi9Vzkxk", title: "Is Trading Really Worth It? My 6 Years of Results" }
     ]
   },
   "default": {
@@ -109,9 +86,13 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
           </ScrollReveal>
         )}
 
-        {partner.extraVideos && (
+        {partner.featuredVideos && (
           <ScrollReveal>
-            <PartnerVideoCarousel videos={partner.extraVideos} />
+            <CurvedCarousel 
+              items={partner.featuredVideos} 
+              title="Our Latest Insights"
+              subtitle="Watch the journey unfold. From strategy deep dives to lifestyle updates, stay connected with our partner's latest content."
+            />
           </ScrollReveal>
         )}
 
