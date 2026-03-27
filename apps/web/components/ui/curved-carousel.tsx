@@ -68,7 +68,7 @@ function CarouselCard({
         z: itemZ,
         opacity: itemOpacity,
       }}
-      className="relative flex-shrink-0 group rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black"
+      className="relative flex-shrink-0 group rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black pointer-events-auto"
       onClick={() => onClick(item.videoId)}
     >
       <Image
@@ -123,8 +123,8 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
     offset: ["start end", "end start"]
   });
 
-  // Map scroll progress to a rotational offset
-  const scrollOffset = useTransform(scrollYProgress, [0, 1], [itemTotalWidth, -itemTotalWidth]);
+  // Map scroll progress to a rotational offset - reduced for subtler effect
+  const scrollOffset = useTransform(scrollYProgress, [0, 1], [itemTotalWidth * 0.4, -itemTotalWidth * 0.4]);
 
   // Combined position for all items to reactive to
   const combinedPos = useTransform([springX, scrollOffset], ([sx, so]) => (sx as number) + (so as number));
@@ -141,6 +141,11 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
     if (Math.abs(velocity) > 500) {
         newIndex = velocity > 0 ? active - 1 : active + 1;
     }
+
+    // Keep active within reasonable bounds of the triple list
+    if (newIndex < 1) newIndex = middleIndexOffset;
+    if (newIndex > displayItems.length - 2) newIndex = middleIndexOffset + items.length - 1;
+
     setActive(newIndex);
   };
 
@@ -167,14 +172,20 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
 
       <div 
         ref={containerRef}
-        className="relative h-[500px] flex items-center justify-center cursor-grab active:cursor-grabbing"
+        className="relative h-[500px] flex items-center justify-center"
       >
         <motion.div
           drag="x"
-          style={{ x: combinedPos, left: "50%" }}
+          // Ghost Drag: capture events without moving the element itself
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0}
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
-          className="absolute flex gap-8 items-center"
+          onDrag={(_, info) => {
+            x.set(x.get() + info.delta.x);
+          }}
+          style={{ x: combinedPos, left: "50%" }}
+          className="absolute flex gap-8 items-center cursor-grab active:cursor-grabbing"
         >
           {displayItems.map((item, index) => (
             <CarouselCard
@@ -193,13 +204,19 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
       </div>
 
       <div className="flex justify-center gap-2 mt-8">
-        {items.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActive(i + middleIndexOffset)}
-            className={`h-2 rounded-full transition-all duration-300 ${active % items.length === i ? 'w-8 bg-primary' : 'w-2 bg-neutral-800'}`}
-          />
-        ))}
+        {items.map((_, i) => {
+          // Calculate if this dot represents the "active" visual item
+          // Since we use springX + scrollOffset, the visual center is slightly shifted
+          const isSelected = active % items.length === i;
+          return (
+            <button
+              key={i}
+              onClick={() => setActive(i + middleIndexOffset)}
+              className={`h-2 rounded-full transition-all duration-300 ${isSelected ? 'w-8 bg-primary' : 'w-2 bg-white/20'}`}
+              aria-label={`Go to video ${i + 1}`}
+            />
+          );
+        })}
       </div>
     </section>
   );
