@@ -25,7 +25,7 @@ export default function Home() {
           title="Restro FX: Redefining Your Trading Experience."
           subtitle="Merge deep market expertise with advanced trading platforms. Algorithm-driven strategies and risk management to help you surpass your investment goals."
           ctaLabel="Start Trading"
-          ctaHref="/register"
+          ctaHref="https://portal.restrofx.com/register"
           secondaryCtaLabel="View Platforms"
           secondaryCtaHref="/platforms"
         />

@@ -51,7 +51,7 @@ function CarouselCard({
   );
   const itemZ = useTransform(combinedPos, 
       [-itemOffset + centerOffset - itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + itemTotalWidth], 
-      [-200, 0, -200]
+      [-itemWidth * 0.5, 0, -itemWidth * 0.5]
   );
   const itemOpacity = useTransform(combinedPos, 
       [-itemOffset + centerOffset - 2 * itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + 2 * itemTotalWidth], 
@@ -107,15 +107,37 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
   const [active, setActive] = useState(0);
   const x = useMotionValue(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 480, height: 270, gap: 32 });
+  
+  // Responsive dimensions
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        // Mobile
+        const w = Math.min(width - 40, 320);
+        setDimensions({ width: w, height: w * 9/16, gap: 16 });
+      } else if (width < 1024) {
+        // Tablet
+        setDimensions({ width: 400, height: 225, gap: 24 });
+      } else {
+        // Desktop
+        setDimensions({ width: 480, height: 270, gap: 32 });
+      }
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const { width: itemWidth, height: itemHeight, gap } = dimensions;
   
   // Triplicate items for infinite loop
   const displayItems = useMemo(() => [...items, ...items, ...items], [items]);
   const middleIndexOffset = items.length;
   
   // Constants
-  const itemWidth = 480;
-  const itemHeight = 270;
-  const gap = 32;
   const itemTotalWidth = itemWidth + gap;
   const centerOffset = -itemWidth / 2;
 
@@ -128,8 +150,9 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
     offset: ["start end", "end start"]
   });
 
-  // Map scroll progress to a rotational offset - reduced for subtler effect
-  const scrollOffset = useTransform(scrollYProgress, [0, 1], [itemTotalWidth * 0.4, -itemTotalWidth * 0.4]);
+  // Map scroll progress to a rotational offset - reduced for subtler effect and responsive scaling
+  const scrollIntensity = itemWidth < 400 ? 0.15 : 0.3;
+  const scrollOffset = useTransform(scrollYProgress, [0, 1], [itemWidth * scrollIntensity, -itemWidth * scrollIntensity]);
 
   // Combined position for all items to reactive to
   const combinedPos = useTransform([springX, scrollOffset], ([sx, so]) => (sx as number) + (so as number));
@@ -140,8 +163,9 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
     setTimeout(() => setIsDragging(false), 50);
     
     const velocity = info.velocity.x;
-    const currentX = x.get() - centerOffset;
-    let newIndex = Math.round(-currentX / itemTotalWidth);
+    // Calculate current visual position relative to the center
+    const visualX = x.get() + scrollOffset.get() - centerOffset;
+    let newIndex = Math.round(-visualX / itemTotalWidth);
     
     if (Math.abs(velocity) > 500) {
         newIndex = velocity > 0 ? active - 1 : active + 1;
@@ -155,13 +179,16 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
   };
 
   useEffect(() => {
-    x.set(-(middleIndexOffset * itemTotalWidth) + centerOffset);
+    // Subtract current scrollOffset so that combinedPos (x + scrollOffset) equals the target
+    const targetX = -(middleIndexOffset * itemTotalWidth) + centerOffset;
+    x.set(targetX - scrollOffset.get());
     setActive(middleIndexOffset);
-  }, [middleIndexOffset, itemTotalWidth, centerOffset, x]);
+  }, [middleIndexOffset, itemTotalWidth, centerOffset, x, scrollOffset]);
 
   useEffect(() => {
-    x.set(-(active * itemTotalWidth) + centerOffset);
-  }, [active, x, itemTotalWidth, centerOffset]);
+    const targetX = -(active * itemTotalWidth) + centerOffset;
+    x.set(targetX - scrollOffset.get());
+  }, [active, x, itemTotalWidth, centerOffset, scrollOffset]);
 
   const handleCardClick = (videoId: string) => {
     if (isDragging) return;
@@ -177,7 +204,8 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
 
       <div 
         ref={containerRef}
-        className="relative h-[500px] flex items-center justify-center"
+        style={{ height: itemHeight * 1.8 }}
+        className="relative flex items-center justify-center"
       >
         <motion.div
           drag="x"
@@ -190,7 +218,7 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
             x.set(x.get() + info.delta.x);
           }}
           style={{ x: combinedPos, left: "50%" }}
-          className="absolute flex gap-8 items-center cursor-grab active:cursor-grabbing"
+          className="absolute flex gap-8 items-center cursor-grab active:cursor-grabbing preserve-3d"
         >
           {displayItems.map((item, index) => (
             <CarouselCard

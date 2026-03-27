@@ -145,9 +145,9 @@ export function Header({ ctaUrl }: { ctaUrl?: string }) {
 										<p className="text-muted-foreground text-sm">
 											Interested?{' '}
 											<a 
-												href={ctaUrl || "/register"} 
-												target={ctaUrl ? "_blank" : undefined}
-												rel={ctaUrl ? "noopener noreferrer" : undefined}
+												href={ctaUrl || "https://portal.restrofx.com/register"} 
+												target="_blank"
+												rel="noopener noreferrer"
 												className="text-red-500 font-medium hover:underline"
 											>
 												Start Trading
@@ -168,9 +168,9 @@ export function Header({ ctaUrl }: { ctaUrl?: string }) {
 										<p className="text-muted-foreground text-sm">
 											Interested?{' '}
 											<a 
-												href={ctaUrl || "/register"} 
-												target={ctaUrl ? "_blank" : undefined}
-												rel={ctaUrl ? "noopener noreferrer" : undefined}
+												href={ctaUrl || "https://portal.restrofx.com/register"} 
+												target="_blank"
+												rel="noopener noreferrer"
 												className="text-red-500 font-medium hover:underline"
 											>
 												Start Trading
@@ -191,9 +191,9 @@ export function Header({ ctaUrl }: { ctaUrl?: string }) {
 										<p className="text-muted-foreground text-sm">
 											Interested?{' '}
 											<a 
-												href={ctaUrl || "/register"} 
-												target={ctaUrl ? "_blank" : undefined}
-												rel={ctaUrl ? "noopener noreferrer" : undefined}
+												href={ctaUrl || "https://portal.restrofx.com/register"} 
+												target="_blank"
+												rel="noopener noreferrer"
 												className="text-red-500 font-medium hover:underline"
 											>
 												Start Trading
@@ -218,18 +218,18 @@ export function Header({ ctaUrl }: { ctaUrl?: string }) {
 				)}>
 					<Button variant="outline" className="rounded-full h-9 px-5 text-sm font-semibold border-border hover:bg-muted/50 transition-all active:scale-95" asChild>
 						<Link 
-							href={ctaUrl || "/login"}
-							target={ctaUrl ? "_blank" : undefined}
-							rel={ctaUrl ? "noopener noreferrer" : undefined}
+							href={ctaUrl || "https://portal.restrofx.com/login"}
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							Sign In
 						</Link>
 					</Button>
 					<Button className="rounded-full h-9 px-5 text-sm font-bold bg-primary text-white hover:bg-red-700 shadow-md transition-all active:scale-95" asChild>
 						<Link 
-							href={ctaUrl || "/register"}
-							target={ctaUrl ? "_blank" : undefined}
-							rel={ctaUrl ? "noopener noreferrer" : undefined}
+							href={ctaUrl || "https://portal.restrofx.com/register"}
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							Get Started
 						</Link>
@@ -283,18 +283,18 @@ export function Header({ ctaUrl }: { ctaUrl?: string }) {
 				<div className="flex flex-col gap-2">
 					<Button variant="outline" className="w-full bg-transparent rounded-full h-10 text-sm font-semibold" asChild>
 						<Link 
-							href={ctaUrl || "/login"}
-							target={ctaUrl ? "_blank" : undefined}
-							rel={ctaUrl ? "noopener noreferrer" : undefined}
+							href={ctaUrl || "https://portal.restrofx.com/login"}
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							Sign In
 						</Link>
 					</Button>
 					<Button className="w-full rounded-full h-10 text-sm font-bold bg-primary text-white" asChild>
 						<Link 
-							href={ctaUrl || "/register"}
-							target={ctaUrl ? "_blank" : undefined}
-							rel={ctaUrl ? "noopener noreferrer" : undefined}
+							href={ctaUrl || "https://portal.restrofx.com/register"}
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							Get Started
 						</Link>

@@ -232,7 +232,7 @@ export default function TradeLockerPage() {
                                             className="rounded-full px-10 h-16 text-lg font-bold shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all duration-300 group relative overflow-hidden"
                                             asChild
                                         >
-                                            <Link href="/register" className="relative z-10 flex items-center">
+                                            <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center">
                                                 Start Trading <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                                             </Link>
                                         </Button>
