@@ -219,7 +219,7 @@ export default function AffiliateProgramPage() {
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                                 <Button size="lg" className="rounded-xl px-8 h-14 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-transform" asChild>
-                                    <Link href="/register">
+                                    <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
                                         Join as Affiliate <ArrowRight className="ml-2 h-5 w-5" />
                                     </Link>
                                 </Button>
@@ -329,7 +329,7 @@ export default function AffiliateProgramPage() {
                                         variant={model.popular ? "default" : "outline"}
                                         asChild
                                     >
-                                        <Link href="/register">Get Started</Link>
+                                        <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">Get Started</Link>
                                     </Button>
                                 </div>
                             ))}
@@ -473,7 +473,7 @@ export default function AffiliateProgramPage() {
                                         className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
                                         asChild
                                     >
-                                        <Link href="/register">
+                                        <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
                                             <span className="relative z-10 flex items-center justify-center">
                                                 Become an Affiliate <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
                                             </span>

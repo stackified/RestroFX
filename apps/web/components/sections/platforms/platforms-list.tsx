@@ -60,7 +60,7 @@ export function PlatformsList() {
                                 </Link>
                             </Button>
                             <Button size="lg" variant="outline" className="rounded-xl h-12" asChild>
-                                <Link href="/register">
+                                <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
                                     Start Using Now
                                 </Link>
                             </Button>

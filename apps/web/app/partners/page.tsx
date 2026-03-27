@@ -133,7 +133,7 @@ export default function AffiliateProgramPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                 <Button size="lg" className="rounded-xl px-8 h-14 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-transform" asChild>
-                  <Link href="/register">
+                  <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
                     Become an Affiliate <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -244,7 +244,7 @@ export default function AffiliateProgramPage() {
                 Join our affiliate program today and start earning commissions
               </p>
               <Button size="lg" className="rounded-xl px-8 h-14 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-transform" asChild>
-                <Link href="/register">
+                <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
                   Apply Now <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

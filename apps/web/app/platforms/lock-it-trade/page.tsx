@@ -221,7 +221,7 @@ export default function LockItTradePage() {
                                             className="rounded-full px-10 h-16 text-lg font-bold shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all duration-300 group relative overflow-hidden"
                                             asChild
                                         >
-                                            <Link href="/register" className="relative z-10 flex items-center">
+                                            <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center">
                                                 Start Free Journaling <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                                             </Link>
                                         </Button>
@@ -509,7 +509,7 @@ export default function LockItTradePage() {
                                                 className="w-full sm:w-auto rounded-full px-8 sm:px-12 h-14 sm:h-16 text-base sm:text-lg font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
                                                 asChild
                                             >
-                                                <Link href="/register">
+                                                <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
                                                     <span className="relative z-10 flex items-center justify-center">
                                                         Start Free Journaling <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
                                                     </span>

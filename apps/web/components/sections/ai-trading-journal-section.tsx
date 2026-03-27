@@ -19,7 +19,7 @@ export function AiTradingJournalSection() {
 
                     {/* Visual Side */}
                     <div className="relative order-2 lg:order-1 flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
-                        <PinContainer title="Unlock AI Insights" href="/register">
+                        <PinContainer title="Unlock AI Insights" href="https://portal.restrofx.com/register">
                             <div className="flex flex-col p-6 sm:p-8 tracking-tight w-[20rem] sm:w-[26rem] h-[20rem] sm:h-[26rem] bg-gradient-to-br from-white/90 via-white/80 to-primary/10 backdrop-blur-xl border-2 border-white/40 rounded-3xl shadow-2xl shadow-primary/30 relative overflow-hidden">
                                 {/* Glassmorphic overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 pointer-events-none" />

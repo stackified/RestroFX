@@ -105,7 +105,7 @@ export function DemoContent() {
 
                                 <div className="pt-2">
                                     <Button size="lg" className="w-full h-14 rounded-xl text-lg font-bold bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/20" asChild>
-                                        <Link href="/register">
+                                        <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
                                             Create Limitless Demo
                                         </Link>
                                     </Button>

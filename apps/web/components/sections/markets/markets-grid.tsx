@@ -107,7 +107,7 @@ export function MarketsGrid() {
                                 className="w-full rounded-xl h-12 text-base font-bold bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/20 hover:scale-[1.02] transition-all"
                                 asChild
                             >
-                                <Link href="/register" className="flex items-center justify-center gap-2">
+                                <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                                     Start Trading {market.name}
                                 </Link>
                             </Button>

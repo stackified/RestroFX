@@ -221,7 +221,7 @@ export function AboutSectionEnhanced() {
                 customVariants={revealVariants}
               >
                 <Link
-                  href="/register"
+                  href="https://portal.restrofx.com/register"
                   className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 border border-primary flex w-fit ml-auto gap-2 hover:gap-4 transition-all duration-300 ease-in-out text-primary-foreground px-5 py-3 rounded-lg cursor-pointer font-semibold font-body inline-flex items-center"
                 >
                   START TRADING <ArrowRight className="w-4 h-4" />

@@ -131,7 +131,7 @@ export function TradingPlatformsSection() {
           className="text-center mt-8 md:mt-12"
         >
           <Button size="lg" className="rounded-full px-12 h-16 text-lg font-bold bg-primary text-white shadow-[0_20px_50px_rgba(220,38,38,0.3)] hover:bg-red-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,38,38,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95 w-[90%] sm:w-auto mx-auto border-none" asChild>
-            <Link href="/register">
+            <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
               <span className="relative z-10 flex items-center justify-center">
                 Start Trading <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
               </span>

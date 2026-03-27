@@ -26,7 +26,7 @@ export function HeroSection() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <Button size="lg" asChild>
-            <Link href="/register">Start Trading</Link>
+            <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">Start Trading</Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
             <Link href="/demo">Try Demo Account</Link>

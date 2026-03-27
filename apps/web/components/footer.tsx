@@ -100,7 +100,7 @@ export function Footer() {
           <Link href="/legal/terms" className="text-xs font-semibold text-muted-foreground hover:text-primary">
             Terms & Conditions
           </Link>
-          <Link href="/register" className="text-xs font-bold text-primary hover:underline">Opening an Account</Link>
+          <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-primary hover:underline">Opening an Account</Link>
         </div>
 
         {/* Detailed Disclaimers */}

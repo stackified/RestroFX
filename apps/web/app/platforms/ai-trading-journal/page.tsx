@@ -119,7 +119,7 @@ export default function AITradingJournalPage() {
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                                 <Button size="lg" className="rounded-xl px-8 h-14 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-transform" asChild>
-                                    <Link href="/register">
+                                    <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
                                         Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
                                     </Link>
                                 </Button>
@@ -212,7 +212,7 @@ export default function AITradingJournalPage() {
                                 </div>
                             </div>
                             <div className="relative flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
-                                <PinContainer title="Unlock AI Insights" href="/register">
+                                <PinContainer title="Unlock AI Insights" href="https://portal.restrofx.com/register">
                                     <div className="flex flex-col p-6 sm:p-8 tracking-tight w-[20rem] sm:w-[26rem] h-[20rem] sm:h-[26rem] bg-gradient-to-br from-white/90 via-white/80 to-primary/10 backdrop-blur-xl border-2 border-white/40 rounded-3xl shadow-2xl shadow-primary/30 relative overflow-hidden">
                                         {/* Glassmorphic overlay */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 pointer-events-none" />
@@ -311,7 +311,7 @@ export default function AITradingJournalPage() {
                                         className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold bg-white text-primary hover:bg-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(220,0,0,0.4)] transition-all duration-500 group relative overflow-hidden active:scale-95"
                                         asChild
                                     >
-                                        <Link href="/register">
+                                        <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer">
                                             <span className="relative z-10 flex items-center justify-center">
                                                 Get Started Free <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
                                             </span>
