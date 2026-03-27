@@ -58,6 +58,8 @@ function CarouselCard({
       [0, 1, 0]
   );
 
+  const [imgSrc, setImgSrc] = useState(`https://i.ytimg.com/vi/${item.videoId}/maxresdefault.jpg`);
+
   return (
     <motion.div
       style={{
@@ -72,10 +74,13 @@ function CarouselCard({
       onClick={() => onClick(item.videoId)}
     >
       <Image
-        src={`https://i.ytimg.com/vi/${item.videoId}/maxresdefault.jpg`}
+        src={imgSrc}
         alt={item.title}
         fill
         className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+        onError={() => {
+          setImgSrc(`https://i.ytimg.com/vi/${item.videoId}/hqdefault.jpg`);
+        }}
       />
       
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">

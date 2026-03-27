@@ -32,9 +32,9 @@ const PARTNERS_DATA: Record<string, PartnerData> = {
     youtubeId: "01loBLlZRHw",
     ctaUrl: "https://portal.restrofx.com/r/glaPWwHQ",
     featuredVideos: [
-      { id: "1", videoId: "R2djd5ACzPM", title: "i'm finally buying my dream car" },
-      { id: "2", videoId: "_QmCh4dNVGE", title: "Don't Trade Every Pair | Here's What Actually Works" },
-      { id: "3", videoId: "JvA-MhX9W-Y", title: "How I Made $20,000 in 1 Day | Full Breakdown" },
+      { id: "1", videoId: "LdjfeDLhRiM", title: "$38k withdrawal in brought a lamborghini Then Went Left!" },
+      { id: "2", videoId: "R2djd5ACzPM", title: "i'm finally buying my dream car" },
+      { id: "3", videoId: "_QmCh4dNVGE", title: "Don't Trade Every Pair | Here's What Actually Works" },
       { id: "4", videoId: "KhLUPlL777U", title: "Why You Should Reconsider Trading This year" },
       { id: "5", videoId: "SyC37iKc2wE", title: "I Made $20k Trading Silver | Here's My Exact Strategy" },
       { id: "6", videoId: "rExdi9Vzkxk", title: "Is Trading Really Worth It? My 6 Years of Results" }
