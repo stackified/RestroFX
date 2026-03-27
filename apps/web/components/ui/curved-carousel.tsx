@@ -51,7 +51,7 @@ function CarouselCard({
   );
   const itemZ = useTransform(combinedPos, 
       [-itemOffset + centerOffset - itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + itemTotalWidth], 
-      [-200, 0, -200]
+      [-itemWidth * 0.5, 0, -itemWidth * 0.5]
   );
   const itemOpacity = useTransform(combinedPos, 
       [-itemOffset + centerOffset - 2 * itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + 2 * itemTotalWidth], 
@@ -107,15 +107,37 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
   const [active, setActive] = useState(0);
   const x = useMotionValue(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 480, height: 270, gap: 32 });
+  
+  // Responsive dimensions
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        // Mobile
+        const w = Math.min(width - 40, 320);
+        setDimensions({ width: w, height: w * 9/16, gap: 16 });
+      } else if (width < 1024) {
+        // Tablet
+        setDimensions({ width: 400, height: 225, gap: 24 });
+      } else {
+        // Desktop
+        setDimensions({ width: 480, height: 270, gap: 32 });
+      }
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const { width: itemWidth, height: itemHeight, gap } = dimensions;
   
   // Triplicate items for infinite loop
   const displayItems = useMemo(() => [...items, ...items, ...items], [items]);
   const middleIndexOffset = items.length;
   
   // Constants
-  const itemWidth = 480;
-  const itemHeight = 270;
-  const gap = 32;
   const itemTotalWidth = itemWidth + gap;
   const centerOffset = -itemWidth / 2;
 
@@ -177,7 +199,8 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
 
       <div 
         ref={containerRef}
-        className="relative h-[500px] flex items-center justify-center"
+        style={{ height: itemHeight * 1.8 }}
+        className="relative flex items-center justify-center"
       >
         <motion.div
           drag="x"
