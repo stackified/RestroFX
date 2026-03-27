@@ -28,7 +28,11 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
   // Calculate the rotation based on the number of items
   // We want to map the drag distance to an index
   const itemWidth = 300; // estimated width of a card
+  const gap = 32; // gap-8 = 2rem = 32px
   
+  // Center offset to align the active item's center with the viewport's center
+  const centerOffset = -itemWidth / 2;
+
   const handleDragEnd = (_: any, info: any) => {
     // Determine the closest index based on the drag offset
     const velocity = info.velocity.x;
@@ -38,14 +42,15 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
         if (velocity > 0) setActive((prev) => Math.max(0, prev - 1));
         else setActive((prev) => Math.min(items.length - 1, prev + 1));
     } else {
-        const index = Math.round(-x.get() / itemWidth);
+        const currentX = x.get() - centerOffset;
+        const index = Math.round(-currentX / (itemWidth + gap));
         setActive(Math.max(0, Math.min(items.length - 1, index)));
     }
   };
 
   useEffect(() => {
-    x.set(-active * itemWidth);
-  }, [active, x]);
+    x.set(-(active * (itemWidth + gap)) + centerOffset);
+  }, [active, x, centerOffset, gap]);
 
   return (
     <section className="py-24 bg-transparent overflow-hidden perspective-1000">
@@ -60,31 +65,36 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
       >
         <motion.div
           drag="x"
-          dragConstraints={{ left: -(items.length - 1) * itemWidth, right: 0 }}
-          style={{ x }}
+          dragConstraints={{ 
+            left: -(items.length - 1) * (itemWidth + gap) + centerOffset, 
+            right: centerOffset 
+          }}
+          style={{ x, left: "50%" }}
           onDragEnd={handleDragEnd}
-          className="flex gap-8 items-center"
+          className="absolute flex gap-8 items-center"
         >
           {items.map((item, index) => {
+            const itemOffset = index * (itemWidth + gap);
+            
             // Map the global x motion value to local item transforms
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const itemRotation = useTransform(springX, 
-                [- (index + 1) * itemWidth, - index * itemWidth, - (index - 1) * itemWidth], 
+                [-itemOffset + centerOffset - (itemWidth + gap), -itemOffset + centerOffset, -itemOffset + centerOffset + (itemWidth + gap)], 
                 [-45, 0, 45]
             );
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const itemScale = useTransform(springX, 
-                [- (index + 1) * itemWidth, - index * itemWidth, - (index - 1) * itemWidth], 
+                [-itemOffset + centerOffset - (itemWidth + gap), -itemOffset + centerOffset, -itemOffset + centerOffset + (itemWidth + gap)], 
                 [0.8, 1, 0.8]
             );
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const itemZ = useTransform(springX, 
-                [- (index + 1) * itemWidth, - index * itemWidth, - (index - 1) * itemWidth], 
+                [-itemOffset + centerOffset - (itemWidth + gap), -itemOffset + centerOffset, -itemOffset + centerOffset + (itemWidth + gap)], 
                 [-200, 0, -200]
             );
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const itemOpacity = useTransform(springX, 
-                [- (index + 2) * itemWidth, - index * itemWidth, - (index - 2) * itemWidth], 
+                [-itemOffset + centerOffset - 2 * (itemWidth + gap), -itemOffset + centerOffset, -itemOffset + centerOffset + 2 * (itemWidth + gap)], 
                 [0, 1, 0]
             );
 
