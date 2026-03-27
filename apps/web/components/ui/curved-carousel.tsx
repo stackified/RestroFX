@@ -29,7 +29,8 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
   const middleIndexOffset = items.length;
   
   // Constants
-  const itemWidth = 300;
+  const itemWidth = 480;
+  const itemHeight = 270;
   const gap = 32;
   const itemTotalWidth = itemWidth + gap;
   const centerOffset = -itemWidth / 2;
@@ -130,7 +131,7 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
                 key={`${item.id}-${index}`}
                 style={{
                   width: itemWidth,
-                  height: 400,
+                  height: itemHeight,
                   rotateY: itemRotation,
                   scale: itemScale,
                   z: itemZ,
