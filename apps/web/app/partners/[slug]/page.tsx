@@ -34,7 +34,7 @@ const PARTNERS_DATA: Record<string, PartnerData> = {
     featuredVideos: [
       { id: "1", videoId: "R2djd5ACzPM", title: "i'm finally buying my dream car" },
       { id: "2", videoId: "_QmCh4dNVGE", title: "Don't Trade Every Pair | Here's What Actually Works" },
-      { id: "3", videoId: "DV6cte3H9rc", title: "Pulled $15k profit - here's every single trade" },
+      { id: "3", videoId: "JvA-MhX9W-Y", title: "How I Made $20,000 in 1 Day | Full Breakdown" },
       { id: "4", videoId: "KhLUPlL777U", title: "Why You Should Reconsider Trading This year" },
       { id: "5", videoId: "SyC37iKc2wE", title: "I Made $20k Trading Silver | Here's My Exact Strategy" },
       { id: "6", videoId: "rExdi9Vzkxk", title: "Is Trading Really Worth It? My 6 Years of Results" }

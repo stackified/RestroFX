@@ -17,6 +17,85 @@ interface CurvedCarouselProps {
   subtitle?: string;
 }
 
+interface CarouselCardProps {
+  item: CarouselItem;
+  index: number;
+  combinedPos: any; // MotionValue<number>
+  itemWidth: number;
+  itemHeight: number;
+  itemTotalWidth: number;
+  centerOffset: number;
+  onClick: (videoId: string) => void;
+}
+
+function CarouselCard({ 
+  item, 
+  index, 
+  combinedPos, 
+  itemWidth, 
+  itemHeight, 
+  itemTotalWidth, 
+  centerOffset, 
+  onClick 
+}: CarouselCardProps) {
+  const itemOffset = index * itemTotalWidth;
+  
+  // Transform logic relative to the combined position
+  const itemRotation = useTransform(combinedPos, 
+      [-itemOffset + centerOffset - itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + itemTotalWidth], 
+      [-45, 0, 45]
+  );
+  const itemScale = useTransform(combinedPos, 
+      [-itemOffset + centerOffset - itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + itemTotalWidth], 
+      [0.8, 1, 0.8]
+  );
+  const itemZ = useTransform(combinedPos, 
+      [-itemOffset + centerOffset - itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + itemTotalWidth], 
+      [-200, 0, -200]
+  );
+  const itemOpacity = useTransform(combinedPos, 
+      [-itemOffset + centerOffset - 2 * itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + 2 * itemTotalWidth], 
+      [0, 1, 0]
+  );
+
+  return (
+    <motion.div
+      style={{
+        width: itemWidth,
+        height: itemHeight,
+        rotateY: itemRotation,
+        scale: itemScale,
+        z: itemZ,
+        opacity: itemOpacity,
+      }}
+      className="relative flex-shrink-0 group rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black"
+      onClick={() => onClick(item.videoId)}
+    >
+      <Image
+        src={`https://i.ytimg.com/vi/${item.videoId}/maxresdefault.jpg`}
+        alt={item.title}
+        fill
+        className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+      />
+      
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          className="p-4 rounded-full bg-primary/20 backdrop-blur-md border border-primary/40 w-fit mb-4 group-hover:scale-110 transition-transform duration-300"
+        >
+          <Play className="w-6 h-6 text-primary fill-primary" />
+        </motion.div>
+        <h3 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors duration-300">
+          {item.title}
+        </h3>
+      </div>
+
+      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+    </motion.div>
+  );
+}
+
 export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -47,10 +126,13 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
   // Map scroll progress to a rotational offset
   const scrollOffset = useTransform(scrollYProgress, [0, 1], [itemTotalWidth, -itemTotalWidth]);
 
+  // Combined position for all items to reactive to
+  const combinedPos = useTransform([springX, scrollOffset], ([sx, so]) => (sx as number) + (so as number));
+
   const handleDragStart = () => setIsDragging(true);
   
   const handleDragEnd = (_: any, info: any) => {
-    setTimeout(() => setIsDragging(false), 50); // Small delay to prevent immediate click
+    setTimeout(() => setIsDragging(false), 50);
     
     const velocity = info.velocity.x;
     const currentX = x.get() - centerOffset;
@@ -59,18 +141,13 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
     if (Math.abs(velocity) > 500) {
         newIndex = velocity > 0 ? active - 1 : active + 1;
     }
-
-    // Wrap index within the displayItems range if needed
-    // But setActive should really be based on the middle set for stability
     setActive(newIndex);
   };
 
-  // Sync scroll and handle infinite wrapping
   useEffect(() => {
-    // Initial position: center of the middle set
     x.set(-(middleIndexOffset * itemTotalWidth) + centerOffset);
     setActive(middleIndexOffset);
-  }, []);
+  }, [middleIndexOffset, itemTotalWidth, centerOffset, x]);
 
   useEffect(() => {
     x.set(-(active * itemTotalWidth) + centerOffset);
@@ -94,76 +171,24 @@ export function CurvedCarousel({ items, title, subtitle }: CurvedCarouselProps) 
       >
         <motion.div
           drag="x"
-          style={{ x: useTransform([springX, scrollOffset], ([sx, so]) => (sx as number) + (so as number)), left: "50%" }}
+          style={{ x: combinedPos, left: "50%" }}
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
           className="absolute flex gap-8 items-center"
         >
-          {displayItems.map((item, index) => {
-            const itemOffset = index * itemTotalWidth;
-            
-            // Transform logic relative to the combined springX + scrollOffset
-            const combinedPos = useTransform([springX, scrollOffset], ([sx, so]) => (sx as number) + (so as number));
-            
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const itemRotation = useTransform(combinedPos, 
-                [-itemOffset + centerOffset - itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + itemTotalWidth], 
-                [-45, 0, 45]
-            );
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const itemScale = useTransform(combinedPos, 
-                [-itemOffset + centerOffset - itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + itemTotalWidth], 
-                [0.8, 1, 0.8]
-            );
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const itemZ = useTransform(combinedPos, 
-                [-itemOffset + centerOffset - itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + itemTotalWidth], 
-                [-200, 0, -200]
-            );
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const itemOpacity = useTransform(combinedPos, 
-                [-itemOffset + centerOffset - 2 * itemTotalWidth, -itemOffset + centerOffset, -itemOffset + centerOffset + 2 * itemTotalWidth], 
-                [0, 1, 0]
-            );
-
-            return (
-              <motion.div
-                key={`${item.id}-${index}`}
-                style={{
-                  width: itemWidth,
-                  height: itemHeight,
-                  rotateY: itemRotation,
-                  scale: itemScale,
-                  z: itemZ,
-                  opacity: itemOpacity,
-                }}
-                className="relative flex-shrink-0 group rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black"
-                onClick={() => handleCardClick(item.videoId)}
-              >
-                <Image
-                  src={`https://i.ytimg.com/vi/${item.videoId}/maxresdefault.jpg`}
-                  alt={item.title}
-                  fill
-                  className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
-                />
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    className="p-4 rounded-full bg-primary/20 backdrop-blur-md border border-primary/40 w-fit mb-4 group-hover:scale-110 transition-transform duration-300"
-                  >
-                    <Play className="w-6 h-6 text-primary fill-primary" />
-                  </motion.div>
-                  <h3 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                </div>
-
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              </motion.div>
-            );
-          })}
+          {displayItems.map((item, index) => (
+            <CarouselCard
+              key={`${item.id}-${index}`}
+              item={item}
+              index={index}
+              combinedPos={combinedPos}
+              itemWidth={itemWidth}
+              itemHeight={itemHeight}
+              itemTotalWidth={itemTotalWidth}
+              centerOffset={centerOffset}
+              onClick={handleCardClick}
+            />
+          ))}
         </motion.div>
       </div>
 
