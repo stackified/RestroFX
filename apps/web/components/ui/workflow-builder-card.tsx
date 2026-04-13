@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
+import Image from "next/image";
 
 interface WorkflowBuilderCardProps {
   imageUrl: string;
@@ -45,9 +46,11 @@ export const WorkflowBuilderCard = ({
       <Card className="overflow-hidden rounded-[2.5rem] bg-white/40 backdrop-blur-xl border border-white/20 shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:border-primary/30">
         {/* Image Section */}
         <div className="relative h-56 w-full overflow-hidden">
-          <img
+          <Image
             src={imageUrl}
             alt={title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>

@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { BackgroundScroll } from "@/components/ui/background-scroll";
 
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Clock, MapPin, Send, ArrowRight, Instagram, Youtube, Twitter, Facebook } from "lucide-react";
+import { Mail, Clock, MapPin, Send, ArrowRight, Instagram, Youtube, Twitter, Facebook } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
