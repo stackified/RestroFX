@@ -13,7 +13,7 @@ interface CarouselItem {
 
 interface CurvedCarouselProps {
   items: CarouselItem[];
-  title?: string;
+  title?: string | React.ReactNode;
   subtitle?: string;
 }
 

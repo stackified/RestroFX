@@ -8,7 +8,6 @@ import {
 } from "@crimsonfx/ui";
 import { motion } from "framer-motion";
 import {
-  ShieldCheck,
   ArrowDownToLine,
   MonitorSmartphone,
   Gamepad2,
@@ -17,12 +16,6 @@ import {
 import { GlowCard } from "@/components/ui/glow-card";
 
 const faqs = [
-  {
-    question: "Is RestroFX regulated?",
-    answer:
-      "Yes, RestroFX is a regulated broker operating in accordance with applicable financial regulations. We maintain strict compliance with regulatory requirements to ensure the security and protection of our clients' funds.",
-    icon: ShieldCheck
-  },
   {
     question: "How fast are withdrawals?",
     answer:

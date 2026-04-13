@@ -41,12 +41,12 @@ export function Footer() {
           <div className="lg:col-span-5">
             <div className="max-w-md space-y-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Restro FX is an international broker regulated by the International Financial Centre,
-                ensuring transparency and compliance with international standards of the company&apos;s services.
+                Restro FX is an international broker ensuring transparency and compliance
+                with international standards of the company&apos;s services.
               </p>
               <div className="text-[10px] text-muted-foreground/60 leading-tight space-y-1">
-                <p>Registration number: 2024-00388</p>
-                <p>Copyright {new Date().getFullYear()} Restro FX LTD. All rights reserved.</p>
+                <p>Registration number: 2025-00922</p>
+                <p>© 2026 Restro FX Ltd. All rights reserved.</p>
                 <p>Registration Address: Rodney Village, Rodney Bay, Gros Islet, St. Lucia</p>
               </div>
             </div>
@@ -103,36 +103,19 @@ export function Footer() {
           <Link href="https://portal.restrofx.com/register" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-primary hover:underline">Opening an Account</Link>
         </div>
 
-        {/* Detailed Disclaimers */}
-        <div className="space-y-6 text-[10px] text-muted-foreground opacity-60 leading-relaxed mb-12">
+        {/* Regulatory & Risk Information */}
+        <div className="space-y-6 text-[10px] text-muted-foreground leading-relaxed mb-12 border-t border-foreground/5 pt-8">
           <p>
-            Restro FX LTD is an Authorized Financial Services Provider (&quot;FSP&quot;) licensed and regulated by the Financial Sector Conduct Authority (&quot;FSCA&quot;) (FSP No. 48827).
-          </p>
-          <p>
-            Restro FX LTD is an International Broker regulated by the International Financial Centre of St. Lucia, ensuring transparency and compliance with international standards of the company&apos;s services and provides access to trading services in accordance with applicable laws and regulations.
+            <strong className="text-foreground">Risk Warning:</strong> Trading Contracts for Difference (CFDs) and Forex instruments involves a high level of risk and may not be suitable for all investors. You may lose more than your initial deposit. Please ensure you fully understand the risks involved before trading.
           </p>
           <p>
-            Client accounts are onboarded through Restro FX LTD, a company incorporated in saint lucia (Reg. No. 2024-00388). By opening an account with Restro FX LTD, you confirm that you are at least eighteen (18) years of age (or the legal age in your jurisdiction), that you are acting of your own free will without solicitation from Restro FX, and that you will ensure compliance with all applicable local laws and regulations.
+            Client accounts are onboarded through Restro FX Ltd., a company incorporated in Saint Lucia (Reg. No. 2025-00922). By opening an account with Restro FX Ltd., you confirm that you are at least eighteen (18) years of age (or the legal age in your jurisdiction), that you are acting of your own free will without solicitation from Restro FX, and that you will ensure compliance with all applicable local laws and regulations.
           </p>
-        </div>
-
-        {/* Risk Warning Box */}
-        <div className="bg-muted/30 border border-foreground/10 rounded-2xl p-6 md:p-8 space-y-4">
-          <div className="flex items-start gap-4">
-            <div className="text-primary mt-0.5">ⓘ</div>
-            <p className="text-[10px] text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Risk Warning:</strong> Trading Forex and CFDs carries a high level of risk to your capital and you should only trade with funds you can afford to lose. Trading Forex and CFDs may not be suitable for all investors, so please ensure that you fully understand the risks involved and seek independent advice if necessary. Please read and ensure you fully understand our risk disclosure.
-            </p>
-          </div>
-          <p className="pl-8 text-[10px] text-muted-foreground leading-relaxed">
-            <strong className="text-foreground text-xs block mb-1">Restricted Countries:</strong>
-            Restro FX LTD does not provide services for residents of certain countries, including Israel, New Zealand, Iran, and North Korea (Democratic People&apos;s Republic of Korea), or any country where such distribution or use would be contrary to local law or regulation. Furthermore, Restro FX LTD does not solicit citizens of the United States of America. Please check with your local jurisdiction to determine if you are permitted to open an account with Restro FX LTD.
+          <p>
+            Restro FX Ltd. does not offer services to residents of jurisdictions where such services are restricted or prohibited by law, including but not limited to the United States of America.
           </p>
-          <p className="pl-8 text-[10px] text-muted-foreground leading-relaxed italic">
-            It is your responsibility to determine whether you are permitted to open an account with Restro FX LTD.
-          </p>
-          <p className="pl-8 text-[10px] text-muted-foreground/60 leading-relaxed">
-            <strong className="text-foreground opacity-100 non-italic">Disclaimer:</strong> The information provided herein reflects personal opinions and ideas and does not constitute a recommendation to purchase financial services or guarantee the performance or outcomes of future transactions. This material is not intended to be interpreted as financial advice. While every effort has been made to ensure the accuracy, validity and completeness of the information, no guarantees are provided and no liability is accepted for any losses incurred as a result of investments made based on this material. Nothing contained on this site should be considered or construed as professional advice from Restro FX LTD, its affiliates, directors, officers, or employees.
+          <p className="pt-4 opacity-60">
+            © 2026 Restro FX Ltd. All rights reserved.
           </p>
         </div>
 

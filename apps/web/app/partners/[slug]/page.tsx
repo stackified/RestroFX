@@ -10,6 +10,7 @@ import { PartnerFeatures } from "@/components/sections/partner-features";
 import { TrustMetricsSection } from "@/components/sections/trust-metrics-section";
 import { BackgroundScroll } from "@/components/ui/background-scroll";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { WorkflowBuilderCard } from "@/components/ui/workflow-builder-card";
 
 interface PartnerData {
   name: string;
@@ -87,13 +88,69 @@ export default function PartnerProfilePage({ params }: { params: { slug: string 
         )}
 
         {partner.featuredVideos && (
-          <ScrollReveal>
-            <CurvedCarousel 
-              items={partner.featuredVideos} 
-              title="Our Latest Insights"
-              subtitle="Watch the journey unfold. From strategy deep dives to lifestyle updates, stay connected with our partner's latest content."
-            />
-          </ScrollReveal>
+          <>
+            <ScrollReveal>
+              <CurvedCarousel 
+                items={partner.featuredVideos} 
+                title={<>Our Latest <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Insights</span></>}
+                subtitle="Watch the journey unfold. From strategy deep dives to lifestyle updates, stay connected with our partner's latest content."
+              />
+            </ScrollReveal>
+
+            {/* Instructional Cards Section */}
+            <div className="container mx-auto max-w-7xl px-4 mb-20">
+              <ScrollReveal>
+                <div className="text-center mb-16">
+                  <h2 className="text-3xl md:text-5xl font-bold font-heading mb-6 tracking-tight">
+                    Getting <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Started</span>
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                    Everything you need to know to set up your account, fund your wallet, and start trading with confidence.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <WorkflowBuilderCard
+                    title="How to Deposit"
+                    description={
+                      <ul className="space-y-2 list-disc list-inside">
+                        <li>Login to your RestroFX Portal</li>
+                        <li>Click on &apos;Deposit Funds&apos;</li>
+                        <li>Select your preferred method</li>
+                        <li>Follow the on-screen steps</li>
+                      </ul>
+                    }
+                    imageUrl="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=2940&auto=format&fit=crop"
+                  />
+
+                  <WorkflowBuilderCard
+                    title="Take Your First Trade"
+                    description={
+                      <ul className="space-y-2 list-disc list-inside">
+                        <li>Open TradeLocker Platform</li>
+                        <li>Select your trading pair</li>
+                        <li>Choose your lot size</li>
+                        <li>Click Buy or Sell to execute</li>
+                      </ul>
+                    }
+                    imageUrl="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2940&auto=format&fit=crop"
+                  />
+
+                  <WorkflowBuilderCard
+                    title="Login TradeLocker"
+                    description={
+                      <ul className="space-y-2 list-disc list-inside">
+                        <li>Locate credentials in your email</li>
+                        <li>Go to TradeLocker login page</li>
+                        <li>Enter your email and password</li>
+                        <li>Select the RestroFX Server</li>
+                      </ul>
+                    }
+                    imageUrl="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2940&auto=format&fit=crop"
+                  />
+                </div>
+              </ScrollReveal>
+            </div>
+          </>
         )}
 
         <div className="py-4 sm:py-6">
