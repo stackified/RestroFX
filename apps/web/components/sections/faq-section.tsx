@@ -18,12 +18,6 @@ import { GlowCard } from "@/components/ui/glow-card";
 
 const faqs = [
   {
-    question: "Is RestroFX regulated?",
-    answer:
-      "Yes, RestroFX is a regulated broker operating in accordance with applicable financial regulations. We maintain strict compliance with regulatory requirements to ensure the security and protection of our clients' funds.",
-    icon: ShieldCheck
-  },
-  {
     question: "How fast are withdrawals?",
     answer:
       "Withdrawals are typically processed within 24 hours. The time it takes for funds to reach your account depends on your payment method, with most methods completing within 1-3 business days.",

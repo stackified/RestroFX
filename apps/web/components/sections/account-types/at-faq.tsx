@@ -22,11 +22,6 @@ import Link from "next/link";
 
 const faqs = [
     {
-        question: "Is RestroFX regulated?",
-        answer: "Yes, we are a regulated broker operating in accordance with applicable financial regulations, ensuring the security of your funds.",
-        icon: ShieldCheck
-    },
-    {
         question: "How fast are withdrawals?",
         answer: "Withdrawals are typically processed within 24 hours. Most payment methods complete within 1-3 business days.",
         icon: ArrowDownToLine
