@@ -8,7 +8,6 @@ import {
 } from "@crimsonfx/ui";
 import { motion } from "framer-motion";
 import {
-    ShieldCheck,
     ArrowDownToLine,
     MonitorSmartphone,
     Gamepad2,
