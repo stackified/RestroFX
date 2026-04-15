@@ -29,10 +29,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://stackified.github.io/RestroFX'),
   title: "Restro FX",
   description: "Restro FX is committed to redefining your trading experience by merging deep market expertise with advanced trading platforms and tools.",
-  icons: {
-    icon: '/RestroFX/favicon.png',
-    apple: '/RestroFX/icon.png',
-  },
   openGraph: {
     title: "Restro FX",
     description: "Restro FX is committed to redefining your trading experience by merging deep market expertise with advanced trading platforms and tools.",
