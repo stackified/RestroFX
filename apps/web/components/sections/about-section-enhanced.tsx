@@ -116,7 +116,7 @@ export function AboutSectionEnhanced() {
                 customVariants={revealVariants}
                 className="flex items-center gap-2 mb-2 sm:text-base text-xs"
               >
-                <span className="text-primary font-bold font-numbers">&lt;30ms</span>
+                <span className="text-primary font-bold font-numbers">&lt;15ms</span>
                 <span className="text-muted-foreground">Execution Speed</span>
                 <span className="text-border lg:hidden block">|</span>
               </TimelineContent>

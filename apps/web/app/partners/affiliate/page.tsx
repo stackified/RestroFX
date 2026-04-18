@@ -88,7 +88,7 @@ export default function AffiliateProgramPage() {
             subtitle: "Professional Tier",
             description: "Increased commission for high-performing affiliates",
             features: [
-                "Earn $10 per lot",
+                "Earn $15 per lot",
                 "Lifetime recurring commissions",
                 "Dedicated account manager",
                 "Best for active partners"
@@ -101,7 +101,7 @@ export default function AffiliateProgramPage() {
             subtitle: "VIP Tier",
             description: "Maximum rewards for established partners and influencers",
             features: [
-                "Earn $20+ per lot",
+                "Earn upto $25 per lot",
                 "Lifetime recurring commissions",
                 "Custom promotion materials",
                 "Premium VIP support"
@@ -172,7 +172,7 @@ export default function AffiliateProgramPage() {
         },
         {
             question: "When do I get paid?",
-            answer: "Commissions are paid weekly or monthly depending on your preference, with a minimum payout threshold of $100.",
+            answer: "Commissions are paid weekly or monthly depending on your preference, with a minimum payout threshold of $25.",
             icon: CreditCard
         },
         {
@@ -182,7 +182,7 @@ export default function AffiliateProgramPage() {
         },
         {
             question: "What makes a qualified trader?",
-            answer: "A qualified trader is someone who registers through your link, verifies their account, and makes a minimum deposit of $100.",
+            answer: "A qualified trader is someone who registers through your link, verifies their account, and makes a minimum deposit of $25.",
             icon: UserCheck
         }
     ];

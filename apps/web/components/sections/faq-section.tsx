@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "What leverage is available?",
     answer:
-      "We offer leverage up to 1:500, depending on your account type and the instruments you trade. Leverage allows you to control larger positions with a smaller initial investment, but it's important to understand the risks involved.",
+      "We offer leverage up to 1:1000, depending on your account type and the instruments you trade. Leverage allows you to control larger positions with a smaller initial investment, but it's important to understand the risks involved.",
     icon: Zap
   },
 ];

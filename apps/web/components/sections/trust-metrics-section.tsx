@@ -6,7 +6,7 @@ import { AnimatedCounter } from "@/components/ui/animated-counter";
 const metrics = [
   { label: "Traders Worldwide", value: "25K+", suffix: "" },
   { label: "Withdrawals Processed", value: "$100K+", suffix: "" },
-  { label: "Execution Speed", value: "<30", suffix: "ms" },
+  { label: "Execution Speed", value: "<15", suffix: "ms" },
   { label: "Partner Network", value: "150+", suffix: "" },
 ];
 

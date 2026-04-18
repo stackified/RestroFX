@@ -37,7 +37,7 @@ const faqs = [
     },
     {
         question: "What leverage is available?",
-        answer: "We offer leverage up to 1:500, depending on your account type and traded instrument.",
+        answer: "We offer leverage up to 1:1000, depending on your account type and traded instrument.",
         icon: Zap
     },
 ];

@@ -13,7 +13,7 @@ const markets = [
         icon: TrendingUp,
         instruments: ["EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD", "USD/CAD"],
         spread: "From 0.0 pips",
-        leverage: "Up to 1:500",
+        leverage: "Up to 1:1000",
     },
     {
         id: "indices",

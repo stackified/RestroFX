@@ -28,7 +28,7 @@ const stats = [
     },
     {
         label: "Execution Speed",
-        value: "<30",
+        value: "<15",
         suffix: "ms",
         icon: Clock,
         description: "Ultra-fast execution"
