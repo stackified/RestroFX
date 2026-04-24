@@ -1,28 +1,29 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@crimsonfx/ui";
 import { Button } from "@crimsonfx/ui";
 import { AnimatedCard } from "@/components/ui/animated-card";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import type { AccountType } from "@crimsonfx/types";
-import { TrendingUp, Zap, Shield, ArrowRight } from "lucide-react";
+import { TrendingUp, Zap, Shield, ArrowRight, Info, X, CheckCircle2 } from "lucide-react";
 
 const accountTypes: AccountType[] = [
   {
     id: "bonus",
-    name: "Bonus Account",
+    name: "PowerUp Account",
     spread: "From 1.2 pips",
-    commission: "$6 / per lot",
-    leverage: "Up to 1:200",
+    commission: "$6 RT per lot",
+    leverage: "1:100 (Majors)",
     executionType: "Market",
-    minimumDeposit: "$100",
+    minimumDeposit: "$250",
   },
   {
     id: "ecn-raw",
     name: "ECN Raw",
     spread: "From 0.0 pips",
-    commission: "Varies - $6 / per lot",
+    commission: "$6 / per lot",
     leverage: "Up to 1:1000",
     executionType: "ECN",
     minimumDeposit: "$25",
@@ -46,6 +47,21 @@ const accountIcons: Record<string, typeof Zap> = {
 };
 
 export function AccountTypesSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const bonusRules = [
+    { rule: "Minimum deposit to receive bonus", detail: "$250 — below this, no bonus credited" },
+    { rule: "Maximum deposit for bonus", detail: "$5,000 — deposits above receive bonus on first $5,000 only" },
+    { rule: "Bonus credited instantly", detail: "On deposit confirmation — same day" },
+    { rule: "Bonus is buying power only", detail: "Never withdrawable cash — used as margin credit" },
+    { rule: "Withdrawal request", detail: "Bonus is removed upon cash withdrawal" },
+    { rule: "Client re-deposits", detail: "Fresh 125% bonus stacks on existing balance" },
+    { rule: "Multiple deposits", detail: "Each deposit tracked separately with its own bonus" },
+    { rule: "Affiliate rebate cap", detail: "$10 per qualifying lot" },
+    { rule: "Qualifying lot rule", detail: "Trade must be open minimum 31 seconds" },
+    { rule: "Bonus never expires", detail: "Buying power remains indefinitely while account is active" },
+  ];
+
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -165,7 +181,7 @@ export function AccountTypesSection() {
                       </div>
                     </CardContent>
 
-                    <CardFooter className="relative z-10 pt-2 pb-6 px-4 sm:px-6 flex-shrink-0">
+                    <CardFooter className="relative z-10 pt-2 pb-6 px-4 sm:px-6 flex flex-col gap-3 flex-shrink-0">
                       <Button
                         className={`w-full rounded-full h-12 sm:h-14 text-base sm:text-lg font-bold transition-all duration-500 ${account.popular
                           ? "bg-primary hover:bg-red-700 shadow-[0_20px_50px_rgba(220,38,38,0.2)] hover:shadow-[0_30px_60px_rgba(220,38,38,0.3)] text-white hover:-translate-y-1"
@@ -182,6 +198,16 @@ export function AccountTypesSection() {
                           </span>
                         </Link>
                       </Button>
+
+                      {account.id === "bonus" && (
+                        <button
+                          onClick={() => setIsModalOpen(true)}
+                          className="flex items-center justify-center gap-2 text-sm font-semibold text-red-600 hover:text-red-700 transition-colors py-2"
+                        >
+                          <Info className="h-4 w-4" />
+                          View Bonus Credit Rules
+                        </button>
+                      )}
                     </CardFooter>
                   </Card>
                 </motion.div>
@@ -190,6 +216,82 @@ export function AccountTypesSection() {
           })}
         </div>
       </div>
+
+      {/* Bonus Rules Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsModalOpen(false)}
+              className="absolute inset-0 bg-background/80 backdrop-blur-md"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-2xl bg-card border border-border shadow-2xl rounded-3xl overflow-hidden flex flex-col max-h-[90vh]"
+            >
+              <div className="p-6 sm:p-8 border-b border-border flex items-center justify-between bg-muted/30">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-red-600/10 text-red-600">
+                    <Zap className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold font-heading">PowerUp Account Rules</h3>
+                    <p className="text-sm text-muted-foreground">125% Bonus Credit Terms & Conditions</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="p-2 rounded-full hover:bg-muted transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+
+              <div className="p-6 sm:p-8 overflow-y-auto">
+                <div className="grid gap-4">
+                  {bonusRules.map((rule, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                      className="flex items-start gap-4 p-4 rounded-2xl bg-muted/20 border border-border/50 hover:border-red-600/30 transition-colors group"
+                    >
+                      <div className="mt-1">
+                        <CheckCircle2 className="h-5 w-5 text-red-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-foreground group-hover:text-red-600 transition-colors">{rule.rule}</h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{rule.detail}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                <div className="mt-8 p-6 rounded-2xl bg-red-600/5 border border-red-600/20">
+                  <p className="text-xs text-muted-foreground leading-relaxed text-center italic">
+                    Note: The PowerUp bonus is designed solely to increase your trading capacity and margin. It cannot be withdrawn or converted to cash. Risk warning: Trading involves significant risk.
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-6 border-t border-border bg-muted/30">
+                <Button 
+                  className="w-full rounded-full h-12 text-lg font-bold" 
+                  onClick={() => setIsModalOpen(false)}
+                >
+                  I Understand
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

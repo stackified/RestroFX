@@ -9,18 +9,18 @@ import type { AccountType } from "@crimsonfx/types";
 const accountTypes: AccountType[] = [
     {
         id: "bonus",
-        name: "Bonus Account",
+        name: "PowerUp Account",
         spread: "From 1.2 pips",
-        commission: "$6 / per lot",
-        leverage: "Up to 1:200",
+        commission: "$6 RT per lot",
+        leverage: "1:100 (Majors)",
         executionType: "Market",
-        minimumDeposit: "$100",
+        minimumDeposit: "$250",
     },
     {
         id: "ecn-raw",
         name: "ECN Raw",
         spread: "From 0.0 pips",
-        commission: "Varies - $6 / per lot",
+        commission: "$6 / per lot",
         leverage: "Up to 1:1000",
         executionType: "ECN",
         minimumDeposit: "$25",
@@ -135,7 +135,7 @@ export function AccountTypesComparison() {
                                             asChild
                                         >
                                             <Link href={`/register?account=${account.id}`}>
-                                                Select {account.id === "ecn-raw" ? "Raw" : account.id === "bonus" ? "Bonus" : "Standard"}
+                                                Select {account.id === "ecn-raw" ? "Raw" : account.id === "bonus" ? "PowerUp" : "Standard"}
                                             </Link>
                                         </Button>
                                     </div>

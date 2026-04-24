@@ -77,11 +77,7 @@ export function HeroSectionEnhanced({
               transition={{ delay: 0.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.2] md:leading-[1.1] mb-6"
             >
-              {title.split(":").map((part, i) => (
-                <span key={i} className={part.includes("Restro FX") ? "bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent block md:inline" : ""}>
-                  {part}{i === 0 && part.includes("Restro FX") ? "" : i === 0 ? " :" : ""}
-                </span>
-              ))}
+              {title}
             </motion.h1>
 
             <motion.p

@@ -21,9 +21,9 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSectionEnhanced
-          eyebrow="Where Patience Meets Profit"
-          title="Restro FX: Redefining Your Trading Experience."
-          subtitle="Merge deep market expertise with advanced trading platforms. Algorithm-driven strategies and risk management to help you surpass your investment goals."
+          eyebrow="Redefining Buying Power"
+          title="Deposit $1,000. Trade like you have $225,000."
+          subtitle="The Prop Account by RestroFX. No challenge. No evaluation. No monthly fee. Just deposit and trade with 125% extra buying power."
           ctaLabel="Start Trading"
           ctaHref="https://portal.restrofx.com/register"
           secondaryCtaLabel="View Platforms"
