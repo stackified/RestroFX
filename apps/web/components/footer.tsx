@@ -19,10 +19,10 @@ export function Footer() {
             <span className="text-sm font-medium text-muted-foreground hidden lg:block">Follow for the latest updates.</span>
             <div className="flex items-center gap-4">
               {[
-                { icon: Instagram, href: "#" },
-                { icon: Youtube, href: "#" },
-                { icon: Twitter, href: "#" },
-                { icon: Facebook, href: "#" },
+                { icon: Instagram, href: "https://www.instagram.com/restrofx" },
+                { icon: Youtube, href: "https://www.youtube.com/@restrofx" },
+                { icon: Twitter, href: "https://x.com/restrofx" },
+                { icon: Facebook, href: "https://www.facebook.com/restrofx" },
               ].map((social, i) => (
                 <a
                   key={i}

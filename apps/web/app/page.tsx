@@ -21,8 +21,8 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSectionEnhanced
-          eyebrow="Redefining Buying Power"
-          title="Deposit $1,000. Trade like you have $225,000."
+          eyebrow=""
+          title="Restro FX Redefining Your Trading Experience."
           subtitle="The Prop Account by RestroFX. No challenge. No evaluation. No monthly fee. Just deposit and trade with 125% extra buying power."
           ctaLabel="Start Trading"
           ctaHref="https://portal.restrofx.com/register"

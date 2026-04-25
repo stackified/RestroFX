@@ -47,3 +47,7 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 
+
+# PowerUp Account Docs
+RestroFX PowerUp_Account_.md
+RestroFX PowerUp_Account_.pdf

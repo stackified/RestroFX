@@ -61,15 +61,17 @@ export function HeroSectionEnhanced({
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col items-start"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs md:text-sm font-bold mb-8 backdrop-blur-md"
-            >
-              <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-              {eyebrow}
-            </motion.div>
+            {eyebrow && (
+              <motion.div
+                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs md:text-sm font-bold mb-8 backdrop-blur-md"
+              >
+                <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                {eyebrow}
+              </motion.div>
+            )}
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -77,7 +79,17 @@ export function HeroSectionEnhanced({
               transition={{ delay: 0.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.2] md:leading-[1.1] mb-6"
             >
-              {title}
+              {title.split(" ").map((word, i) => {
+                const isBrand = word === "Restro" || word === "FX";
+                return (
+                  <span 
+                    key={i} 
+                    className={isBrand ? "bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent" : ""}
+                  >
+                    {word}{" "}
+                  </span>
+                );
+              })}
             </motion.h1>
 
             <motion.p
