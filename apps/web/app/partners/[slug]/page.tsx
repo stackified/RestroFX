@@ -30,7 +30,7 @@ const PARTNERS_DATA: Record<string, PartnerData> = {
     imageUrl: "/images/soloetv.png",
     quote: "Life is short and working for other people sucks",
     ctaMessage: "Trade with the broker I trust. Join me at RestroFX and experience trading the way it was meant to be. Raw spreads, lightning-fast execution, and a platform that puts you first.",
-    youtubeId: "01loBLlZRHw",
+    youtubeId: "FXUtCnCdEq4",
     ctaUrl: "https://portal.restrofx.com/r/nqehg2zv",
     featuredVideos: [
       { id: "1", videoId: "LdjfeDLhRiM", title: "$38k withdrawal in brought a lamborghini Then Went Left!" },

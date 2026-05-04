@@ -6,43 +6,66 @@ import Link from "next/link";
 import { Info } from "lucide-react";
 import type { AccountType } from "@crimsonfx/types";
 
-const accountTypes: AccountType[] = [
+const accountTypes: (AccountType & Record<string, any>)[] = [
     {
         id: "bonus",
         name: "PowerUp Account",
+        bestFor: "Building accounts faster with bonus capital",
+        minimumDeposit: "$250",
         spread: "From 1.2 pips",
         commission: "$6 RT per lot",
-        leverage: "1:100 (Majors)",
+        leverage: "Up to 1:100",
         executionType: "Market",
-        minimumDeposit: "$250",
+        bonus: "125% buying power",
+        easScalping: "Allowed",
+        hedging: "Allowed",
+        negativeBalance: "Yes",
+        platform: "TradeLocker"
     },
     {
         id: "ecn-raw",
         name: "ECN Raw",
+        bestFor: "Active traders, scalpers, EAs",
+        minimumDeposit: "$25",
         spread: "From 0.0 pips",
-        commission: "$6 / per lot",
+        commission: "$6 per lot",
         leverage: "Up to 1:1000",
         executionType: "ECN",
-        minimumDeposit: "$25",
+        bonus: "—",
+        easScalping: "Allowed",
+        hedging: "Allowed",
+        negativeBalance: "Yes",
+        platform: "TradeLocker",
         popular: true,
     },
     {
         id: "standard",
         name: "Standard Account",
+        bestFor: "All-around traders",
+        minimumDeposit: "$25",
         spread: "From 0.0 pips",
-        commission: "$9 / per lot",
+        commission: "$9 per lot",
         leverage: "Up to 1:1000",
         executionType: "Market",
-        minimumDeposit: "$25",
+        bonus: "—",
+        easScalping: "Allowed",
+        hedging: "Allowed",
+        negativeBalance: "Yes",
+        platform: "TradeLocker"
     },
 ];
 
 const features = [
+    { label: "Min. Deposit", key: "minimumDeposit" },
     { label: "Spread", key: "spread" },
     { label: "Commission", key: "commission" },
     { label: "Leverage", key: "leverage" },
     { label: "Execution", key: "executionType" },
-    { label: "Minimum Deposit", key: "minimumDeposit" },
+    { label: "Bonus", key: "bonus" },
+    { label: "EAs / Scalping", key: "easScalping" },
+    { label: "Hedging", key: "hedging" },
+    { label: "Negative balance protection", key: "negativeBalance" },
+    { label: "Platform", key: "platform" },
 ];
 
 export function AccountTypesComparison() {
@@ -79,9 +102,7 @@ export function AccountTypesComparison() {
                                         <div className="relative z-10 pt-4">
                                             <h3 className="text-base md:text-xl font-bold mb-1 md:mb-2 group-hover:text-red-600 transition-colors duration-300 truncate">{account.name}</h3>
                                             <p className="text-muted-foreground text-[10px] md:text-xs mb-4 md:mb-6 uppercase tracking-wider font-medium">
-                                                {account.id === "bonus" && "For Beginners"}
-                                                {account.id === "ecn-raw" && "For Professionals"}
-                                                {account.id === "standard" && "Balanced Choice"}
+                                                {(account as any).bestFor}
                                             </p>
                                             <Button
                                                 size="sm"

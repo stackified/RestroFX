@@ -10,10 +10,13 @@ import { motion } from "framer-motion";
 import {
     ArrowDownToLine,
     MonitorSmartphone,
-    Gamepad2,
     Zap,
     MessageCircle,
-    ArrowRight
+    ArrowRight,
+    UserCheck,
+    Layers,
+    Wallet,
+    Bot
 } from "lucide-react";
 import { GlowCard } from "@/components/ui/glow-card";
 import { Button } from "@crimsonfx/ui";
@@ -21,24 +24,39 @@ import Link from "next/link";
 
 const faqs = [
     {
-        question: "How fast are withdrawals?",
-        answer: "Withdrawals are typically processed within 24 hours. Most payment methods complete within 1-3 business days.",
+        question: "Which account should I choose?",
+        answer: "It depends on your style. If you want extra trading power from a smaller deposit, go with PowerUp. If you're an active or professional trader chasing the tightest possible spreads, ECN Raw. If you want a balanced, flexible account with the lowest entry deposit and broad instrument access, Standard.",
+        icon: UserCheck
+    },
+    {
+        question: "Can I open more than one account?",
+        answer: "Yes. Many traders run a PowerUp for active swing trades and an ECN Raw for scalping. There's no limit on additional live accounts under the same profile.",
+        icon: Layers
+    },
+    {
+        question: "What's the minimum deposit to get started?",
+        answer: "$25 for ECN Raw and Standard. $250 for PowerUp (which is also the minimum to trigger the bonus).",
+        icon: Wallet
+    },
+    {
+        question: "Are EAs and scalping allowed?",
+        answer: "Yes — across all three account types. Hedging is also permitted.",
+        icon: Bot
+    },
+    {
+        question: "How is the PowerUp bonus paid out?",
+        answer: "It isn't paid out — it's added to your margin as buying power, instantly on each qualifying deposit. It increases your trading capacity rather than your withdrawable balance.",
+        icon: Zap
+    },
+    {
+        question: "Can I withdraw my profits?",
+        answer: "Yes. All trading profits are yours to withdraw at any time. On PowerUp, withdrawals process from your deposited cash and profits — the bonus credit doesn't withdraw with you.",
         icon: ArrowDownToLine
     },
     {
-        question: "Which platforms are available?",
-        answer: "We offer Lock It Trade and TradeLocker trading platforms on desktop, web, and mobile devices.",
+        question: "What platform do you use?",
+        answer: "All accounts run on TradeLocker — fast, modern, and built for serious trading.",
         icon: MonitorSmartphone
-    },
-    {
-        question: "Do you offer demo accounts?",
-        answer: "Yes, free demo accounts are available for you to practice trading strategies risk-free with virtual funds.",
-        icon: Gamepad2
-    },
-    {
-        question: "What leverage is available?",
-        answer: "We offer leverage up to 1:1000, depending on your account type and traded instrument.",
-        icon: Zap
     },
 ];
 

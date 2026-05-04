@@ -30,15 +30,14 @@ export function AccountTypesHero() {
                     </motion.div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-heading mb-6 tracking-tight leading-[1.1]">
-                        Accounts built for <br className="hidden md:block" />
+                        Choose the Account <br className="hidden md:block" />
                         <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">
-                            every trading style.
+                            That Trades Like You Do
                         </span>
                     </h1>
 
                     <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed drop-shadow-sm">
-                        Select the account type that best fits your trading style and experience level.
-                        Each account is designed to optimize your trading performance.
+                        Three account types. One trading platform. Pick the setup that matches your style — whether you&apos;re starting out, scaling up, or trading at full speed.
                     </p>
                 </motion.div>
             </div>

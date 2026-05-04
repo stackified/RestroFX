@@ -75,17 +75,18 @@ const platforms: Platform[] = [
   },
 ];
 
-const accountTypes: AccountTypeData[] = [
+const accountTypes: (AccountTypeData & Record<string, any>)[] = [
   {
     id: "bonus",
-    name: "Bonus Account",
+    name: "PowerUp Account",
     spread: "From 1.2 pips",
-    commission: "$6 / per lot",
-    leverage: "Up to 1:200",
+    commission: "$6 RT per lot",
+    leverage: "Up to 1:100",
     executionType: "Market",
-    minimumDeposit: "$100",
+    minimumDeposit: "$250",
+    bonus: "125% buying power",
     icon: Zap,
-    description: "Perfect for beginners",
+    description: "Trade bigger from day one",
     color: "from-green-500/10 to-green-600/10",
     borderColor: "border-green-500/20 hover:border-green-500/40",
   },
@@ -93,13 +94,13 @@ const accountTypes: AccountTypeData[] = [
     id: "ecn-raw",
     name: "ECN Raw",
     spread: "From 0.0 pips",
-    commission: "Varies - $6 / per lot",
+    commission: "$6 per lot",
     leverage: "Up to 1:1000",
     executionType: "ECN",
     minimumDeposit: "$25",
     popular: true,
     icon: TrendingUp,
-    description: "Best for professional traders",
+    description: "Raw spreads. Direct execution.",
     color: "from-red-600/10 to-red-700/20",
     borderColor: "border-red-600/40 hover:border-red-600/60",
   },
@@ -107,12 +108,12 @@ const accountTypes: AccountTypeData[] = [
     id: "standard",
     name: "Standard Account",
     spread: "From 0.0 pips",
-    commission: "$9 / per lot",
+    commission: "$9 per lot",
     leverage: "Up to 1:1000",
     executionType: "Market",
     minimumDeposit: "$25",
     icon: Shield,
-    description: "Balanced option for all traders",
+    description: "All-in-one access for every trader",
     color: "from-orange-500/10 to-orange-600/10",
     borderColor: "border-orange-500/20 hover:border-orange-500/40",
   },
@@ -437,6 +438,7 @@ export function PlatformSelectorSection() {
                                 { label: "Leverage", value: account.leverage },
                                 { label: "Execution", value: account.executionType },
                                 { label: "Min. Deposit", value: account.minimumDeposit },
+                                ...(account.id === "bonus" ? [{ label: "Bonus", value: account.bonus }] : [])
                               ].map((item, idx) => (
                                 <motion.div
                                   key={idx}
