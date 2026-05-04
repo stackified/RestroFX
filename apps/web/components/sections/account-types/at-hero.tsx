@@ -37,7 +37,7 @@ export function AccountTypesHero() {
                     </h1>
 
                     <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed drop-shadow-sm">
-                        Three account types. One trading platform. Pick the setup that matches your style — whether you're starting out, scaling up, or trading at full speed.
+                        Three account types. One trading platform. Pick the setup that matches your style — whether you&apos;re starting out, scaling up, or trading at full speed.
                     </p>
                 </motion.div>
             </div>

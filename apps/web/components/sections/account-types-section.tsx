@@ -84,7 +84,7 @@ export function AccountTypesSection() {
             Choose the Account That <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Trades Like You Do</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
-            Three account types. One trading platform. Pick the setup that matches your style — whether you're starting out, scaling up, or trading at full speed.
+            Three account types. One trading platform. Pick the setup that matches your style — whether you&apos;re starting out, scaling up, or trading at full speed.
           </p>
         </motion.div>
 

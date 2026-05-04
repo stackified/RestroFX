@@ -227,7 +227,7 @@ export function AccountDetailClient({ slug }: { slug: string }) {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading mb-6 sm:mb-8">Who It's For</h3>
+                                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading mb-6 sm:mb-8">Who It&apos;s For</h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {data.whoItsFor.map((item: string, i: number) => (
                                         <GlowCard key={i} className="p-6 rounded-2xl bg-card/50 border border-border/50 h-full flex flex-col group">
