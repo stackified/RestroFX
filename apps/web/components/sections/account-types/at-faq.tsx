@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 import {
     ArrowDownToLine,
     MonitorSmartphone,
-    Gamepad2,
     Zap,
     MessageCircle,
     ArrowRight,
