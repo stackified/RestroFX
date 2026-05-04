@@ -15,7 +15,7 @@ const accountTypes: AccountType[] = [
     name: "PowerUp Account",
     spread: "From 1.2 pips",
     commission: "$6 RT per lot",
-    leverage: "1:100 (Majors)",
+    leverage: "Up to 1:100 (Majors)",
     executionType: "Market",
     minimumDeposit: "$250",
   },
@@ -23,7 +23,7 @@ const accountTypes: AccountType[] = [
     id: "ecn-raw",
     name: "ECN Raw",
     spread: "From 0.0 pips",
-    commission: "$6 / per lot",
+    commission: "$6 per lot",
     leverage: "Up to 1:1000",
     executionType: "ECN",
     minimumDeposit: "$25",
@@ -33,7 +33,7 @@ const accountTypes: AccountType[] = [
     id: "standard",
     name: "Standard Account",
     spread: "From 0.0 pips",
-    commission: "$9 / per lot",
+    commission: "$9 per lot",
     leverage: "Up to 1:1000",
     executionType: "Market",
     minimumDeposit: "$25",
@@ -81,10 +81,10 @@ export function AccountTypesSection() {
             <span>Account Types</span>
           </motion.div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-4 tracking-tight">
-            Choose Your Trading <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Edge</span>
+            Choose the Account That <span className="bg-gradient-to-b from-red-500 via-red-600 to-red-800 bg-clip-text text-transparent">Trades Like You Do</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
-            Select the account type that best fits your trading style and experience level. Each account is designed to optimize your trading performance.
+            Three account types. One trading platform. Pick the setup that matches your style — whether you're starting out, scaling up, or trading at full speed.
           </p>
         </motion.div>
 
@@ -149,9 +149,9 @@ export function AccountTypesSection() {
                             {account.name}
                           </CardTitle>
                           <p className="text-xs sm:text-sm text-muted-foreground">
-                            {account.id === "bonus" ? "Perfect for beginners" :
-                              account.id === "ecn-raw" ? "Best for professional traders" :
-                                "Balanced option for all traders"}
+                            {account.id === "bonus" ? "Trade bigger from day one" :
+                              account.id === "ecn-raw" ? "Raw spreads. Direct execution." :
+                                "All-in-one access for every trader"}
                           </p>
                         </div>
                       </div>
@@ -165,6 +165,7 @@ export function AccountTypesSection() {
                           { label: "Leverage", value: account.leverage },
                           { label: "Execution", value: account.executionType },
                           { label: "Min. Deposit", value: account.minimumDeposit },
+                          ...(account.id === "bonus" ? [{ label: "Bonus", value: "125% buying power" }] : [])
                         ].map((item, idx) => (
                           <motion.div
                             key={idx}
@@ -197,6 +198,14 @@ export function AccountTypesSection() {
                             <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
                           </span>
                         </Link>
+                      </Button>
+
+                      <Button
+                          variant="ghost"
+                          className="w-full h-10 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full"
+                          asChild
+                      >
+                          <Link href={`/account-types/${account.id === "bonus" ? "powerup" : account.id}`}>Learn More</Link>
                       </Button>
 
                       {account.id === "bonus" && (
