@@ -7,16 +7,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { 
-  CreditCard, 
-  CheckCircle2, 
   AlertCircle, 
-  Clock, 
-  DollarSign, 
   ShieldCheck,
-  ArrowRight,
-  Play,
-  HelpCircle,
-  X
+  Play
 } from "lucide-react";
 import { Button, Card, CardContent } from "@crimsonfx/ui";
 import { OnboardingStepsSection } from "@/components/sections/onboarding-steps-section";
