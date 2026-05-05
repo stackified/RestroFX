@@ -14,7 +14,7 @@ export const accountDetails = {
     powerup: {
         id: "bonus", // for register link
         title: "PowerUp Account",
-        heroHeadline: "Deposit $1,000. Trade like you have $2,250.",
+        heroHeadline: "Deposit $5,000. Trade like you have $11,250.",
         heroDescription: "The PowerUp Account gives you 125% extra buying power on every qualifying deposit — automatically. No challenge. No evaluation. No monthly fees. Just deposit and trade.",
         whoItsFor: [
             "Newer traders who want more room to learn without risking more capital",

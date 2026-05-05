@@ -61,6 +61,12 @@ const tradingLinks: LinkItem[] = [
 		description: 'Forex, Indices, Crypto & more',
 		icon: BarChart,
 	},
+	{
+		title: 'Deposit Guide',
+		href: '/support/how-to-deposit-with-debit-cards',
+		description: 'Fund your account with a card',
+		icon: CreditCard,
+	},
 ];
 
 const companyLinks: LinkItem[] = [
