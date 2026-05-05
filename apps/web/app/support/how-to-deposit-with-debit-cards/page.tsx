@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { 
-  ChevronRight, 
   CreditCard, 
   CheckCircle2, 
   AlertCircle, 
