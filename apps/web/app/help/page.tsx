@@ -11,9 +11,16 @@ import {
   Video,
   FileText,
   Mail,
+  CreditCard,
 } from "lucide-react";
 
 const helpResources = [
+  {
+    name: "Card Deposits",
+    description: "Step-by-step guide on how to fund your account with a credit or debit card",
+    icon: CreditCard,
+    href: "/support/how-to-deposit-with-debit-cards",
+  },
   {
     name: "Getting Started",
     description: "Learn the basics of trading and using our platform",
