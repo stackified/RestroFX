@@ -56,6 +56,12 @@ const tradingLinks: LinkItem[] = [
 		icon: CreditCard,
 	},
 	{
+		title: 'PowerUp Account',
+		href: '/account-types/powerup',
+		description: 'Get 125% extra buying power',
+		icon: Layers,
+	},
+	{
 		title: 'Instruments',
 		href: '/markets',
 		description: 'Forex, Indices, Crypto & more',
