@@ -69,7 +69,7 @@ export const accountDetails = {
             { label: "Minimum deposit", value: "$250" },
             { label: "Bonus", value: "125% buying power on every qualifying deposit" },
             { label: "Maximum bonus per cycle", value: "$6,250" },
-            { label: "Commission", value: "$6 RT per lot" },
+            { label: "Commission", value: "$18 RT per lot" },
             { label: "Spread", value: "From 1.2 pips on majors" },
             { label: "Leverage (majors)", value: "Up to 1:100" },
             { label: "Execution", value: "Market execution" },
@@ -111,7 +111,7 @@ export const accountDetails = {
         ),
         specs: [
             { label: "Minimum deposit", value: "$25" },
-            { label: "Commission", value: "$6 per lot" },
+            { label: "Commission", value: "$18 per lot" },
             { label: "Spread", value: "From 0.0 pips" },
             { label: "Leverage", value: "Up to 1:1000" },
             { label: "Execution", value: "ECN" },
