@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@crimsonfx/ui";
 import { Button } from "@crimsonfx/ui";
 import { AnimatedCard } from "@/components/ui/animated-card";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import type { AccountType } from "@crimsonfx/types";
-import { TrendingUp, Zap, Shield, ArrowRight, Info, X, CheckCircle2 } from "lucide-react";
+import { TrendingUp, Zap, Shield, ArrowRight } from "lucide-react";
 
 const accountTypes: AccountType[] = [
   {
