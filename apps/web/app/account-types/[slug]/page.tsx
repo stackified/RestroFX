@@ -4,7 +4,7 @@ export function generateStaticParams() {
     return [
         { slug: "raw" },
         { slug: "ecn-standard-default" },
-        { slug: "ecn-standard-vip" },
+        { slug: "powerup" },
     ];
 }
 

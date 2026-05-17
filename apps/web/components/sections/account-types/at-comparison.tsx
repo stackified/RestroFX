@@ -11,11 +11,12 @@ const accountTypes: (AccountType & Record<string, any>)[] = [
         id: "raw",
         name: "RAW",
         bestFor: "Pro traders, scalpers, algos",
-        minimumDeposit: "$500",
+        minimumDeposit: "$25",
         spread: "From 0.1 pips",
         commission: "$18.00 RT",
         leverage: "Up to 1:500",
-        executionType: "A-Book Direct",
+        executionType: "Direct",
+        bonus: "—",
         easScalping: "Allowed",
         hedging: "Allowed",
         negativeBalance: "Yes",
@@ -25,11 +26,12 @@ const accountTypes: (AccountType & Record<string, any>)[] = [
         id: "ecn-standard-default",
         name: "ECN / Standard Default",
         bestFor: "Retail & Everyday Traders",
-        minimumDeposit: "$100",
+        minimumDeposit: "$25",
         spread: "From 2.0 pips",
         commission: "$4.00 RT",
         leverage: "Up to 1:500",
-        executionType: "Hybrid",
+        executionType: "Standard",
+        bonus: "—",
         easScalping: "Allowed",
         hedging: "Allowed",
         negativeBalance: "Yes",
@@ -37,14 +39,15 @@ const accountTypes: (AccountType & Record<string, any>)[] = [
         popular: true,
     },
     {
-        id: "ecn-standard-vip",
-        name: "ECN / Standard VIP",
-        bestFor: "High-Volume Retail & VIP Affiliates",
+        id: "bonus",
+        name: "PowerUp Account",
+        bestFor: "Building accounts faster with bonus capital",
         minimumDeposit: "$100",
-        spread: "From 3.5 pips",
-        commission: "$4.00 RT",
-        leverage: "Up to 1:500",
-        executionType: "Hybrid",
+        spread: "From 1.2 pips",
+        commission: "$18.00 RT",
+        leverage: "Up to 1:100 (Majors)",
+        executionType: "Standard",
+        bonus: "125% buying power",
         easScalping: "Allowed",
         hedging: "Allowed",
         negativeBalance: "Yes",
@@ -57,7 +60,7 @@ const features = [
     { label: "Spread", key: "spread" },
     { label: "Commission", key: "commission" },
     { label: "Leverage", key: "leverage" },
-    { label: "Execution", key: "executionType" },
+    { label: "Bonus", key: "bonus" },
     { label: "EAs / Scalping", key: "easScalping" },
     { label: "Hedging", key: "hedging" },
     { label: "Negative balance protection", key: "negativeBalance" },
@@ -152,7 +155,7 @@ export function AccountTypesComparison() {
                                             asChild
                                         >
                                             <Link href={`/register?account=${account.id}`}>
-                                                Select {account.id === "raw" ? "RAW" : account.id === "ecn-standard-default" ? "Default" : "VIP"}
+                                                Select {account.id === "raw" ? "RAW" : account.id === "ecn-standard-default" ? "Default" : "PowerUp"}
                                             </Link>
                                         </Button>
                                     </div>
