@@ -12,8 +12,8 @@ const markets = [
         description: "Trade major, minor, and exotic currency pairs with competitive spreads and fast execution.",
         icon: TrendingUp,
         instruments: ["EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD", "USD/CAD"],
-        spread: "From 0.0 pips",
-        leverage: "Up to 1:1000",
+        spread: "From 0.1 pips",
+        leverage: "Up to 1:500",
     },
     {
         id: "indices",

@@ -77,43 +77,42 @@ const platforms: Platform[] = [
 
 const accountTypes: (AccountTypeData & Record<string, any>)[] = [
   {
-    id: "bonus",
-    name: "PowerUp Account",
-    spread: "From 1.2 pips",
-    commission: "$6 RT per lot",
-    leverage: "Up to 1:100",
-    executionType: "Market",
-    minimumDeposit: "$250",
-    bonus: "125% buying power",
+    id: "raw",
+    name: "RAW",
+    spread: "From 0.1 pips",
+    commission: "$18.00 RT",
+    leverage: "Up to 1:500",
+    executionType: "A-Book Direct",
+    minimumDeposit: "$500",
     icon: Zap,
-    description: "Trade bigger from day one",
+    description: "Raw market access. Institutional spreads.",
     color: "from-green-500/10 to-green-600/10",
     borderColor: "border-green-500/20 hover:border-green-500/40",
   },
   {
-    id: "ecn-raw",
-    name: "ECN Raw",
-    spread: "From 0.0 pips",
-    commission: "$6 per lot",
-    leverage: "Up to 1:1000",
-    executionType: "ECN",
-    minimumDeposit: "$25",
+    id: "ecn-standard-default",
+    name: "ECN / Standard Default",
+    spread: "From 2.0 pips",
+    commission: "$4.00 RT",
+    leverage: "Up to 1:500",
+    executionType: "Hybrid",
+    minimumDeposit: "$100",
     popular: true,
     icon: TrendingUp,
-    description: "Raw spreads. Direct execution.",
+    description: "Competitive conditions for all.",
     color: "from-red-600/10 to-red-700/20",
     borderColor: "border-red-600/40 hover:border-red-600/60",
   },
   {
-    id: "standard",
-    name: "Standard Account",
-    spread: "From 0.0 pips",
-    commission: "$9 per lot",
-    leverage: "Up to 1:1000",
-    executionType: "Market",
-    minimumDeposit: "$25",
+    id: "ecn-standard-vip",
+    name: "ECN / Standard VIP",
+    spread: "From 3.5 pips",
+    commission: "$4.00 RT",
+    leverage: "Up to 1:500",
+    executionType: "Hybrid",
+    minimumDeposit: "$100",
     icon: Shield,
-    description: "All-in-one access for every trader",
+    description: "Premium structure for VIP clients.",
     color: "from-orange-500/10 to-orange-600/10",
     borderColor: "border-orange-500/20 hover:border-orange-500/40",
   },
@@ -432,14 +431,13 @@ export function PlatformSelectorSection() {
 
                           <CardContent className="relative z-10 pt-0 pb-14 px-4 sm:px-6">
                             <div className="space-y-0 text-sm">
-                              {[
-                                { label: "Spread", value: account.spread },
-                                { label: "Commission", value: account.commission },
-                                { label: "Leverage", value: account.leverage },
-                                { label: "Execution", value: account.executionType },
-                                { label: "Min. Deposit", value: account.minimumDeposit },
-                                ...(account.id === "bonus" ? [{ label: "Bonus", value: account.bonus }] : [])
-                              ].map((item, idx) => (
+                                {[
+                                  { label: "Spread", value: account.spread },
+                                  { label: "Commission", value: account.commission },
+                                  { label: "Leverage", value: account.leverage },
+                                  { label: "Execution", value: account.executionType },
+                                  { label: "Min. Deposit", value: account.minimumDeposit }
+                                ].map((item, idx) => (
                                 <motion.div
                                   key={idx}
                                   initial={{ opacity: 0, x: -10 }}

@@ -11,93 +11,25 @@ import { motion } from "framer-motion";
 import { GlowCard } from "@/components/ui/glow-card";
 
 export const accountDetails = {
-    powerup: {
-        id: "bonus", // for register link
-        title: "PowerUp Account",
-        heroHeadline: "Deposit $5,000. Trade like you have $11,250.",
-        heroDescription: "The PowerUp Account gives you 125% extra buying power on every qualifying deposit — automatically. No challenge. No evaluation. No monthly fees. Just deposit and trade.",
-        whoItsFor: [
-            "Newer traders who want more room to learn without risking more capital",
-            "Active traders who want to scale position size without scaling deposits",
-            "Anyone who wants prop-style buying power without the prop-style hoops"
-        ],
-        whyTitle: "How the Bonus Works",
-        whyContent: (
-            <div className="space-y-6 w-full">
-                <p className="text-muted-foreground text-base sm:text-lg">Every qualifying deposit ($250 minimum) is matched with 125% buying power, credited instantly. The bonus is added to your margin — not your withdrawable balance — so it works as extra firepower while you trade.</p>
-                <div className="bg-card border border-border/50 rounded-2xl w-full overflow-hidden mt-6 shadow-xl shadow-black/10">
-                    <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-red-600/20">
-                        <table className="w-full text-sm min-w-[500px]">
-                            <thead className="bg-muted/80 border-b border-border/50">
-                                <tr>
-                                    <th className="text-left p-4 sm:p-5 font-semibold text-foreground">Your Deposit</th>
-                                    <th className="text-left p-4 sm:p-5 font-semibold text-foreground">Bonus Credited</th>
-                                    <th className="text-left p-4 sm:p-5 font-bold text-red-500">Total Buying Power</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-border/30 text-muted-foreground">
-                                <tr className="hover:bg-muted/20 transition-colors"><td className="p-4 sm:p-5">$250</td><td className="p-4 sm:p-5">$312.50</td><td className="p-4 sm:p-5 text-red-500 font-bold">$562.50</td></tr>
-                                <tr className="hover:bg-muted/20 transition-colors"><td className="p-4 sm:p-5">$500</td><td className="p-4 sm:p-5">$625</td><td className="p-4 sm:p-5 text-red-500 font-bold">$1,125</td></tr>
-                                <tr className="hover:bg-muted/20 transition-colors"><td className="p-4 sm:p-5">$1,000</td><td className="p-4 sm:p-5">$1,250</td><td className="p-4 sm:p-5 text-red-500 font-bold">$2,250</td></tr>
-                                <tr className="hover:bg-muted/20 transition-colors"><td className="p-4 sm:p-5">$2,500</td><td className="p-4 sm:p-5">$3,125</td><td className="p-4 sm:p-5 text-red-500 font-bold">$5,625</td></tr>
-                                <tr className="hover:bg-muted/20 transition-colors bg-muted/10"><td className="p-4 sm:p-5">$5,000</td><td className="p-4 sm:p-5">$6,250</td><td className="p-4 sm:p-5 text-red-500 font-bold text-base">$11,250</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <p className="text-xs text-muted-foreground italic mt-2 opacity-80">*Maximum bonus per deposit cycle: $6,250. Bonus applies to every qualifying deposit — not just the first.</p>
-                
-                <h4 className="text-xl sm:text-2xl font-bold font-heading mt-10 mb-6 text-foreground">Bonus Terms (Plain English)</h4>
-                <ul className="grid grid-cols-1 gap-3">
-                    {[
-                        "Minimum $250 deposit to qualify for the bonus",
-                        "Bonus is buying power only — it increases your trading capacity, not your withdrawable balance",
-                        "Bonus credits instantly on confirmed deposit",
-                        "If you withdraw funds, the proportional bonus is removed; redeposit to receive a fresh bonus",
-                        "Bonus stays in your account through trading drawdowns — it never expires while your account is active",
-                        "Full terms apply — see Bonus Credit Rules"
-                    ].map((term, i) => (
-                        <li key={i} className="flex items-start gap-3 p-3 rounded-xl hover:bg-muted/30 transition-colors">
-                            <CheckCircle2 className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground text-sm sm:text-base leading-relaxed">{term}</span>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        ),
-        specs: [
-            { label: "Minimum deposit", value: "$250" },
-            { label: "Bonus", value: "125% buying power on every qualifying deposit" },
-            { label: "Maximum bonus per cycle", value: "$6,250" },
-            { label: "Commission", value: "$18 RT per lot" },
-            { label: "Spread", value: "From 1.2 pips on majors" },
-            { label: "Leverage (majors)", value: "Up to 1:100" },
-            { label: "Execution", value: "Market execution" },
-            { label: "Margin call / Stop-out", value: "100% / 70%" },
-            { label: "Negative balance protection", value: "Always on" },
-            { label: "Hedging", value: "Allowed" },
-            { label: "Platform", value: "TradeLocker" },
-        ]
-    },
-    "ecn-raw": {
-        id: "ecn-raw",
-        title: "ECN Raw",
-        heroHeadline: "Raw market access. No spread markup games.",
-        heroDescription: "ECN Raw is built for traders who care about execution: tight spreads from 0.0 pips, direct ECN routing, and a flat $6 per lot commission. What you see on the chart is what you trade.",
+    "raw": {
+        id: "raw",
+        title: "RAW",
+        heroHeadline: "Raw market access. Institutional spreads.",
+        heroDescription: "The RAW account offers the most direct access to market liquidity. With spreads starting from 0.1 pips and a straightforward $18 RT commission, it's designed for serious traders, scalpers, and algos.",
         whoItsFor: [
             "Active and professional traders",
             "Scalpers who need tight spreads to make their strategy work",
             "Algo / EA traders running automated strategies",
             "Anyone who wants the lowest cost of trading on every ticket"
         ],
-        whyTitle: "Why Traders Choose ECN Raw",
+        whyTitle: "Why Traders Choose RAW",
         whyContent: (
             <ul className="grid grid-cols-1 gap-4">
                 {[
-                    "Spreads from 0.0 pips on major pairs",
-                    "Direct ECN execution — no dealing desk interference",
-                    "Up to 1:1000 leverage across forex",
-                    "$25 minimum deposit — no barrier to entry",
+                    "Spreads from 0.1 pips on major pairs",
+                    "Direct A-Book execution — pure liquidity",
+                    "Up to 1:500 leverage across forex",
+                    "$500 minimum deposit",
                     "EAs, scalping, and hedging all permitted"
                 ].map((reason, i) => (
                     <li key={i} className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-muted/20 border border-border/40 hover:border-red-500/30 transition-all group">
@@ -110,35 +42,35 @@ export const accountDetails = {
             </ul>
         ),
         specs: [
-            { label: "Minimum deposit", value: "$25" },
-            { label: "Commission", value: "$18 per lot" },
-            { label: "Spread", value: "From 0.0 pips" },
-            { label: "Leverage", value: "Up to 1:1000" },
-            { label: "Execution", value: "ECN" },
+            { label: "Minimum deposit", value: "$500" },
+            { label: "Commission", value: "$18.00 RT" },
+            { label: "Spread", value: "From 0.1 pips" },
+            { label: "Leverage", value: "Up to 1:500" },
+            { label: "Execution", value: "A-Book Direct" },
             { label: "Negative balance protection", value: "Always on" },
             { label: "EAs / Scalping / Hedging", value: "All permitted" },
             { label: "Platform", value: "TradeLocker" },
         ]
     },
-    standard: {
-        id: "standard",
-        title: "Standard Account",
-        heroHeadline: "Trading made simple — without compromise.",
-        heroDescription: "The Standard Account is the balanced option for traders who want flexibility, low entry, and access to every instrument we offer. Tight spreads, fast execution, and zero complexity.",
+    "ecn-standard-default": {
+        id: "ecn-standard-default",
+        title: "ECN / Standard Default",
+        heroHeadline: "Trading made simple — competitive and flexible.",
+        heroDescription: "The Standard Default Account is built for the everyday retail trader. With a $100 minimum deposit, 1:500 leverage, and simple $4 RT commissions, it provides a balanced environment for all strategies.",
         whoItsFor: [
             "Traders who want a clean, no-frills account",
             "Swing and position traders who hold longer-term setups",
             "Anyone diversifying across forex, metals, indices, and crypto"
         ],
-        whyTitle: "Why Traders Choose Standard",
+        whyTitle: "Why Traders Choose Standard Default",
         whyContent: (
             <ul className="grid grid-cols-1 gap-4">
                 {[
-                    "Spreads from 0.0 pips",
-                    "Up to 1:1000 leverage",
-                    "$25 minimum deposit",
+                    "Spreads from 2.0 pips",
+                    "Up to 1:500 leverage",
+                    "$100 minimum deposit",
                     "Full instrument access — forex, metals, energies, indices, crypto",
-                    "Market execution with reliable fill quality"
+                    "Hybrid execution with reliable fill quality"
                 ].map((reason, i) => (
                     <li key={i} className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-muted/20 border border-border/40 hover:border-red-500/30 transition-all group">
                         <div className="w-8 h-8 rounded-full bg-red-600/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -150,11 +82,51 @@ export const accountDetails = {
             </ul>
         ),
         specs: [
-            { label: "Minimum deposit", value: "$25" },
-            { label: "Commission", value: "$9 per lot" },
-            { label: "Spread", value: "From 0.0 pips" },
-            { label: "Leverage", value: "Up to 1:1000" },
-            { label: "Execution", value: "Market" },
+            { label: "Minimum deposit", value: "$100" },
+            { label: "Commission", value: "$4.00 RT" },
+            { label: "Spread", value: "From 2.0 pips" },
+            { label: "Leverage", value: "Up to 1:500" },
+            { label: "Execution", value: "Hybrid" },
+            { label: "Negative balance protection", value: "Always on" },
+            { label: "EAs / Scalping / Hedging", value: "All permitted" },
+            { label: "Platform", value: "TradeLocker" },
+        ]
+    },
+    "ecn-standard-vip": {
+        id: "ecn-standard-vip",
+        title: "ECN / Standard VIP",
+        heroHeadline: "Premium structure for high-volume traders.",
+        heroDescription: "The Standard VIP Account is tailored for high-volume retail traders and VIP affiliates. It offers similar robust conditions to our Default account with spreads starting from 3.5 pips.",
+        whoItsFor: [
+            "High-Volume Retail Traders",
+            "VIP Affiliates requiring bespoke setups",
+            "Traders looking for premium tier conditions"
+        ],
+        whyTitle: "Why Traders Choose Standard VIP",
+        whyContent: (
+            <ul className="grid grid-cols-1 gap-4">
+                {[
+                    "Spreads from 3.5 pips",
+                    "Up to 1:500 leverage",
+                    "$100 minimum deposit",
+                    "Full instrument access with Hybrid execution",
+                    "Premium tier affiliate support structure"
+                ].map((reason, i) => (
+                    <li key={i} className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-muted/20 border border-border/40 hover:border-red-500/30 transition-all group">
+                        <div className="w-8 h-8 rounded-full bg-red-600/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <CheckCircle2 className="w-5 h-5 text-red-600" />
+                        </div>
+                        <span className="text-foreground text-base sm:text-lg font-medium">{reason}</span>
+                    </li>
+                ))}
+            </ul>
+        ),
+        specs: [
+            { label: "Minimum deposit", value: "$100" },
+            { label: "Commission", value: "$4.00 RT" },
+            { label: "Spread", value: "From 3.5 pips" },
+            { label: "Leverage", value: "Up to 1:500" },
+            { label: "Execution", value: "Hybrid" },
             { label: "Negative balance protection", value: "Always on" },
             { label: "EAs / Scalping / Hedging", value: "All permitted" },
             { label: "Platform", value: "TradeLocker" },

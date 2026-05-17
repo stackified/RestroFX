@@ -11,56 +11,42 @@ import { TrendingUp, Zap, Shield, ArrowRight, Info, X, CheckCircle2 } from "luci
 
 const accountTypes: AccountType[] = [
   {
-    id: "bonus",
-    name: "PowerUp Account",
-    spread: "From 1.2 pips",
-    commission: "$18 RT per lot",
-    leverage: "Up to 1:100 (Majors)",
-    executionType: "Market",
-    minimumDeposit: "$250",
+    id: "raw",
+    name: "RAW",
+    spread: "From 0.1 pips",
+    commission: "$18.00 RT",
+    leverage: "Up to 1:500",
+    executionType: "A-Book Direct",
+    minimumDeposit: "$500",
   },
   {
-    id: "ecn-raw",
-    name: "ECN Raw",
-    spread: "From 0.0 pips",
-    commission: "$18 per lot",
-    leverage: "Up to 1:1000",
-    executionType: "ECN",
-    minimumDeposit: "$25",
+    id: "ecn-standard-default",
+    name: "ECN / Standard Default",
+    spread: "From 2.0 pips",
+    commission: "$4.00 RT",
+    leverage: "Up to 1:500",
+    executionType: "Hybrid",
+    minimumDeposit: "$100",
     popular: true,
   },
   {
-    id: "standard",
-    name: "Standard Account",
-    spread: "From 0.0 pips",
-    commission: "$9 per lot",
-    leverage: "Up to 1:1000",
-    executionType: "Market",
-    minimumDeposit: "$25",
+    id: "ecn-standard-vip",
+    name: "ECN / Standard VIP",
+    spread: "From 3.5 pips",
+    commission: "$4.00 RT",
+    leverage: "Up to 1:500",
+    executionType: "Hybrid",
+    minimumDeposit: "$100",
   },
 ];
 
 const accountIcons: Record<string, typeof Zap> = {
-  bonus: Zap,
-  "ecn-raw": TrendingUp,
-  standard: Shield,
+  raw: Zap,
+  "ecn-standard-default": TrendingUp,
+  "ecn-standard-vip": Shield,
 };
 
 export function AccountTypesSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const bonusRules = [
-    { rule: "Minimum deposit to receive bonus", detail: "$250 — below this, no bonus credited" },
-    { rule: "Maximum deposit for bonus", detail: "$5,000 — deposits above receive bonus on first $5,000 only" },
-    { rule: "Bonus credited instantly", detail: "On deposit confirmation — same day" },
-    { rule: "Bonus is buying power only", detail: "Never withdrawable cash — used as margin credit" },
-    { rule: "Withdrawal request", detail: "Bonus is removed upon cash withdrawal" },
-    { rule: "Client re-deposits", detail: "Fresh 125% bonus stacks on existing balance" },
-    { rule: "Multiple deposits", detail: "Each deposit tracked separately with its own bonus" },
-    { rule: "Affiliate rebate cap", detail: "$10 per qualifying lot" },
-    { rule: "Qualifying lot rule", detail: "Trade must be open minimum 31 seconds" },
-    { rule: "Bonus never expires", detail: "Buying power remains indefinitely while account is active" },
-  ];
 
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -149,9 +135,9 @@ export function AccountTypesSection() {
                             {account.name}
                           </CardTitle>
                           <p className="text-xs sm:text-sm text-muted-foreground">
-                            {account.id === "bonus" ? "Trade bigger from day one" :
-                              account.id === "ecn-raw" ? "Raw spreads. Direct execution." :
-                                "All-in-one access for every trader"}
+                            {account.id === "raw" ? "Raw spreads. Direct execution." :
+                              account.id === "ecn-standard-default" ? "All-around trading with competitive conditions" :
+                                "Premium structure for VIP clients"}
                           </p>
                         </div>
                       </div>
@@ -164,8 +150,7 @@ export function AccountTypesSection() {
                           { label: "Commission", value: account.commission },
                           { label: "Leverage", value: account.leverage },
                           { label: "Execution", value: account.executionType },
-                          { label: "Min. Deposit", value: account.minimumDeposit },
-                          ...(account.id === "bonus" ? [{ label: "Bonus", value: "125% buying power" }] : [])
+                          { label: "Min. Deposit", value: account.minimumDeposit }
                         ].map((item, idx) => (
                           <motion.div
                             key={idx}
@@ -205,18 +190,8 @@ export function AccountTypesSection() {
                           className="w-full h-10 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full"
                           asChild
                       >
-                          <Link href={`/account-types/${account.id === "bonus" ? "powerup" : account.id}`}>Learn More</Link>
+                          <Link href={`/account-types/${account.id}`}>Learn More</Link>
                       </Button>
-
-                      {account.id === "bonus" && (
-                        <button
-                          onClick={() => setIsModalOpen(true)}
-                          className="flex items-center justify-center gap-2 text-sm font-semibold text-red-600 hover:text-red-700 transition-colors py-2"
-                        >
-                          <Info className="h-4 w-4" />
-                          View Bonus Credit Rules
-                        </button>
-                      )}
                     </CardFooter>
                   </Card>
                 </motion.div>
@@ -226,81 +201,6 @@ export function AccountTypesSection() {
         </div>
       </div>
 
-      {/* Bonus Rules Modal */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsModalOpen(false)}
-              className="absolute inset-0 bg-background/80 backdrop-blur-md"
-            />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-2xl bg-card border border-border shadow-2xl rounded-3xl overflow-hidden flex flex-col max-h-[90vh]"
-            >
-              <div className="p-6 sm:p-8 border-b border-border flex items-center justify-between bg-muted/30">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-red-600/10 text-red-600">
-                    <Zap className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold font-heading">PowerUp Account Rules</h3>
-                    <p className="text-sm text-muted-foreground">125% Bonus Credit Terms & Conditions</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="p-2 rounded-full hover:bg-muted transition-colors"
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-
-              <div className="p-6 sm:p-8 overflow-y-auto">
-                <div className="grid gap-4">
-                  {bonusRules.map((rule, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.05 }}
-                      className="flex items-start gap-4 p-4 rounded-2xl bg-muted/20 border border-border/50 hover:border-red-600/30 transition-colors group"
-                    >
-                      <div className="mt-1">
-                        <CheckCircle2 className="h-5 w-5 text-red-600" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-foreground group-hover:text-red-600 transition-colors">{rule.rule}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{rule.detail}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-                
-                <div className="mt-8 p-6 rounded-2xl bg-red-600/5 border border-red-600/20">
-                  <p className="text-xs text-muted-foreground leading-relaxed text-center italic">
-                    Note: The PowerUp bonus is designed solely to increase your trading capacity and margin. It cannot be withdrawn or converted to cash. Risk warning: Trading involves significant risk.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-6 border-t border-border bg-muted/30">
-                <Button 
-                  className="w-full rounded-full h-12 text-lg font-bold" 
-                  onClick={() => setIsModalOpen(false)}
-                >
-                  I Understand
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

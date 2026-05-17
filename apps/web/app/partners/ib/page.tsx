@@ -62,7 +62,7 @@ export default function IBProgramPage() {
     const stats = [
         { value: "$5M+", label: "Paid to IBs" },
         { value: "200+", label: "Active IBs" },
-        { value: "Up to $15", label: "Per Lot Rebate" },
+        { value: "Up to $25", label: "Per Lot Rebate" },
         { value: "24/7", label: "IB Support" }
     ];
 
