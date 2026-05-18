@@ -7,18 +7,18 @@ import { Zap, Percent, Activity } from "lucide-react";
 export function PartnerFeatures() {
   const features = [
     {
-      title: "1:1000 Leverage on MT5 & TradeLocker",
+      title: "1:500 Leverage on TradeLocker",
       description:
-        "Instantly unlock 1:1000 leverage and take your account to new heights. Don't let low leverage hold you back! More margin = Larger lots = More Opportunity.",
+        "Instantly unlock 1:500 leverage and take your account to new heights. Don't let low leverage hold you back! More margin = Larger lots = More Opportunity.",
       icon: Activity,
       borderColor: "border-blue-500/20 hover:border-blue-500/40",
       iconColor: "text-blue-500",
       bgGradient: "from-blue-500/10 to-transparent",
     },
     {
-      title: "Enjoy ZERO Commission Trading on our STP Account",
+      title: "Enjoy Low Commission Trading",
       description:
-        "Access some of the lowest all-in costs in FX trading. Benefit from market-leading prices, low spreads, and zero commissions*. Available on MT5 & TradeLocker.",
+        "Access some of the lowest all-in costs in FX trading. Benefit from market-leading prices, low spreads, and competitive commissions. Available on TradeLocker.",
       icon: Percent,
       borderColor: "border-primary/20 hover:border-primary/40",
       iconColor: "text-primary",
@@ -27,7 +27,7 @@ export function PartnerFeatures() {
     {
       title: "Trade Raw Spreads with Tier-1 Liquidity",
       description:
-        "Sourced 20+ major banks, non-bank LPs, and top cryptocurrency exchanges to offer best trading conditions. During active sessions many pairs will have 0.0 spreads.",
+        "Sourced 20+ major banks, non-bank LPs, and top cryptocurrency exchanges to offer best trading conditions. During active sessions many pairs will have spreads from 0.1 pips.",
       icon: Zap,
       borderColor: "border-green-500/20 hover:border-green-500/40",
       iconColor: "text-green-500",

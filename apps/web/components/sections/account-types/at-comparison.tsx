@@ -8,29 +8,29 @@ import type { AccountType } from "@crimsonfx/types";
 
 const accountTypes: (AccountType & Record<string, any>)[] = [
     {
-        id: "bonus",
-        name: "PowerUp Account",
-        bestFor: "Building accounts faster with bonus capital",
-        minimumDeposit: "$250",
-        spread: "From 1.2 pips",
-        commission: "$18 RT per lot",
-        leverage: "Up to 1:100",
-        executionType: "Market",
-        bonus: "125% buying power",
+        id: "raw",
+        name: "RAW",
+        bestFor: "Pro traders, scalpers, algos",
+        minimumDeposit: "$25",
+        spread: "From 0.1 pips",
+        commission: "$18.00 RT",
+        leverage: "Up to 1:500",
+        executionType: "Direct",
+        bonus: "—",
         easScalping: "Allowed",
         hedging: "Allowed",
         negativeBalance: "Yes",
         platform: "TradeLocker"
     },
     {
-        id: "ecn-raw",
-        name: "ECN Raw",
-        bestFor: "Active traders, scalpers, EAs",
+        id: "ecn-standard-default",
+        name: "ECN / Standard Default",
+        bestFor: "Retail & Everyday Traders",
         minimumDeposit: "$25",
-        spread: "From 0.0 pips",
-        commission: "$18 per lot",
-        leverage: "Up to 1:1000",
-        executionType: "ECN",
+        spread: "From 2.0 pips",
+        commission: "$4.00 RT",
+        leverage: "Up to 1:500",
+        executionType: "Standard",
         bonus: "—",
         easScalping: "Allowed",
         hedging: "Allowed",
@@ -39,15 +39,15 @@ const accountTypes: (AccountType & Record<string, any>)[] = [
         popular: true,
     },
     {
-        id: "standard",
-        name: "Standard Account",
-        bestFor: "All-around traders",
-        minimumDeposit: "$25",
-        spread: "From 0.0 pips",
-        commission: "$9 per lot",
-        leverage: "Up to 1:1000",
-        executionType: "Market",
-        bonus: "—",
+        id: "bonus",
+        name: "PowerUp Account",
+        bestFor: "Building accounts faster with bonus capital",
+        minimumDeposit: "$100",
+        spread: "From 1.2 pips",
+        commission: "$18.00 RT",
+        leverage: "Up to 1:100 (Majors)",
+        executionType: "Standard",
+        bonus: "125% buying power",
         easScalping: "Allowed",
         hedging: "Allowed",
         negativeBalance: "Yes",
@@ -60,7 +60,6 @@ const features = [
     { label: "Spread", key: "spread" },
     { label: "Commission", key: "commission" },
     { label: "Leverage", key: "leverage" },
-    { label: "Execution", key: "executionType" },
     { label: "Bonus", key: "bonus" },
     { label: "EAs / Scalping", key: "easScalping" },
     { label: "Hedging", key: "hedging" },
@@ -156,7 +155,7 @@ export function AccountTypesComparison() {
                                             asChild
                                         >
                                             <Link href={`/register?account=${account.id}`}>
-                                                Select {account.id === "ecn-raw" ? "Raw" : account.id === "bonus" ? "PowerUp" : "Standard"}
+                                                Select {account.id === "raw" ? "RAW" : account.id === "ecn-standard-default" ? "Default" : "PowerUp"}
                                             </Link>
                                         </Button>
                                     </div>

@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 import {
     ArrowDownToLine,
     MonitorSmartphone,
-    Zap,
     MessageCircle,
     ArrowRight,
     UserCheck,
@@ -25,17 +24,17 @@ import Link from "next/link";
 const faqs = [
     {
         question: "Which account should I choose?",
-        answer: "It depends on your style. If you want extra trading power from a smaller deposit, go with PowerUp. If you're an active or professional trader chasing the tightest possible spreads, ECN Raw. If you want a balanced, flexible account with the lowest entry deposit and broad instrument access, Standard.",
+        answer: "It depends on your style. If you're an active or professional trader chasing the tightest possible spreads, go with RAW. If you want a balanced, flexible account with the lowest entry deposit and broad instrument access, Standard Default. For premium affiliate structure, Standard VIP.",
         icon: UserCheck
     },
     {
         question: "Can I open more than one account?",
-        answer: "Yes. Many traders run a PowerUp for active swing trades and an ECN Raw for scalping. There's no limit on additional live accounts under the same profile.",
+        answer: "Yes. Many traders run a Standard Default for active swing trades and a RAW account for scalping. There's no limit on additional live accounts under the same profile.",
         icon: Layers
     },
     {
         question: "What's the minimum deposit to get started?",
-        answer: "$25 for ECN Raw and Standard. $250 for PowerUp (which is also the minimum to trigger the bonus).",
+        answer: "$100 for Standard Default and Standard VIP. $500 for RAW.",
         icon: Wallet
     },
     {
@@ -44,13 +43,8 @@ const faqs = [
         icon: Bot
     },
     {
-        question: "How is the PowerUp bonus paid out?",
-        answer: "It isn't paid out — it's added to your margin as buying power, instantly on each qualifying deposit. It increases your trading capacity rather than your withdrawable balance.",
-        icon: Zap
-    },
-    {
         question: "Can I withdraw my profits?",
-        answer: "Yes. All trading profits are yours to withdraw at any time. On PowerUp, withdrawals process from your deposited cash and profits — the bonus credit doesn't withdraw with you.",
+        answer: "Yes. All trading profits are yours to withdraw at any time.",
         icon: ArrowDownToLine
     },
     {

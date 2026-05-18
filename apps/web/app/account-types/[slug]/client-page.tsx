@@ -11,8 +11,87 @@ import { motion } from "framer-motion";
 import { GlowCard } from "@/components/ui/glow-card";
 
 export const accountDetails = {
-    powerup: {
-        id: "bonus", // for register link
+    "raw": {
+        id: "raw",
+        title: "RAW",
+        heroHeadline: "Raw market access. Institutional spreads.",
+        heroDescription: "The RAW account offers the most direct access to market liquidity. With spreads starting from 0.1 pips and a straightforward $18 RT commission, it's designed for serious traders, scalpers, and algos.",
+        whoItsFor: [
+            "Active and professional traders",
+            "Scalpers who need tight spreads to make their strategy work",
+            "Algo / EA traders running automated strategies",
+            "Anyone who wants the lowest cost of trading on every ticket"
+        ],
+        whyTitle: "Why Traders Choose RAW",
+        whyContent: (
+            <ul className="grid grid-cols-1 gap-4">
+                {[
+                    "Spreads from 0.1 pips on major pairs",
+                    "Direct execution — pure liquidity",
+                    "Up to 1:500 leverage across forex",
+                    "$25 minimum deposit",
+                    "EAs, scalping, and hedging all permitted"
+                ].map((reason, i) => (
+                    <li key={i} className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-muted/20 border border-border/40 hover:border-red-500/30 transition-all group">
+                        <div className="w-8 h-8 rounded-full bg-red-600/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <CheckCircle2 className="w-5 h-5 text-red-600" />
+                        </div>
+                        <span className="text-foreground text-base sm:text-lg font-medium">{reason}</span>
+                    </li>
+                ))}
+            </ul>
+        ),
+        specs: [
+            { label: "Minimum deposit", value: "$25" },
+            { label: "Commission", value: "$18.00 RT" },
+            { label: "Spread", value: "From 0.1 pips" },
+            { label: "Leverage", value: "Up to 1:500" },
+            { label: "Negative balance protection", value: "Always on" },
+            { label: "EAs / Scalping / Hedging", value: "All permitted" },
+            { label: "Platform", value: "TradeLocker" },
+        ]
+    },
+    "ecn-standard-default": {
+        id: "ecn-standard-default",
+        title: "ECN / Standard Default",
+        heroHeadline: "Trading made simple — competitive and flexible.",
+        heroDescription: "The Standard Default Account is built for the everyday retail trader. With a $25 minimum deposit, 1:500 leverage, and simple $4 RT commissions, it provides a balanced environment for all strategies.",
+        whoItsFor: [
+            "Traders who want a clean, no-frills account",
+            "Swing and position traders who hold longer-term setups",
+            "Anyone diversifying across forex, metals, indices, and crypto"
+        ],
+        whyTitle: "Why Traders Choose Standard Default",
+        whyContent: (
+            <ul className="grid grid-cols-1 gap-4">
+                {[
+                    "Spreads from 2.0 pips",
+                    "Up to 1:500 leverage",
+                    "$25 minimum deposit",
+                    "Full instrument access — forex, metals, energies, indices, crypto",
+                    "Reliable execution with fast fill quality"
+                ].map((reason, i) => (
+                    <li key={i} className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-muted/20 border border-border/40 hover:border-red-500/30 transition-all group">
+                        <div className="w-8 h-8 rounded-full bg-red-600/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <CheckCircle2 className="w-5 h-5 text-red-600" />
+                        </div>
+                        <span className="text-foreground text-base sm:text-lg font-medium">{reason}</span>
+                    </li>
+                ))}
+            </ul>
+        ),
+        specs: [
+            { label: "Minimum deposit", value: "$25" },
+            { label: "Commission", value: "$4.00 RT" },
+            { label: "Spread", value: "From 2.0 pips" },
+            { label: "Leverage", value: "Up to 1:500" },
+            { label: "Negative balance protection", value: "Always on" },
+            { label: "EAs / Scalping / Hedging", value: "All permitted" },
+            { label: "Platform", value: "TradeLocker" },
+        ]
+    },
+    "powerup": {
+        id: "bonus",
         title: "PowerUp Account",
         heroHeadline: "Deposit $5,000. Trade like you have $11,250.",
         heroDescription: "The PowerUp Account gives you 125% extra buying power on every qualifying deposit — automatically. No challenge. No evaluation. No monthly fees. Just deposit and trade.",
@@ -66,97 +145,14 @@ export const accountDetails = {
             </div>
         ),
         specs: [
-            { label: "Minimum deposit", value: "$250" },
+            { label: "Minimum deposit", value: "$100" },
             { label: "Bonus", value: "125% buying power on every qualifying deposit" },
             { label: "Maximum bonus per cycle", value: "$6,250" },
-            { label: "Commission", value: "$18 RT per lot" },
+            { label: "Commission", value: "$18.00 RT" },
             { label: "Spread", value: "From 1.2 pips on majors" },
             { label: "Leverage (majors)", value: "Up to 1:100" },
-            { label: "Execution", value: "Market execution" },
-            { label: "Margin call / Stop-out", value: "100% / 70%" },
             { label: "Negative balance protection", value: "Always on" },
             { label: "Hedging", value: "Allowed" },
-            { label: "Platform", value: "TradeLocker" },
-        ]
-    },
-    "ecn-raw": {
-        id: "ecn-raw",
-        title: "ECN Raw",
-        heroHeadline: "Raw market access. No spread markup games.",
-        heroDescription: "ECN Raw is built for traders who care about execution: tight spreads from 0.0 pips, direct ECN routing, and a flat $6 per lot commission. What you see on the chart is what you trade.",
-        whoItsFor: [
-            "Active and professional traders",
-            "Scalpers who need tight spreads to make their strategy work",
-            "Algo / EA traders running automated strategies",
-            "Anyone who wants the lowest cost of trading on every ticket"
-        ],
-        whyTitle: "Why Traders Choose ECN Raw",
-        whyContent: (
-            <ul className="grid grid-cols-1 gap-4">
-                {[
-                    "Spreads from 0.0 pips on major pairs",
-                    "Direct ECN execution — no dealing desk interference",
-                    "Up to 1:1000 leverage across forex",
-                    "$25 minimum deposit — no barrier to entry",
-                    "EAs, scalping, and hedging all permitted"
-                ].map((reason, i) => (
-                    <li key={i} className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-muted/20 border border-border/40 hover:border-red-500/30 transition-all group">
-                        <div className="w-8 h-8 rounded-full bg-red-600/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                            <CheckCircle2 className="w-5 h-5 text-red-600" />
-                        </div>
-                        <span className="text-foreground text-base sm:text-lg font-medium">{reason}</span>
-                    </li>
-                ))}
-            </ul>
-        ),
-        specs: [
-            { label: "Minimum deposit", value: "$25" },
-            { label: "Commission", value: "$18 per lot" },
-            { label: "Spread", value: "From 0.0 pips" },
-            { label: "Leverage", value: "Up to 1:1000" },
-            { label: "Execution", value: "ECN" },
-            { label: "Negative balance protection", value: "Always on" },
-            { label: "EAs / Scalping / Hedging", value: "All permitted" },
-            { label: "Platform", value: "TradeLocker" },
-        ]
-    },
-    standard: {
-        id: "standard",
-        title: "Standard Account",
-        heroHeadline: "Trading made simple — without compromise.",
-        heroDescription: "The Standard Account is the balanced option for traders who want flexibility, low entry, and access to every instrument we offer. Tight spreads, fast execution, and zero complexity.",
-        whoItsFor: [
-            "Traders who want a clean, no-frills account",
-            "Swing and position traders who hold longer-term setups",
-            "Anyone diversifying across forex, metals, indices, and crypto"
-        ],
-        whyTitle: "Why Traders Choose Standard",
-        whyContent: (
-            <ul className="grid grid-cols-1 gap-4">
-                {[
-                    "Spreads from 0.0 pips",
-                    "Up to 1:1000 leverage",
-                    "$25 minimum deposit",
-                    "Full instrument access — forex, metals, energies, indices, crypto",
-                    "Market execution with reliable fill quality"
-                ].map((reason, i) => (
-                    <li key={i} className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-muted/20 border border-border/40 hover:border-red-500/30 transition-all group">
-                        <div className="w-8 h-8 rounded-full bg-red-600/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                            <CheckCircle2 className="w-5 h-5 text-red-600" />
-                        </div>
-                        <span className="text-foreground text-base sm:text-lg font-medium">{reason}</span>
-                    </li>
-                ))}
-            </ul>
-        ),
-        specs: [
-            { label: "Minimum deposit", value: "$25" },
-            { label: "Commission", value: "$9 per lot" },
-            { label: "Spread", value: "From 0.0 pips" },
-            { label: "Leverage", value: "Up to 1:1000" },
-            { label: "Execution", value: "Market" },
-            { label: "Negative balance protection", value: "Always on" },
-            { label: "EAs / Scalping / Hedging", value: "All permitted" },
             { label: "Platform", value: "TradeLocker" },
         ]
     }

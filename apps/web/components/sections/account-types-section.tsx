@@ -11,39 +11,39 @@ import { TrendingUp, Zap, Shield, ArrowRight, Info, X, CheckCircle2 } from "luci
 
 const accountTypes: AccountType[] = [
   {
-    id: "bonus",
-    name: "PowerUp Account",
-    spread: "From 1.2 pips",
-    commission: "$18 RT per lot",
-    leverage: "Up to 1:100 (Majors)",
-    executionType: "Market",
-    minimumDeposit: "$250",
+    id: "raw",
+    name: "RAW",
+    spread: "From 0.1 pips",
+    commission: "$18.00 RT",
+    leverage: "Up to 1:500",
+    executionType: "Direct",
+    minimumDeposit: "$25",
   },
   {
-    id: "ecn-raw",
-    name: "ECN Raw",
-    spread: "From 0.0 pips",
-    commission: "$18 per lot",
-    leverage: "Up to 1:1000",
-    executionType: "ECN",
+    id: "ecn-standard-default",
+    name: "ECN / Standard Default",
+    spread: "From 2.0 pips",
+    commission: "$4.00 RT",
+    leverage: "Up to 1:500",
+    executionType: "Standard",
     minimumDeposit: "$25",
     popular: true,
   },
   {
-    id: "standard",
-    name: "Standard Account",
-    spread: "From 0.0 pips",
-    commission: "$9 per lot",
-    leverage: "Up to 1:1000",
-    executionType: "Market",
-    minimumDeposit: "$25",
+    id: "bonus",
+    name: "PowerUp Account",
+    spread: "From 1.2 pips",
+    commission: "$18.00 RT",
+    leverage: "Up to 1:100 (Majors)",
+    executionType: "Standard",
+    minimumDeposit: "$100",
   },
 ];
 
 const accountIcons: Record<string, typeof Zap> = {
+  raw: Zap,
+  "ecn-standard-default": TrendingUp,
   bonus: Zap,
-  "ecn-raw": TrendingUp,
-  standard: Shield,
 };
 
 export function AccountTypesSection() {
@@ -97,7 +97,7 @@ export function AccountTypesSection() {
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="relative"
+                  className="relative h-full"
                 >
                   {account.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-30">
@@ -133,9 +133,7 @@ export function AccountTypesSection() {
                     <div
                       className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${account.popular ? "opacity-100" : ""}`}
                       style={{
-                        background: account.popular
-                          ? 'linear-gradient(to bottom right, rgba(220, 38, 38, 0.08), rgba(0, 0, 0, 0.12), rgba(220, 38, 38, 0.08))'
-                          : 'linear-gradient(to bottom right, rgba(220, 38, 38, 0.08), rgba(0, 0, 0, 0.12), rgba(220, 38, 38, 0.08))'
+                        background: 'linear-gradient(to bottom right, rgba(220, 38, 38, 0.08), rgba(0, 0, 0, 0.12), rgba(220, 38, 38, 0.08))'
                       }}
                     />
 
@@ -149,9 +147,9 @@ export function AccountTypesSection() {
                             {account.name}
                           </CardTitle>
                           <p className="text-xs sm:text-sm text-muted-foreground">
-                            {account.id === "bonus" ? "Trade bigger from day one" :
-                              account.id === "ecn-raw" ? "Raw spreads. Direct execution." :
-                                "All-in-one access for every trader"}
+                            {account.id === "raw" ? "Raw spreads. Direct execution." :
+                              account.id === "ecn-standard-default" ? "All-around trading with competitive conditions" :
+                                "Trade bigger from day one"}
                           </p>
                         </div>
                       </div>
@@ -163,7 +161,6 @@ export function AccountTypesSection() {
                           { label: "Spread", value: account.spread },
                           { label: "Commission", value: account.commission },
                           { label: "Leverage", value: account.leverage },
-                          { label: "Execution", value: account.executionType },
                           { label: "Min. Deposit", value: account.minimumDeposit },
                           ...(account.id === "bonus" ? [{ label: "Bonus", value: "125% buying power" }] : [])
                         ].map((item, idx) => (
@@ -182,7 +179,7 @@ export function AccountTypesSection() {
                       </div>
                     </CardContent>
 
-                    <CardFooter className="relative z-10 pt-2 pb-6 px-4 sm:px-6 flex flex-col gap-3 flex-shrink-0">
+                    <CardFooter className="relative z-10 pt-2 pb-6 px-4 sm:px-6 flex flex-col gap-3 flex-shrink-0 mt-auto">
                       <Button
                         className={`w-full rounded-full h-12 sm:h-14 text-base sm:text-lg font-bold transition-all duration-500 ${account.popular
                           ? "bg-primary hover:bg-red-700 shadow-[0_20px_50px_rgba(220,38,38,0.2)] hover:shadow-[0_30px_60px_rgba(220,38,38,0.3)] text-white hover:-translate-y-1"
@@ -210,7 +207,10 @@ export function AccountTypesSection() {
 
                       {account.id === "bonus" && (
                         <button
-                          onClick={() => setIsModalOpen(true)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setIsModalOpen(true);
+                          }}
                           className="flex items-center justify-center gap-2 text-sm font-semibold text-red-600 hover:text-red-700 transition-colors py-2"
                         >
                           <Info className="h-4 w-4" />

@@ -2,9 +2,9 @@ import { AccountDetailClient } from "./client-page";
 
 export function generateStaticParams() {
     return [
+        { slug: "raw" },
+        { slug: "ecn-standard-default" },
         { slug: "powerup" },
-        { slug: "ecn-raw" },
-        { slug: "standard" },
     ];
 }
 
