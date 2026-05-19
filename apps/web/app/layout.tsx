@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Inter, Poppins } from "next/font/google";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -43,11 +45,42 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Meta Pixel Code */}
+        <Script id="fb-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '4688865621440669'); 
+            fbq('track', 'PageView');
+          `}
+        </Script>
+      </head>
       <body
         className={`${archivo.variable} ${inter.variable} ${poppins.variable} font-body antialiased`}
       >
+        {/* Meta Pixel noscript fallback */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=4688865621440669&ev=PageView&noscript=1"
+            alt="facebook pixel"
+          />
+        </noscript>
         {children}
       </body>
+      {/* Google Tag Manager (GTM) */}
+      <GoogleTagManager gtmId="GTM-59JTRGK7" />
+      {/* Google Analytics (GA4) */}
+      <GoogleAnalytics gaId="G-Y8BK4R8S1L" />
     </html>
   );
 }
