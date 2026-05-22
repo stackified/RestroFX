@@ -62,9 +62,22 @@ export default function RootLayout({
           `}
         </Script>
       </head>
+      {/* Google Tag Manager (GTM) */}
+      <GoogleTagManager gtmId="GTM-59JTRGK7" />
+      {/* Google Analytics (GA4) */}
+      <GoogleAnalytics gaId="G-Y8BK4R8S1L" />
       <body
         className={`${archivo.variable} ${inter.variable} ${poppins.variable} font-body antialiased`}
       >
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-59JTRGK7"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {/* Meta Pixel noscript fallback */}
         <noscript>
           <img
@@ -77,10 +90,6 @@ export default function RootLayout({
         </noscript>
         {children}
       </body>
-      {/* Google Tag Manager (GTM) */}
-      <GoogleTagManager gtmId="GTM-59JTRGK7" />
-      {/* Google Analytics (GA4) */}
-      <GoogleAnalytics gaId="G-Y8BK4R8S1L" />
     </html>
   );
 }
