@@ -36,7 +36,7 @@ const accountTypes: AccountType[] = [
     commission: "$18.00 RT",
     leverage: "Up to 1:100 (Majors)",
     executionType: "Standard",
-    minimumDeposit: "$100",
+    minimumDeposit: "$250",
   },
 ];
 

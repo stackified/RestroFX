@@ -42,7 +42,7 @@ const accountTypes: (AccountType & Record<string, any>)[] = [
         id: "bonus",
         name: "PowerUp Account",
         bestFor: "Building accounts faster with bonus capital",
-        minimumDeposit: "$100",
+        minimumDeposit: "$250",
         spread: "From 1.2 pips",
         commission: "$18.00 RT",
         leverage: "Up to 1:100 (Majors)",
