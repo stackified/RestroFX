@@ -109,7 +109,7 @@ const accountTypes: (AccountTypeData & Record<string, any>)[] = [
     commission: "$18.00 RT",
     leverage: "Up to 1:100 (Majors)",
     executionType: "Standard",
-    minimumDeposit: "$100",
+    minimumDeposit: "$250",
     bonus: "125% buying power",
     icon: Zap,
     description: "Trade bigger from day one.",

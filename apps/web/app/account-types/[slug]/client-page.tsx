@@ -145,7 +145,7 @@ export const accountDetails = {
             </div>
         ),
         specs: [
-            { label: "Minimum deposit", value: "$100" },
+            { label: "Minimum deposit", value: "$250" },
             { label: "Bonus", value: "125% buying power on every qualifying deposit" },
             { label: "Maximum bonus per cycle", value: "$6,250" },
             { label: "Commission", value: "$18.00 RT" },

@@ -150,7 +150,7 @@ export default function CardDepositSupportPage() {
               </div>
               <p className="text-sm">
                 If you&apos;re a visual learner, click the link to watch a short video on how to make your first deposit: <br />
-                <Link href="#" className="text-red-600 font-bold hover:underline">Watch Video</Link>
+                <Link href="https://www.youtube.com/watch?v=09p8_VnwP6k" target="_blank" rel="noopener noreferrer" className="text-red-600 font-bold hover:underline">Watch Video</Link>
               </p>
             </div>
           </div>
