@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, Inter, Poppins } from "next/font/google";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
+import { DepositPopup } from "@/components/deposit-popup";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -89,6 +90,7 @@ export default function RootLayout({
           />
         </noscript>
         {children}
+        <DepositPopup />
       </body>
     </html>
   );

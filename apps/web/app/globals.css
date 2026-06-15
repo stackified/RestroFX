@@ -218,3 +218,24 @@ body {
 .animate-pulse-slow {
   animation: pulse-slow 5s ease-in-out infinite;
 }
+
+/* Deposit popup auto-dismiss progress bar */
+@keyframes deposit-progress {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes deposit-progress {
+
+    from,
+    to {
+      width: 0%;
+    }
+  }
+}
