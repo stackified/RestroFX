@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { X, ArrowRight } from "lucide-react";
+import { withBasePath } from "@/lib/base-path";
 
 /**
  * Global, brand-themed deposit announcement modal. It fades in (centered) when
@@ -122,7 +123,7 @@ export function DepositPopup() {
           {/* Right: image */}
           <div className="relative min-h-[240px] bg-black sm:min-h-[340px]">
             <Image
-              src="/images/deposit-cards.png"
+              src={withBasePath("/images/deposit-cards.png")}
               alt="Deposit instantly using debit, credit cards or Apple Pay"
               fill
               sizes="(max-width: 768px) 100vw, 512px"
