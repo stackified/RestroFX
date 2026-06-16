@@ -1,17 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { X, CreditCard, Wallet, Apple } from "lucide-react";
-
-const AUTO_DISMISS_MS = 6000;
+import { X, ArrowRight } from "lucide-react";
 
 /**
- * Global, brand-themed popup announcing the available deposit methods
- * (debit card, credit card, Apple Pay). It slides in when the site loads,
- * auto-dismisses after 3 seconds, and can be closed early via the cancel (X)
- * symbol. Mounted once from the root layout so it shows across all pages
- * without re-triggering on client-side navigation.
+ * Global, brand-themed deposit announcement modal. It fades in (centered) when
+ * the site loads and stays until the user closes it via the cancel (X) symbol,
+ * the "Close Window" link, the backdrop, or the Escape key. Mounted once from
+ * the root layout so it shows across all pages without re-triggering on
+ * client-side navigation.
  */
 export function DepositPopup() {
   const [mounted, setMounted] = useState(false);
@@ -22,13 +21,16 @@ export function DepositPopup() {
     setMounted(true);
 
     // Slight delay so the entrance animation plays after first paint.
-    const showTimer = setTimeout(() => setVisible(true), 400);
-    // Auto-dismiss after it has stayed for 3 seconds.
-    const hideTimer = setTimeout(() => dismiss(), 400 + AUTO_DISMISS_MS);
+    const showTimer = setTimeout(() => setVisible(true), 350);
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") dismiss();
+    };
+    window.addEventListener("keydown", onKey);
 
     return () => {
       clearTimeout(showTimer);
-      clearTimeout(hideTimer);
+      window.removeEventListener("keydown", onKey);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -36,77 +38,98 @@ export function DepositPopup() {
   function dismiss() {
     setLeaving(true);
     // Allow the exit transition to finish before unmounting.
-    setTimeout(() => setMounted(false), 400);
+    setTimeout(() => setMounted(false), 350);
   }
 
   if (!mounted) return null;
 
+  const open = visible && !leaving;
+
   return (
     <div
       role="dialog"
-      aria-label="Deposit methods available"
-      className={`fixed bottom-4 left-1/2 z-[100] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 sm:bottom-6 sm:left-auto sm:right-6 sm:translate-x-0 transition-all duration-500 ease-out ${
-        visible && !leaving
-          ? "translate-y-0 opacity-100"
-          : "translate-y-6 opacity-0"
+      aria-modal="true"
+      aria-label="Deposit methods now available"
+      onClick={dismiss}
+      className={`fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 ${
+        open ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="relative overflow-hidden rounded-xl border border-border bg-card/95 shadow-2xl shadow-black/10 backdrop-blur-md">
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+
+      {/* Card */}
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className={`relative z-10 w-full max-w-4xl overflow-hidden rounded-2xl bg-card shadow-2xl shadow-black/30 transition-all duration-300 ease-out ${
+          open ? "translate-y-0 scale-100 opacity-100" : "translate-y-4 scale-95 opacity-0"
+        }`}
+      >
         {/* Brand accent bar */}
-        <div className="absolute inset-x-0 top-0 h-1 bg-primary" />
+        <div className="absolute left-0 top-0 z-20 h-1 w-full bg-primary" />
 
-        {/* Auto-dismiss progress indicator */}
-        <div
-          className="absolute bottom-0 left-0 h-0.5 bg-primary/70"
-          style={{
-            animation: visible && !leaving ? `deposit-progress ${AUTO_DISMISS_MS}ms linear forwards` : "none",
-          }}
-        />
-
+        {/* Close (cancel) symbol */}
         <button
           type="button"
           onClick={dismiss}
           aria-label="Close"
-          className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-background/70 text-muted-foreground backdrop-blur transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <X className="h-4 w-4" />
         </button>
 
-        <div className="flex items-start gap-4 p-5 pr-10">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-            <CreditCard className="h-5 w-5" />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          {/* Left: copy */}
+          <div className="flex flex-col justify-center gap-5 p-7 sm:p-9">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              </span>
+              Now Live
+            </span>
 
-          <div className="min-w-0">
-            <p className="font-heading text-sm font-semibold text-foreground">
-              Fund your account instantly
-            </p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              We now accept{" "}
-              <span className="font-medium text-foreground">debit card</span>,{" "}
-              <span className="font-medium text-foreground">credit card</span> and{" "}
-              <span className="font-medium text-foreground">Apple Pay</span> deposits.
-            </p>
+            <h2 className="font-heading text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+              <span className="text-primary">Deposit</span> Using Cards
+            </h2>
 
-            <div className="mt-3 flex items-center gap-3 text-muted-foreground">
-              <span className="flex items-center gap-1 text-xs">
-                <CreditCard className="h-3.5 w-3.5" /> Card
-              </span>
-              <span className="flex items-center gap-1 text-xs">
-                <Apple className="h-3.5 w-3.5" /> Apple Pay
-              </span>
-              <span className="flex items-center gap-1 text-xs">
-                <Wallet className="h-3.5 w-3.5" /> Debit
-              </span>
-            </div>
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+              We&apos;re proud to announce our new card deposits payment processor
+              is officially live. Fund your account instantly with{" "}
+              <span className="font-medium text-foreground">debit</span>,{" "}
+              <span className="font-medium text-foreground">credit</span> or{" "}
+              <span className="font-medium text-foreground">Apple Pay</span>.
+            </p>
 
             <Link
               href="/support/how-to-deposit-with-debit-cards"
               onClick={dismiss}
-              className="mt-3 inline-flex items-center text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+              className="inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              Learn how to deposit →
+              Learn More
+              <ArrowRight className="h-4 w-4" />
             </Link>
+
+            <button
+              type="button"
+              onClick={dismiss}
+              className="w-fit text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Close Window
+            </button>
+          </div>
+
+          {/* Right: image */}
+          <div className="relative min-h-[240px] bg-black sm:min-h-[340px]">
+            <Image
+              src="/images/deposit-cards.png"
+              alt="Deposit instantly using debit, credit cards or Apple Pay"
+              fill
+              sizes="(max-width: 768px) 100vw, 512px"
+              className="object-contain object-center"
+              quality={100}
+              priority
+            />
           </div>
         </div>
       </div>
