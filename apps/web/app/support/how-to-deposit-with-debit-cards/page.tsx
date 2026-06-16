@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button, Card, CardContent } from "@crimsonfx/ui";
 import { OnboardingStepsSection } from "@/components/sections/onboarding-steps-section";
+import { withBasePath } from "@/lib/base-path";
 import { DemoCTASection } from "@/components/sections/demo-cta-section";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
@@ -128,7 +129,7 @@ export default function CardDepositSupportPage() {
             className="relative w-full aspect-[5/4] rounded-[40px] overflow-hidden mb-20 shadow-2xl shadow-black/40 border border-white/5 bg-muted/5"
           >
             <Image 
-              src="/images/Debit-Cards.png" 
+              src={withBasePath("/images/Debit-Cards.png")} 
               alt="How to Deposit" 
               fill
               className="object-cover"
