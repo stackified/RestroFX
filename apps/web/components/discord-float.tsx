@@ -7,7 +7,7 @@
 export function DiscordFloat() {
   return (
     <a
-      href="https://discord.gg/VJJEwe3tU2"
+      href="https://discord.gg/n4bpHRwaMF"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Join our Discord community"
