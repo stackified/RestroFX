@@ -112,7 +112,7 @@ export function Footer() {
             Client accounts are onboarded through Restro FX Ltd., a company incorporated in Saint Lucia (Reg. No. 2025-00922). By opening an account with Restro FX Ltd., you confirm that you are at least eighteen (18) years of age (or the legal age in your jurisdiction), that you are acting of your own free will without solicitation from Restro FX, and that you will ensure compliance with all applicable local laws and regulations.
           </p>
           <p>
-            Restro FX Ltd. does not offer services to residents of jurisdictions where such services are restricted or prohibited by law, including but not limited to the United States of America.
+            Restro FX Ltd. does not offer services to residents of jurisdictions where such services are restricted or prohibited by law, including but not limited to Hong Kong, Afghanistan, and Russia.
           </p>
           <p className="pt-4 opacity-60">
             © 2026 Restro FX Ltd. All rights reserved.
