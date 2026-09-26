@@ -1,4 +1,4 @@
-# CrimsonFX Trading Platform
+# Restro FX Trading Platform
 
 A modern, professional trading platform website built with Next.js, TypeScript, and Tailwind CSS.
 
@@ -35,4 +35,8 @@ npm start
 - Tailwind CSS
 - shadcn/ui
 - Framer Motion
+
+## License
+
+Proprietary. Copyright (c) 2026 Restro FX. All rights reserved. Designed and developed by [Stackified](https://github.com/stackified). See [LICENSE](LICENSE).
 

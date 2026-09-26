@@ -1,8 +1,8 @@
-# CrimsonFX Setup Instructions
+# Restro FX Setup Instructions
 
 ## Overview
 
-This is a monorepo structure for the CrimsonFX trading platform website built with Next.js, TypeScript, and Tailwind CSS.
+This is a monorepo structure for the Restro FX trading platform website built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Installation
 
@@ -46,7 +46,7 @@ To use General Sans (if you have a license), you can:
 ## Project Structure
 
 ```
-CrimsonFX/
+RestroFX/
 ├── apps/
 │   └── web/              # Next.js frontend application
 ├── packages/
