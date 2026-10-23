@@ -7,9 +7,9 @@ import { Zap, Percent, Activity } from "lucide-react";
 export function PartnerFeatures() {
   const features = [
     {
-      title: "1:500 Leverage on TradeLocker",
+      title: "1:1000 Leverage on TradeLocker",
       description:
-        "Instantly unlock 1:500 leverage and take your account to new heights. Don't let low leverage hold you back! More margin = Larger lots = More Opportunity.",
+        "Instantly unlock 1:1000 leverage on RAW and ECN accounts and take your account to new heights. Don't let low leverage hold you back! More margin = Larger lots = More Opportunity.",
       icon: Activity,
       borderColor: "border-blue-500/20 hover:border-blue-500/40",
       iconColor: "text-blue-500",
