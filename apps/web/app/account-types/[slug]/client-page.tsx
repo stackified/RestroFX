@@ -28,7 +28,7 @@ export const accountDetails = {
                 {[
                     "Spreads from 0.1 pips on major pairs",
                     "Direct execution — pure liquidity",
-                    "Up to 1:500 leverage across forex",
+                    "Up to 1:1000 leverage across forex",
                     "$25 minimum deposit",
                     "EAs, scalping, and hedging all permitted"
                 ].map((reason, i) => (
@@ -45,7 +45,7 @@ export const accountDetails = {
             { label: "Minimum deposit", value: "$25" },
             { label: "Commission", value: "$18.00 RT" },
             { label: "Spread", value: "From 0.1 pips" },
-            { label: "Leverage", value: "Up to 1:500" },
+            { label: "Leverage", value: "Up to 1:1000" },
             { label: "Negative balance protection", value: "Always on" },
             { label: "EAs / Scalping / Hedging", value: "All permitted" },
             { label: "Platform", value: "TradeLocker" },
@@ -55,7 +55,7 @@ export const accountDetails = {
         id: "ecn-standard-default",
         title: "ECN / Standard Default",
         heroHeadline: "Trading made simple — competitive and flexible.",
-        heroDescription: "The Standard Default Account is built for the everyday retail trader. With a $25 minimum deposit, 1:500 leverage, and simple $4 RT commissions, it provides a balanced environment for all strategies.",
+        heroDescription: "The Standard Default Account is built for the everyday retail trader. With a $25 minimum deposit, 1:1000 leverage, and simple $4 RT commissions, it provides a balanced environment for all strategies.",
         whoItsFor: [
             "Traders who want a clean, no-frills account",
             "Swing and position traders who hold longer-term setups",
@@ -66,7 +66,7 @@ export const accountDetails = {
             <ul className="grid grid-cols-1 gap-4">
                 {[
                     "Spreads from 2.0 pips",
-                    "Up to 1:500 leverage",
+                    "Up to 1:1000 leverage",
                     "$25 minimum deposit",
                     "Full instrument access — forex, metals, energies, indices, crypto",
                     "Reliable execution with fast fill quality"
@@ -84,7 +84,7 @@ export const accountDetails = {
             { label: "Minimum deposit", value: "$25" },
             { label: "Commission", value: "$4.00 RT" },
             { label: "Spread", value: "From 2.0 pips" },
-            { label: "Leverage", value: "Up to 1:500" },
+            { label: "Leverage", value: "Up to 1:1000" },
             { label: "Negative balance protection", value: "Always on" },
             { label: "EAs / Scalping / Hedging", value: "All permitted" },
             { label: "Platform", value: "TradeLocker" },
