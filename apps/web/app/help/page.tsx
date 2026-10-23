@@ -14,6 +14,9 @@ import {
   CreditCard,
 } from "lucide-react";
 
+// Resources without a dedicated page yet point to the RestroFX YouTube channel.
+const YOUTUBE_CHANNEL = "https://www.youtube.com/@restrofx";
+
 const helpResources = [
   {
     name: "Card Deposits",
@@ -25,7 +28,8 @@ const helpResources = [
     name: "Getting Started",
     description: "Learn the basics of trading and using our platform",
     icon: BookOpen,
-    href: "/help/getting-started",
+    href: YOUTUBE_CHANNEL,
+    external: true,
   },
   {
     name: "FAQs",
@@ -37,13 +41,15 @@ const helpResources = [
     name: "Trading Guides",
     description: "Comprehensive guides on trading strategies and tools",
     icon: FileText,
-    href: "/help/guides",
+    href: YOUTUBE_CHANNEL,
+    external: true,
   },
   {
     name: "Video Tutorials",
     description: "Watch step-by-step video tutorials",
     icon: Video,
-    href: "/help/videos",
+    href: YOUTUBE_CHANNEL,
+    external: true,
   },
   {
     name: "Contact Support",
@@ -82,7 +88,17 @@ export default function HelpPage() {
                       {resource.description}
                     </p>
                     <Button variant="outline" className="w-full" asChild>
-                      <Link href={resource.href}>Learn More</Link>
+                      {resource.external ? (
+                        <a
+                          href={resource.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn More
+                        </a>
+                      ) : (
+                        <Link href={resource.href}>Learn More</Link>
+                      )}
                     </Button>
                   </CardContent>
                 </Card>
